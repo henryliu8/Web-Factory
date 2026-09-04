@@ -1,0 +1,6 @@
+@layer wf.theme {
+  body {
+    background: var(--wf-color-background);
+    color: var(--wf-color-text);
+  }
+}

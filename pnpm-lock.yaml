@@ -65,6 +65,18 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
 
+  themes/default:
+    dependencies:
+      '@webfactory/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+
+  themes/luxury:
+    dependencies:
+      '@webfactory/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+
 packages:
 
   '@astrojs/check@0.9.10':

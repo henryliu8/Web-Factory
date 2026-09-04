@@ -1,0 +1,16 @@
+@layer wf.theme {
+  :where(a, button) {
+    transition: color var(--wf-motion-normal), background-color var(--wf-motion-normal), border-color var(--wf-motion-normal), transform var(--wf-motion-normal);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}

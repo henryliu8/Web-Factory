@@ -1,0 +1,11 @@
+@layer wf.theme {
+  body {
+    background: var(--wf-color-background);
+    color: var(--wf-color-text);
+  }
+
+  ::selection {
+    background: var(--wf-color-primary);
+    color: var(--wf-color-on-primary);
+  }
+}

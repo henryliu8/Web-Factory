@@ -1,0 +1,8 @@
+{
+  "preferred": [
+    "hero/HeroFullscreen",
+    "features/FeatureGrid",
+    "cta/CTA"
+  ],
+  "overrides": {}
+}

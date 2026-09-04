@@ -1,0 +1,19 @@
+{
+  "name": "@webfactory/theme-luxury",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./theme.config.ts",
+    "./styles/tokens.css": "./src/styles/tokens.css",
+    "./styles/theme.css": "./src/styles/theme.css",
+    "./styles/typography.css": "./src/styles/typography.css",
+    "./styles/motion.css": "./src/styles/motion.css"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@webfactory/tokens": "workspace:*"
+  }
+}

@@ -1,0 +1,19 @@
+@layer wf.theme {
+  :root {
+    --wf-color-primary: #211d19;
+    --wf-color-background: #f8f7f4;
+    --wf-color-surface: #eeece7;
+    --wf-color-on-primary: #f8f7f4;
+    --wf-color-text: #211d19;
+    --wf-color-muted: #716b63;
+    --wf-color-accent: #9a8264;
+    --wf-font-heading: Georgia, 'Times New Roman', serif;
+    --wf-font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+    --wf-content-width: 82.5rem;
+    --wf-section-space: clamp(5rem, 10vw, 10rem);
+    --wf-radius-md: 0.125rem;
+    --wf-radius-lg: 0.25rem;
+    --wf-shadow-sm: 0 0.75rem 2rem rgb(33 29 25 / 0.08);
+    --wf-motion-normal: 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
