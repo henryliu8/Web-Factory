@@ -1,7 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
-import PageBuilder from '../../../../../packages/core/src/page-builder/PageBuilder.astro';
-import BaseLayout from '../../../src/layouts/BaseLayout.astro';
+import PageBuilder from '@webfactory/core/page-builder/PageBuilder.astro';
+import BaseLayout from '@webfactory/template-stardrive/layouts/BaseLayout.astro';
 import { sectionRegistry } from '../config/sectionRegistry';
 
 const home = await getEntry('pages', 'home');

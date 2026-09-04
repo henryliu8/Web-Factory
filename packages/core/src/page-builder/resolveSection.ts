@@ -4,7 +4,7 @@ import type { ResolvedSectionRegistry } from './types';
 
 export function resolveSection(
   registry: ResolvedSectionRegistry,
-  definition: SectionDefinition,
+  definition: SectionDefinition | { type: string },
 ): unknown {
   try {
     return requireEntry(registry, definition.type);

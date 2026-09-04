@@ -33,6 +33,30 @@ importers:
         specifier: ^3.25.76
         version: 3.25.76
 
+  apps/test-site:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.9.4
+        version: 0.9.10(prettier@3.9.6)(typescript@5.9.3)
+      '@webfactory/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@webfactory/sections':
+        specifier: workspace:*
+        version: link:../../packages/sections
+      '@webfactory/template-stardrive':
+        specifier: workspace:*
+        version: link:../../templates/stardrive
+      '@webfactory/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      '@webfactory/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      astro:
+        specifier: ^5.15.0
+        version: 5.18.2(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.63.1)(typescript@5.9.3)(yaml@2.9.0)
+
   packages/animations: {}
 
   packages/core:

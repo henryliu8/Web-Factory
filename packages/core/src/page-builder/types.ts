@@ -5,5 +5,5 @@ export type ResolvedSectionRegistry = Readonly<Record<string, SectionComponent>>
 
 export interface PageBuilderProps {
   sections: SectionDefinition[];
-  sectionRegistry?: ResolvedSectionRegistry;
+  sectionRegistry: ResolvedSectionRegistry;
 }

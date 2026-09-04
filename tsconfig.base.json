@@ -5,8 +5,11 @@
     "moduleResolution": "Bundler",
     "baseUrl": ".",
     "paths": {
-      "@webfactory/*": ["packages/*/src/index.ts"],
-      "@webfactory/ui/*": ["packages/ui/src/*"]
+      "@webfactory/core/*": ["packages/core/src/*"],
+      "@webfactory/template-stardrive/*": ["templates/stardrive/src/*"],
+      "@webfactory/sections/*": ["packages/sections/src/*"],
+      "@webfactory/ui/*": ["packages/ui/src/*"],
+      "@webfactory/*": ["packages/*/src/index.ts"]
     },
     "types": ["astro/client"],
     "strict": true,

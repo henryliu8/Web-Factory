@@ -4,7 +4,7 @@ import type { PageBuilderProps } from './types';
 
 interface Props extends PageBuilderProps {}
 
-const { sections, sectionRegistry = {} } = Astro.props;
+const { sections, sectionRegistry } = Astro.props;
 const resolvedSections = resolveSections(sectionRegistry, sections);
 ---
 
