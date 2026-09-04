@@ -1,0 +1,19 @@
+{
+  "name": "@webfactory/template-stardrive",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./template.config.ts",
+    "./styles/template.css": "./src/styles/template.css",
+    "./layouts/BaseLayout.astro": "./src/layouts/BaseLayout.astro"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@webfactory/core": "workspace:*",
+    "@webfactory/tokens": "workspace:*",
+    "@webfactory/ui": "workspace:*"
+  }
+}

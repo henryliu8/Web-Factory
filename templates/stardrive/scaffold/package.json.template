@@ -1,0 +1,19 @@
+{
+  "name": "@webfactory/app-{{project}}",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@webfactory/core": "workspace:*",
+    "@webfactory/sections": "workspace:*",
+    "@webfactory/template-stardrive": "workspace:*",
+    "@webfactory/tokens": "workspace:*",
+    "@webfactory/ui": "workspace:*",
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.15.0"
+  }
+}

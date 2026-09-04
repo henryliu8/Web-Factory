@@ -53,6 +53,18 @@ importers:
 
   packages/utilities: {}
 
+  templates/stardrive:
+    dependencies:
+      '@webfactory/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@webfactory/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      '@webfactory/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+
 packages:
 
   '@astrojs/check@0.9.10':

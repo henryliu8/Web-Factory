@@ -1,0 +1,13 @@
+---
+import SharedHeader from '../../../../packages/ui/src/navigation/Header.astro';
+
+interface Props {
+  brand?: string;
+  items?: { label: string; href: string }[];
+  cta?: { label: string; href: string };
+}
+
+const { brand = 'Site', items = [], cta } = Astro.props;
+---
+
+<SharedHeader brand={brand} items={items} cta={cta} />

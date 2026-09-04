@@ -1,0 +1,38 @@
+@layer wf.template {
+  :root {
+    color-scheme: light;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--wf-color-background);
+    color: var(--wf-color-text);
+    font-family: var(--wf-font-body);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--wf-color-background);
+    margin: 0;
+    min-width: 20rem;
+  }
+
+  :where(h1, h2, h3, h4) {
+    color: var(--wf-color-text);
+    font-family: var(--wf-font-heading);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--wf-color-primary);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
