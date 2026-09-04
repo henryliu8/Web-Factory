@@ -1,1 +1,14 @@
+@import 'tailwindcss';
 @import './base.css';
+
+@theme inline {
+  --color-wf-primary: var(--wf-color-primary);
+  --color-wf-background: var(--wf-color-background);
+  --color-wf-surface: var(--wf-color-surface);
+  --color-wf-text: var(--wf-color-text);
+  --color-wf-muted: var(--wf-color-muted);
+  --font-wf-heading: var(--wf-font-heading);
+  --font-wf-body: var(--wf-font-body);
+  --radius-wf-md: var(--wf-radius-md);
+  --spacing-wf-section: var(--wf-section-space);
+}

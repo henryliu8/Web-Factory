@@ -1,0 +1,32 @@
+---
+import Button from '../../../ui/src/primitives/Button.astro';
+import Container from '../../../ui/src/primitives/Container.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  button?: { label: string; href: string };
+  class?: string;
+}
+
+const { title, description, button, class: className = '' } = Astro.props;
+---
+
+<section class:list={['wf-cta', className]}>
+  <Container class="wf-cta__inner">
+    <div>
+      <h2>{title}</h2>
+      {description && <p>{description}</p>}
+    </div>
+    {button && <Button href={button.href} variant="secondary">{button.label}</Button>}
+  </Container>
+</section>
+
+<style>
+  .wf-cta { background: var(--wf-color-primary); color: var(--wf-color-on-primary); padding-block: clamp(3rem, 7vw, 6rem); }
+  .wf-cta__inner { align-items: center; display: flex; gap: 2rem; justify-content: space-between; }
+  h2 { font: 700 clamp(2rem, 4vw, 3.5rem)/1.05 var(--wf-font-heading); letter-spacing: -0.03em; margin: 0; max-width: 16ch; }
+  p { font: 400 1rem/1.6 var(--wf-font-body); margin: 1rem 0 0; max-width: 36rem; opacity: 0.8; }
+  :global(.wf-cta .wf-button--secondary) { border-color: var(--wf-color-on-primary); color: var(--wf-color-on-primary); flex-shrink: 0; }
+  @media (max-width: 640px) { .wf-cta__inner { align-items: flex-start; flex-direction: column; } }
+</style>

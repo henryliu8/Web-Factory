@@ -1,0 +1,48 @@
+---
+import Container from '../../../ui/src/primitives/Container.astro';
+
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  intro?: string;
+  items: Feature[];
+  class?: string;
+}
+
+const { title, intro, items, class: className = '' } = Astro.props;
+---
+
+<section class:list={['wf-feature-grid', className]}>
+  <Container>
+    {(title || intro) && (
+      <header class="wf-feature-grid__header">
+        {title && <h2>{title}</h2>}
+        {intro && <p>{intro}</p>}
+      </header>
+    )}
+    <div class="wf-feature-grid__items">
+      {items.map((item, index) => (
+        <article class="wf-feature-grid__item">
+          <span class="wf-feature-grid__number">{String(index + 1).padStart(2, '0')}</span>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<style>
+  .wf-feature-grid { padding-block: var(--wf-section-space); }
+  .wf-feature-grid__header { display: grid; gap: 1rem; margin-bottom: 3rem; max-width: 42rem; }
+  h2 { font: 700 clamp(2rem, 4vw, 3.5rem)/1.05 var(--wf-font-heading); letter-spacing: -0.03em; margin: 0; }
+  .wf-feature-grid__header p, .wf-feature-grid__item p { color: var(--wf-color-muted); font: 400 1rem/1.6 var(--wf-font-body); margin: 0; }
+  .wf-feature-grid__items { display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); background: color-mix(in srgb, var(--wf-color-text) 15%, transparent); }
+  .wf-feature-grid__item { background: var(--wf-color-background); min-height: 12rem; padding: 1.5rem; }
+  .wf-feature-grid__number { color: var(--wf-color-primary); display: block; font: 600 0.8rem/1 var(--wf-font-body); margin-bottom: 3rem; }
+  h3 { font: 650 1.25rem/1.2 var(--wf-font-heading); margin: 0 0 0.75rem; }
+</style>

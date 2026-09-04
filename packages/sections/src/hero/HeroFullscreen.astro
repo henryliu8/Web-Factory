@@ -1,0 +1,49 @@
+---
+import Button from '../../../ui/src/primitives/Button.astro';
+import Container from '../../../ui/src/primitives/Container.astro';
+
+interface CTA {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  image?: string;
+  primaryCTA?: CTA;
+  secondaryCTA?: CTA;
+  class?: string;
+}
+
+const { eyebrow, title, description, image, primaryCTA, secondaryCTA, class: className = '' } = Astro.props;
+---
+
+<section class:list={['wf-hero-fullscreen', className]}>
+  {image && <img class="wf-hero-fullscreen__image" src={image} alt="" aria-hidden="true" />}
+  <div class="wf-hero-fullscreen__overlay"></div>
+  <Container class="wf-hero-fullscreen__content">
+    {eyebrow && <p class="wf-hero-fullscreen__eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
+    {description && <p class="wf-hero-fullscreen__description">{description}</p>}
+    {(primaryCTA || secondaryCTA) && (
+      <div class="wf-hero-fullscreen__actions">
+        {primaryCTA && <Button href={primaryCTA.href}>{primaryCTA.label}</Button>}
+        {secondaryCTA && <Button href={secondaryCTA.href} variant="secondary">{secondaryCTA.label}</Button>}
+      </div>
+    )}
+  </Container>
+</section>
+
+<style>
+  .wf-hero-fullscreen { background: var(--wf-color-surface); color: var(--wf-color-text); min-height: min(42rem, 85vh); overflow: hidden; position: relative; display: grid; align-items: center; }
+  .wf-hero-fullscreen__image, .wf-hero-fullscreen__overlay { inset: 0; height: 100%; position: absolute; width: 100%; }
+  .wf-hero-fullscreen__image { object-fit: cover; }
+  .wf-hero-fullscreen__overlay { background: color-mix(in srgb, var(--wf-color-background) 78%, transparent); }
+  .wf-hero-fullscreen__content { position: relative; z-index: 1; padding-block: var(--wf-section-space); }
+  .wf-hero-fullscreen__eyebrow { color: var(--wf-color-primary); font: 600 0.8rem/1.2 var(--wf-font-body); letter-spacing: 0.12em; margin: 0 0 1.25rem; text-transform: uppercase; }
+  h1 { font: 700 clamp(2.5rem, 7vw, 6rem)/0.98 var(--wf-font-heading); letter-spacing: -0.04em; margin: 0; max-width: 12ch; }
+  .wf-hero-fullscreen__description { font: 400 1.125rem/1.6 var(--wf-font-body); margin: 1.5rem 0 0; max-width: 42rem; }
+  .wf-hero-fullscreen__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+</style>
