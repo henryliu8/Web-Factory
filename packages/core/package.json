@@ -4,10 +4,15 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./page-builder/PageBuilder.astro": "./src/page-builder/PageBuilder.astro",
+    "./content": "./src/content/index.ts"
   },
   "scripts": {
     "check": "tsc --noEmit",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
   }
 }

@@ -1,0 +1,16 @@
+---
+import { resolveSections } from './resolveSection';
+import type { PageBuilderProps } from './types';
+
+interface Props extends PageBuilderProps {}
+
+const { sections, sectionRegistry = {} } = Astro.props;
+const resolvedSections = resolveSections(sectionRegistry, sections);
+---
+
+<div class="wf-page-builder">
+  {resolvedSections.map(({ component, definition }) => {
+    const Component = component as any;
+    return <Component {...definition} />;
+  })}
+</div>

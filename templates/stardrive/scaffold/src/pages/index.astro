@@ -1,9 +1,14 @@
 ---
+import { getEntry } from 'astro:content';
+import PageBuilder from '../../../../../packages/core/src/page-builder/PageBuilder.astro';
 import BaseLayout from '../../../src/layouts/BaseLayout.astro';
-import HomeContent from '../content/home.md';
+import { sectionRegistry } from '../config/sectionRegistry';
+
+const home = await getEntry('pages', 'home');
+if (!home) throw new Error('Home content entry is missing.');
+const { title, description, sections } = home.data;
 ---
 
-<BaseLayout title="Site">
-  <!-- The generated project wires this content into @webfactory/core's PageBuilder. -->
-  <HomeContent />
+<BaseLayout title={title} description={description}>
+  <PageBuilder sections={sections} sectionRegistry={sectionRegistry} />
 </BaseLayout>

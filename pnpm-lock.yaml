@@ -29,10 +29,17 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.7(@types/debug@4.1.13)(jiti@2.7.0)(lightningcss@1.32.0)(yaml@2.9.0)
+      zod:
+        specifier: ^3.25.76
+        version: 3.25.76
 
   packages/animations: {}
 
-  packages/core: {}
+  packages/core:
+    dependencies:
+      zod:
+        specifier: ^3.25.76
+        version: 3.25.76
 
   packages/forms: {}
 
