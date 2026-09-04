@@ -1,0 +1,44 @@
+---
+import Container from '../primitives/Container.astro';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  brand: string;
+  items?: NavItem[];
+  cta?: NavItem;
+}
+
+const { brand, items = [], cta } = Astro.props;
+---
+
+<header class="wf-header">
+  <Container class="wf-header__inner">
+    <a class="wf-header__brand" href="/">{brand}</a>
+    <nav aria-label="Primary navigation">
+      <ul>
+        {items.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+    {cta && <a class="wf-header__cta" href={cta.href}>{cta.label}</a>}
+  </Container>
+</header>
+
+<style>
+  .wf-header { border-bottom: 1px solid color-mix(in srgb, var(--wf-color-text) 12%, transparent); }
+  .wf-header__inner { align-items: center; display: flex; gap: 2rem; justify-content: space-between; min-height: 4.5rem; }
+  .wf-header__brand, .wf-header a { color: var(--wf-color-text); text-decoration: none; }
+  .wf-header__brand { font: 700 1.1rem/1 var(--wf-font-heading); letter-spacing: 0.04em; }
+  nav { margin-inline: auto; }
+  nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+  nav a { font: 500 0.875rem/1.4 var(--wf-font-body); }
+  nav a:hover { color: var(--wf-color-primary); }
+  .wf-header__cta { border: 1px solid var(--wf-color-primary); border-radius: var(--wf-radius-md); font: 600 0.8125rem/1 var(--wf-font-body); padding: 0.7rem 1rem; }
+  @media (max-width: 640px) {
+    .wf-header__inner { gap: 1rem; }
+    nav { display: none; }
+  }
+</style>

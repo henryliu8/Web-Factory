@@ -1,0 +1,18 @@
+{
+  "name": "@webfactory/sections",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./hero/HeroFullscreen.astro": "./src/hero/HeroFullscreen.astro",
+    "./features/FeatureGrid.astro": "./src/features/FeatureGrid.astro",
+    "./cta/CTA.astro": "./src/cta/CTA.astro"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@webfactory/ui": "workspace:*"
+  }
+}

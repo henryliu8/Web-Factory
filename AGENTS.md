@@ -4,8 +4,14 @@ Always read:
 
 1. WEB_FACTORY_REQUIREMENTS.md
 2. README.md
-3. The relevant package README
+3. The relevant package README, when one exists
 4. Existing code before modifying files
+
+Documentation policy:
+
+- Keep the root README.md as the repository-wide introduction.
+- Do not add or retain unnecessary placeholder README.md files in packages, apps, templates, themes, tools or other subdirectories.
+- Add a subdirectory README.md only when it contains meaningful, location-specific documentation that cannot reasonably live in the root README.md.
 
 Core architecture:
 

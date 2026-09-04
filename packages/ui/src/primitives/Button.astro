@@ -1,0 +1,60 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'text';
+  class?: string;
+}
+
+const { href, variant = 'primary', class: className = '' } = Astro.props;
+---
+
+{href ? (
+  <a class:list={['wf-button', `wf-button--${variant}`, className]} href={href}>
+    <slot />
+  </a>
+) : (
+  <button class:list={['wf-button', `wf-button--${variant}`, className]} type="button">
+    <slot />
+  </button>
+)}
+
+<style>
+  .wf-button {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: var(--wf-radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    font: 600 0.9375rem/1 var(--wf-font-body);
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    transition: background-color var(--wf-motion-normal), border-color var(--wf-motion-normal), color var(--wf-motion-normal), transform var(--wf-motion-normal);
+  }
+
+  .wf-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .wf-button--primary {
+    background: var(--wf-color-primary);
+    color: var(--wf-color-on-primary);
+  }
+
+  .wf-button--secondary {
+    background: transparent;
+    border-color: var(--wf-color-primary);
+    color: var(--wf-color-primary);
+  }
+
+  .wf-button--text {
+    color: var(--wf-color-primary);
+    padding-inline: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wf-button { transition: none; }
+    .wf-button:hover { transform: none; }
+  }
+</style>
