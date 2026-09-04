@@ -1,0 +1,25 @@
+{
+  "name": "@webfactory/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "webfactory": "./dist/index.js"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc --outDir dist --declaration false"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.10.1",
+    "commander": "^13.1.0",
+    "execa": "^9.5.2",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@webfactory/core": "workspace:*",
+    "vitest": "^3.2.4",
+    "tsx": "^4.19.3"
+  }
+}
