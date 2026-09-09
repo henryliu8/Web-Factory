@@ -1,0 +1,40 @@
+---
+import { site } from '../../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="flooring-footer">
+  <div class="flooring-footer__lead">
+    <div>
+      <p class="flooring-footer__title">Let’s find the material that belongs in your home.</p>
+      <a class="text-link text-link--light" href="/contact">
+        Visit the studio
+        <svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path d="M4 10h11M11 6l4 4-4 4" /></svg>
+      </a>
+    </div>
+    <address>
+      {site.contact.address.map((line) => <span>{line}</span>)}
+      <a href={site.contact.phoneHref}>{site.contact.phone}</a>
+      <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+    </address>
+  </div>
+
+  <div class="flooring-footer__main">
+    <a class="flooring-brand flooring-brand--footer" href="/">
+      <span>{site.name}</span>
+      <small>{site.descriptor}</small>
+    </a>
+    <nav aria-label="Footer navigation">
+      {site.navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <div class="flooring-footer__social">
+      {site.social.map((item) => <a href={item.href} rel="noreferrer">{item.label}</a>)}
+    </div>
+  </div>
+
+  <div class="flooring-footer__legal">
+    <span>© {year} {site.name}</span>
+    <span>Fictional studio built with Web Factory</span>
+  </div>
+</footer>

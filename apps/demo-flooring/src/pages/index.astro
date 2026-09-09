@@ -1,14 +1,72 @@
 ---
 import { getEntry } from 'astro:content';
-import PageBuilder from '@webfactory/core/page-builder/PageBuilder.astro';
-import SiteLayout from '@webfactory/template-stardrive/layouts/SiteLayout';
-import { sectionRegistry } from '../config/sectionRegistry';
+import ProjectShell from '../layouts/ProjectShell.astro';
+import HomeSlider from '../components/home/HomeSlider.astro';
 
-const home = await getEntry('pages', 'home');
-if (!home) throw new Error('Home content entry is missing.');
-const { title, description, sections } = home.data;
+const entry = await getEntry('pages', 'home');
+if (!entry || entry.data.kind !== 'home') throw new Error('Home content entry is missing or invalid.');
+const { title, description, slides, materials, projects, process, quote } = entry.data;
 ---
 
-<SiteLayout title={title} description={description}>
-  <PageBuilder sections={sections} sectionRegistry={sectionRegistry} />
-</SiteLayout>
+<ProjectShell {title} {description} pageClass="page-home">
+  <HomeSlider {slides} />
+
+  <section class="section material-intro" aria-labelledby="materials-title">
+    <div class="section__heading">
+      <div>
+        <h2 id="materials-title">Materials selected for real life</h2>
+        <p>Beautiful floors should do more than look good. We choose surfaces that are durable, timeless, and easy to live with.</p>
+      </div>
+      <a class="text-link" href="/services">Explore all materials <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="material-list">
+      {materials.map((material, index) => (
+        <article>
+          <span class="material-list__number">0{index + 1}</span>
+          <h3>{material.name}</h3>
+          <p>{material.detail}</p>
+          <small>{material.summary}</small>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section projects" aria-labelledby="projects-title">
+    <div class="section__heading section__heading--single">
+      <h2 id="projects-title">Recent spaces</h2>
+    </div>
+    <div class="project-grid">
+      {projects.map((project) => (
+        <figure>
+          <img src={project.image.src} alt={project.image.alt} width="1536" height="1024" loading="lazy" />
+          <figcaption>
+            <span>{project.name}, {project.location}</span>
+            <small>{project.material}</small>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="section process" aria-labelledby="process-title">
+    <h2 id="process-title">A considered process</h2>
+    <ol>
+      {process.map((step, index) => (
+        <li>
+          <span>0{index + 1}</span>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="testimonial" aria-label="Customer story">
+    <blockquote>
+      <span aria-hidden="true">“</span>
+      <p>{quote.text}</p>
+      <footer>{quote.author}<small>{quote.context}</small></footer>
+    </blockquote>
+    <img src={quote.image.src} alt={quote.image.alt} width="1536" height="1024" loading="lazy" />
+  </section>
+</ProjectShell>

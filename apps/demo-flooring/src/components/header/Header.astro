@@ -1,0 +1,46 @@
+---
+import { site } from '../../data/site';
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.startsWith(href);
+---
+
+<header class="flooring-header" data-site-header>
+  <div class="flooring-header__inner">
+    <a class="flooring-brand" href="/" aria-label={`${site.name} home`}>
+      <span>{site.name}</span>
+      <small>{site.descriptor}</small>
+    </a>
+
+    <button class="flooring-header__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="sr-only">Open navigation</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+
+    <nav id="primary-navigation" class="flooring-header__nav" aria-label="Primary navigation">
+      <ul>
+        {site.navigation.map((item) => (
+          <li><a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <a class="flooring-header__action" href={site.primaryAction.href}>
+      {site.primaryAction.label}
+      <svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path d="M4 10h11M11 6l4 4-4 4" /></svg>
+    </a>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-site-header]');
+  const toggle = header?.querySelector<HTMLButtonElement>('.flooring-header__toggle');
+  toggle?.addEventListener('click', () => {
+    const open = header?.toggleAttribute('data-menu-open') ?? false;
+    toggle.setAttribute('aria-expanded', String(open));
+    const label = toggle.querySelector('.sr-only');
+    if (label) label.textContent = open ? 'Close navigation' : 'Open navigation';
+  });
+</script>

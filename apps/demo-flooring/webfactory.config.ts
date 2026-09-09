@@ -1,9 +1,9 @@
 import { defineProject } from '@webfactory/core';
 
 export default defineProject({
-  name: 'Demo Flooring',
+  name: 'Grain & Ground',
   slug: 'demo-flooring',
   template: 'stardrive',
   theme: 'default',
-  pages: ["home","about","services","contact"],
+  pages: ['home', 'about', 'services', 'contact'],
 });

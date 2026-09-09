@@ -1,0 +1,21 @@
+---
+import SiteLayout from '@webfactory/template-stardrive/layouts/SiteLayout';
+import Header from '../components/header/Header.astro';
+import Footer from '../components/footer/Footer.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  pageClass?: string;
+}
+
+const { title, description, pageClass = '' } = Astro.props;
+---
+
+<SiteLayout title={title} description={description} lang={site.language} bodyClass={pageClass}>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <Header />
+  <main id="main-content"><slot /></main>
+  <Footer />
+</SiteLayout>

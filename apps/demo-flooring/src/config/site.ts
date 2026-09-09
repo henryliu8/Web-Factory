@@ -1,4 +1,1 @@
-export const site = {
-  name: 'Demo Flooring',
-  language: 'en',
-};
+export { site } from '../data/site';

@@ -1,14 +1,38 @@
 ---
 import { getEntry } from 'astro:content';
-import StandardPageTemplate from '@webfactory/template-stardrive/page-templates/StandardPageTemplate';
-import { site } from '../config/site';
+import ProjectShell from '../layouts/ProjectShell.astro';
 
 const entry = await getEntry('pages', 'contact');
-if (!entry) throw new Error('Missing content entry: contact');
+if (!entry || entry.data.kind !== 'contact') throw new Error('Contact content entry is missing or invalid.');
+const { title, description, intro, studio, prompts } = entry.data;
 ---
 
-<StandardPageTemplate
-  metadata={{ title: entry.data.title, description: entry.data.description, lang: site.language }}
-  header={{ brand: site.name }}
-  heading={entry.data.title}
-/>
+<ProjectShell {title} {description} pageClass="page-contact">
+  <header class="page-hero section">
+    <h1>{title}</h1>
+    <p>{intro}</p>
+  </header>
+
+  <section class="contact-layout section">
+    <div class="contact-details">
+      <h2>Grain & Ground</h2>
+      <address>{studio.address.map((line) => <span>{line}</span>)}</address>
+      <a href={`tel:${studio.phone.replace(/[^+\d]/g, '')}`}>{studio.phone}</a>
+      <a href={`mailto:${studio.email}`}>{studio.email}</a>
+      <h3>Studio hours</h3>
+      <ul>{studio.hours.map((line) => <li>{line}</li>)}</ul>
+    </div>
+
+    <form class="contact-form" action="/contact?sent=true" method="get">
+      <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required /></div>
+      <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+      <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
+      <div>
+        <label for="project">Tell us about the project</label>
+        <textarea id="project" name="project" rows="6" aria-describedby="project-hints" required></textarea>
+        <ul id="project-hints">{prompts.map((prompt) => <li>{prompt}</li>)}</ul>
+      </div>
+      <button class="button button--solid" type="submit">Request a consultation</button>
+    </form>
+  </section>
+</ProjectShell>
