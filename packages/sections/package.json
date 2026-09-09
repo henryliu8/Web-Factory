@@ -5,14 +5,22 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./header/Header": "./src/header/Header.astro",
+    "./hero/HeroFullscreen": "./src/hero/HeroFullscreen.astro",
+    "./features/FeatureGrid": "./src/features/FeatureGrid.astro",
+    "./cta/CTA": "./src/cta/CTA.astro",
     "./hero/HeroFullscreen.astro": "./src/hero/HeroFullscreen.astro",
     "./features/FeatureGrid.astro": "./src/features/FeatureGrid.astro",
     "./cta/CTA.astro": "./src/cta/CTA.astro"
   },
   "scripts": {
-    "check": "tsc --noEmit"
+    "check": "astro check"
   },
   "dependencies": {
+    "@webfactory/tokens": "workspace:*",
     "@webfactory/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "astro": "^5.13.5"
   }
 }

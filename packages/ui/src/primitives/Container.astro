@@ -1,20 +1,22 @@
 ---
-interface Props {
-  class?: string;
-}
+import type { ContainerProps } from '../component-types';
 
-const { class: className = '' } = Astro.props;
+const { as: Element = 'div', width = 'default', class: className = '' } = Astro.props satisfies ContainerProps;
 ---
 
-<div class:list={['wf-container', className]}>
+<Element class:list={['wf-container', `wf-container--${width}`, className]}>
   <slot />
-</div>
+</Element>
 
 <style>
   .wf-container {
     margin-inline: auto;
-    max-width: var(--wf-content-width);
-    padding-inline: clamp(1rem, 4vw, 2.5rem);
+    max-width: var(--wf-container-max);
+    padding-inline: var(--wf-container-padding);
     width: 100%;
   }
+
+  .wf-container--wide { max-width: 90rem; }
+  .wf-container--narrow { max-width: 50rem; }
+  .wf-container--full { max-width: none; }
 </style>

@@ -5,14 +5,18 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./primitives/Container": "./src/primitives/Container.astro",
+    "./primitives/Button": "./src/primitives/Button.astro",
     "./primitives/Container.astro": "./src/primitives/Container.astro",
-    "./primitives/Button.astro": "./src/primitives/Button.astro",
-    "./navigation/Header.astro": "./src/navigation/Header.astro"
+    "./primitives/Button.astro": "./src/primitives/Button.astro"
   },
   "scripts": {
-    "check": "tsc --noEmit"
+    "check": "astro check"
   },
   "dependencies": {
     "@webfactory/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "astro": "^5.13.5"
   }
 }

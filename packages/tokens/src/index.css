@@ -2,13 +2,36 @@
 @import './base.css';
 
 @theme inline {
-  --color-wf-primary: var(--wf-color-primary);
-  --color-wf-background: var(--wf-color-background);
-  --color-wf-surface: var(--wf-color-surface);
-  --color-wf-text: var(--wf-color-text);
-  --color-wf-muted: var(--wf-color-muted);
-  --font-wf-heading: var(--wf-font-heading);
-  --font-wf-body: var(--wf-font-body);
-  --radius-wf-md: var(--wf-radius-md);
-  --spacing-wf-section: var(--wf-section-space);
+  --color-primary: var(--wf-color-primary);
+  --color-primary-hover: var(--wf-color-primary-hover);
+  --color-on-primary: var(--wf-color-on-primary);
+  --color-secondary: var(--wf-color-secondary);
+  --color-on-secondary: var(--wf-color-on-secondary);
+  --color-background: var(--wf-color-background);
+  --color-surface: var(--wf-color-surface);
+  --color-surface-alt: var(--wf-color-surface-alt);
+  --color-text: var(--wf-color-text);
+  --color-text-muted: var(--wf-color-text-muted);
+  --color-border: var(--wf-color-border);
+  --color-focus: var(--wf-color-focus);
+  --color-success: var(--wf-color-success);
+  --color-warning: var(--wf-color-warning);
+  --color-error: var(--wf-color-error);
+  --font-heading: var(--wf-font-heading);
+  --font-body: var(--wf-font-body);
+  --radius-sm: var(--wf-radius-sm);
+  --radius-md: var(--wf-radius-md);
+  --radius-lg: var(--wf-radius-lg);
+  --radius-xl: var(--wf-radius-xl);
+  --radius-full: var(--wf-radius-full);
+  --spacing-section: var(--wf-section-space);
+  --spacing-container: var(--wf-container-padding);
+  --spacing-space-1: var(--wf-space-1);
+  --spacing-space-2: var(--wf-space-2);
+  --spacing-space-3: var(--wf-space-3);
+  --spacing-space-4: var(--wf-space-4);
+  --spacing-space-6: var(--wf-space-6);
+  --spacing-space-8: var(--wf-space-8);
+  --spacing-space-12: var(--wf-space-12);
+  --spacing-space-16: var(--wf-space-16);
 }

@@ -53,11 +53,7 @@ importers:
 
   packages/animations: {}
 
-  packages/core:
-    dependencies:
-      zod:
-        specifier: ^3.25.76
-        version: 3.25.76
+  packages/core: {}
 
   packages/forms: {}
 
@@ -65,9 +61,16 @@ importers:
 
   packages/sections:
     dependencies:
+      '@webfactory/tokens':
+        specifier: workspace:*
+        version: link:../tokens
       '@webfactory/ui':
         specifier: workspace:*
         version: link:../ui
+    devDependencies:
+      astro:
+        specifier: ^5.13.5
+        version: 5.18.2(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.63.1)(tsx@4.23.13)(typescript@5.9.3)(yaml@2.9.0)
 
   packages/seo: {}
 
@@ -78,6 +81,10 @@ importers:
       '@webfactory/tokens':
         specifier: workspace:*
         version: link:../tokens
+    devDependencies:
+      astro:
+        specifier: ^5.13.5
+        version: 5.18.2(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.63.1)(tsx@4.23.13)(typescript@5.9.3)(yaml@2.9.0)
 
   packages/utilities: {}
 

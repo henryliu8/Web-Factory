@@ -1,9 +1,14 @@
 ---
-import Container from '../../../ui/src/primitives/Container.astro';
+import Container from '@webfactory/ui/primitives/Container';
+import type { ContainerProps } from '@webfactory/ui';
+
+const TypedContainer = Container as unknown as (props: ContainerProps) => unknown;
 
 interface Feature {
   title: string;
   description: string;
+  icon?: string;
+  href?: string;
 }
 
 interface Props {
@@ -17,7 +22,7 @@ const { title, intro, items, class: className = '' } = Astro.props;
 ---
 
 <section class:list={['wf-feature-grid', className]}>
-  <Container>
+  <TypedContainer>
     {(title || intro) && (
       <header class="wf-feature-grid__header">
         {title && <h2>{title}</h2>}
@@ -28,12 +33,14 @@ const { title, intro, items, class: className = '' } = Astro.props;
       {items.map((item, index) => (
         <article class="wf-feature-grid__item">
           <span class="wf-feature-grid__number">{String(index + 1).padStart(2, '0')}</span>
+          {item.icon && <span class="wf-feature-grid__icon" aria-hidden="true">{item.icon}</span>}
           <h3>{item.title}</h3>
           <p>{item.description}</p>
+          {item.href && <a class="wf-feature-grid__link" href={item.href}>Learn more<span aria-hidden="true"> →</span></a>}
         </article>
       ))}
     </div>
-  </Container>
+  </TypedContainer>
 </section>
 
 <style>

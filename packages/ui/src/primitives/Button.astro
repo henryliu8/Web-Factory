@@ -1,19 +1,16 @@
 ---
-interface Props {
-  href?: string;
-  variant?: 'primary' | 'secondary' | 'text';
-  class?: string;
-}
+import type { ButtonProps } from '../component-types';
 
-const { href, variant = 'primary', class: className = '' } = Astro.props;
+const { href, variant = 'primary', size = 'md', disabled = false, type = 'button', class: className = '' } = Astro.props satisfies ButtonProps;
+const classes = ['wf-button', `wf-button--${variant}`, `wf-button--${size}`, className];
 ---
 
-{href ? (
-  <a class:list={['wf-button', `wf-button--${variant}`, className]} href={href}>
+{href && !disabled ? (
+  <a class:list={classes} href={href}>
     <slot />
   </a>
 ) : (
-  <button class:list={['wf-button', `wf-button--${variant}`, className]} type="button">
+  <button class:list={classes} type={type} disabled={disabled}>
     <slot />
   </button>
 )}
@@ -33,9 +30,22 @@ const { href, variant = 'primary', class: className = '' } = Astro.props;
     transition: background-color var(--wf-motion-normal), border-color var(--wf-motion-normal), color var(--wf-motion-normal), transform var(--wf-motion-normal);
   }
 
-  .wf-button:hover {
+  .wf-button:hover:not(:disabled) {
     transform: translateY(-1px);
   }
+
+  .wf-button:focus-visible {
+    outline: 3px solid var(--wf-color-focus);
+    outline-offset: 3px;
+  }
+
+  .wf-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .wf-button--sm { font-size: var(--wf-font-size-sm); min-height: 2.25rem; padding: 0.5rem 0.875rem; }
+  .wf-button--lg { font-size: var(--wf-font-size-lg); min-height: 3.25rem; padding: 0.875rem 1.5rem; }
 
   .wf-button--primary {
     background: var(--wf-color-primary);
@@ -48,13 +58,19 @@ const { href, variant = 'primary', class: className = '' } = Astro.props;
     color: var(--wf-color-primary);
   }
 
-  .wf-button--text {
+  .wf-button--outline {
+    background: transparent;
+    border-color: var(--wf-color-border);
+    color: var(--wf-color-text);
+  }
+
+  .wf-button--ghost {
+    background: transparent;
     color: var(--wf-color-primary);
-    padding-inline: 0;
   }
 
   @media (prefers-reduced-motion: reduce) {
     .wf-button { transition: none; }
-    .wf-button:hover { transform: none; }
+    .wf-button:hover:not(:disabled) { transform: none; }
   }
 </style>

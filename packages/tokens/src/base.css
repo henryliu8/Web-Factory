@@ -1,18 +1,70 @@
 @layer wf.tokens {
   :root {
     --wf-color-primary: #1f2933;
-    --wf-color-background: #ffffff;
-    --wf-color-surface: #f3f4f6;
+    --wf-color-primary-hover: #111827;
     --wf-color-on-primary: #ffffff;
+    --wf-color-secondary: #52606d;
+    --wf-color-on-secondary: #ffffff;
+    --wf-color-background: #ffffff;
+    --wf-color-surface: #f8fafc;
+    --wf-color-surface-alt: #eef2f6;
     --wf-color-text: #1f2933;
-    --wf-color-muted: #667085;
+    --wf-color-text-muted: #667085;
+    --wf-color-muted: var(--wf-color-text-muted);
+    --wf-color-border: #d0d5dd;
+    --wf-color-focus: #2563eb;
+    --wf-color-success: #15803d;
+    --wf-color-warning: #b45309;
+    --wf-color-error: #b91c1c;
+
     --wf-font-heading: ui-sans-serif, system-ui, sans-serif;
     --wf-font-body: ui-sans-serif, system-ui, sans-serif;
-    --wf-content-width: 75rem;
+    --wf-font-size-xs: 0.75rem;
+    --wf-font-size-sm: 0.875rem;
+    --wf-font-size-md: 1rem;
+    --wf-font-size-lg: 1.125rem;
+    --wf-font-size-xl: 1.25rem;
+    --wf-font-size-2xl: 1.5rem;
+    --wf-font-size-3xl: 1.875rem;
+    --wf-font-size-4xl: 2.25rem;
+    --wf-font-size-5xl: 3rem;
+    --wf-line-height-tight: 1.1;
+    --wf-line-height-snug: 1.25;
+    --wf-line-height-normal: 1.5;
+    --wf-line-height-relaxed: 1.75;
+
+    --wf-space-1: 0.25rem;
+    --wf-space-2: 0.5rem;
+    --wf-space-3: 0.75rem;
+    --wf-space-4: 1rem;
+    --wf-space-5: 1.25rem;
+    --wf-space-6: 1.5rem;
+    --wf-space-8: 2rem;
+    --wf-space-10: 2.5rem;
+    --wf-space-12: 3rem;
+    --wf-space-16: 4rem;
+    --wf-space-20: 5rem;
+    --wf-space-24: 6rem;
     --wf-section-space: clamp(4rem, 8vw, 9rem);
+    --wf-container-padding: clamp(1rem, 4vw, 2.5rem);
+    --wf-container-max: 75rem;
+    --wf-content-width: var(--wf-container-max);
+
+    --wf-radius-sm: 0.25rem;
     --wf-radius-md: 0.5rem;
     --wf-radius-lg: 1rem;
+    --wf-radius-xl: 1.5rem;
+    --wf-radius-full: 9999px;
+
     --wf-shadow-sm: 0 0.25rem 1rem rgb(15 23 42 / 0.08);
-    --wf-motion-normal: 180ms ease;
+    --wf-shadow-md: 0 0.75rem 2rem rgb(15 23 42 / 0.12);
+    --wf-shadow-lg: 0 1.5rem 4rem rgb(15 23 42 / 0.16);
+
+    --wf-duration-fast: 120ms;
+    --wf-duration-normal: 180ms;
+    --wf-duration-slow: 320ms;
+    --wf-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --wf-ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --wf-motion-normal: var(--wf-duration-normal) var(--wf-ease-standard);
   }
 }
