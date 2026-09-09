@@ -1,0 +1,14 @@
+---
+import { getEntry } from 'astro:content';
+import PageBuilder from '@webfactory/core/page-builder/PageBuilder.astro';
+import SiteLayout from '@webfactory/template-stardrive/layouts/SiteLayout';
+import { sectionRegistry } from '../config/sectionRegistry';
+
+const home = await getEntry('pages', 'home');
+if (!home) throw new Error('Home content entry is missing.');
+const { title, description, sections } = home.data;
+---
+
+<SiteLayout title={title} description={description}>
+  <PageBuilder sections={sections} sectionRegistry={sectionRegistry} />
+</SiteLayout>
