@@ -13,7 +13,7 @@ const template: StardriveTemplateConfig = {
   name: 'Stardrive',
   description: 'A flexible, content-first Astro website structure.',
   layouts: {
-    default: './src/layouts/BaseLayout.astro',
+    default: './src/layouts/SiteLayout.astro',
   },
   styles: ['@webfactory/tokens', './src/styles/template.css'],
 };

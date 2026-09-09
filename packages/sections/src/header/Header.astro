@@ -1,23 +1,19 @@
 ---
 import Container from '@webfactory/ui/primitives/Container';
 import Button from '@webfactory/ui/primitives/Button';
+import type { ActionLink, ImageSource, NavigationItem } from '@webfactory/core';
 import type { ContainerProps } from '@webfactory/ui';
 
 const TypedContainer = Container as unknown as (props: ContainerProps) => unknown;
 
-interface NavItem {
-  label: string;
-  href: string;
-}
-
 interface Props {
   brand?: string;
-  logo?: { src: string; alt: string; width?: number; height?: number };
-  items?: NavItem[];
-  cta?: NavItem;
+  logo?: ImageSource;
+  items?: NavigationItem[];
+  cta?: ActionLink;
 }
 
-const { brand, logo, items = [], cta } = Astro.props;
+const { brand, logo, items = [], cta } = Astro.props satisfies Props;
 ---
 
 <header class="wf-section-header">
@@ -27,7 +23,7 @@ const { brand, logo, items = [], cta } = Astro.props;
     </a>
     <nav aria-label="Primary navigation">
       <ul>
-        {items.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        {items.map((item: NavigationItem) => <li><a href={item.href}>{item.label}</a></li>)}
       </ul>
     </nav>
     {cta && <Button href={cta.href} size="sm">{cta.label}</Button>}

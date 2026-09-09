@@ -10,11 +10,16 @@ interface CTA {
   href: string;
 }
 
+interface Media {
+  src: string;
+  alt?: string;
+}
+
 interface Props {
   eyebrow?: string;
   title: string;
   description?: string;
-  image?: string;
+  image?: string | Media;
   primaryCTA?: CTA;
   secondaryCTA?: CTA;
   align?: 'start' | 'center' | 'end';
@@ -22,10 +27,12 @@ interface Props {
 }
 
 const { eyebrow, title, description, image, primaryCTA, secondaryCTA, align = 'start', class: className = '' } = Astro.props;
+const imageSource = typeof image === 'string' ? image : image?.src;
+const imageAlt = typeof image === 'string' ? '' : image?.alt ?? '';
 ---
 
 <section class:list={['wf-hero-fullscreen', `wf-hero-fullscreen--${align}`, className]}>
-  {image && <img class="wf-hero-fullscreen__image" src={image} alt="" aria-hidden="true" />}
+  {imageSource && <img class="wf-hero-fullscreen__image" src={imageSource} alt={imageAlt} aria-hidden={imageAlt ? undefined : 'true'} />}
   <div class="wf-hero-fullscreen__overlay"></div>
   <TypedContainer class="wf-hero-fullscreen__content">
     {eyebrow && <p class="wf-hero-fullscreen__eyebrow">{eyebrow}</p>}

@@ -1,0 +1,39 @@
+---
+import { CTA, FeatureGrid, Header, HeroFullscreen } from '@webfactory/sections';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import type { HomeTemplateProps } from '../types';
+
+interface Props extends HomeTemplateProps {}
+
+const { metadata, header, hero, features, cta, class: className = '' } = Astro.props;
+---
+
+<SiteLayout title={metadata.title} description={metadata.description} lang={metadata.lang} bodyClass={className}>
+  <Header brand={header.brand} logo={header.logo} items={header.items} cta={header.cta} />
+  <main>
+    <slot name="beforeHero" />
+    <HeroFullscreen
+      eyebrow={hero.eyebrow}
+      title={hero.title}
+      description={hero.description}
+      image={hero.image}
+      primaryCTA={hero.primaryAction}
+      secondaryCTA={hero.secondaryAction}
+      align={hero.align}
+    />
+    <slot name="afterHero" />
+    {features && <FeatureGrid title={features.title} intro={features.intro} items={features.items} />}
+    <slot name="beforeCTA" />
+    {cta && (
+      <CTA
+        eyebrow={cta.eyebrow}
+        title={cta.title}
+        description={cta.description}
+        button={cta.primaryAction}
+        secondaryButton={cta.secondaryAction}
+      />
+    )}
+    <slot name="afterCTA" />
+    <slot />
+  </main>
+</SiteLayout>

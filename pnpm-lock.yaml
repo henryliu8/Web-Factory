@@ -93,12 +93,16 @@ importers:
       '@webfactory/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@webfactory/sections':
+        specifier: workspace:*
+        version: link:../../packages/sections
       '@webfactory/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
-      '@webfactory/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
+    devDependencies:
+      astro:
+        specifier: ^5.13.5
+        version: 5.18.2(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.63.1)(tsx@4.23.13)(typescript@5.9.3)(yaml@2.9.0)
 
   themes/default:
     dependencies:

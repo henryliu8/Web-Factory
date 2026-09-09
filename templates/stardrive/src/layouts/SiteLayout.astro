@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+  bodyClass?: string;
+  class?: string;
+}
+
+const { title, description, lang = 'en', bodyClass = '', class: className = '' } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class={className}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    {description && <meta name="description" content={description} />}
+    <title>{title}</title>
+  </head>
+  <body class={bodyClass}>
+    <slot />
+  </body>
+</html>

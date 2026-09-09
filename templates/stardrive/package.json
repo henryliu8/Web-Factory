@@ -4,16 +4,22 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./template.config.ts",
-    "./styles/template.css": "./src/styles/template.css",
-    "./layouts/BaseLayout.astro": "./src/layouts/BaseLayout.astro"
+    ".": "./src/index.ts",
+    "./layouts/SiteLayout": "./src/layouts/SiteLayout.astro",
+    "./layouts/BaseLayout.astro": "./src/layouts/BaseLayout.astro",
+    "./page-templates/HomeTemplate": "./src/page-templates/HomeTemplate.astro",
+    "./page-templates/StandardPageTemplate": "./src/page-templates/StandardPageTemplate.astro",
+    "./styles/template.css": "./src/styles/template.css"
   },
   "scripts": {
-    "check": "tsc --noEmit"
+    "check": "astro check"
   },
   "dependencies": {
     "@webfactory/core": "workspace:*",
-    "@webfactory/tokens": "workspace:*",
-    "@webfactory/ui": "workspace:*"
+    "@webfactory/sections": "workspace:*",
+    "@webfactory/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "astro": "^5.13.5"
   }
 }
