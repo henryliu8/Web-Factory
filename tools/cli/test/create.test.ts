@@ -96,6 +96,8 @@ describe('real Stardrive scaffold generation', () => {
     expect(basename(path)).toBe('my-new-website');
     expect(manifest.name).toBe('@webfactory/app-my-new-website');
     expect(manifest.dependencies['@webfactory/template-stardrive']).toBe('workspace:*');
+    expect(manifest.dependencies['@webfactory/theme-luxury']).toBe('workspace:*');
+    expect(manifest.dependencies['@webfactory/theme-default']).toBeUndefined();
     expect(existsSync(join(path, 'package.json.template'))).toBe(false);
     expect(generatedFiles.filter((file) => basename(file) === 'webfactory.config.ts')).toHaveLength(1);
     expect(config).toContain("name: 'My New Website'");
@@ -113,6 +115,38 @@ describe('real Stardrive scaffold generation', () => {
     expect(text).not.toMatch(/(?:\.\.\/)+packages\//);
     expect(text).not.toContain(repositoryRoot());
     expect(text).not.toContain('ui/src/navigation/Header.astro');
+
+    const globalStyles = await readFile(join(path, 'src/styles/global.css'), 'utf8');
+    expect(globalStyles.match(/@import/g)).toHaveLength(4);
+    expect(globalStyles.indexOf("@import '@webfactory/tokens'")).toBeLessThan(
+      globalStyles.indexOf("@import 'virtual:webfactory-template-style'"),
+    );
+    expect(globalStyles.indexOf("@import 'virtual:webfactory-template-style'")).toBeLessThan(
+      globalStyles.indexOf("@import 'virtual:webfactory-theme-style'"),
+    );
+    expect(globalStyles.indexOf("@import 'virtual:webfactory-theme-style'")).toBeLessThan(
+      globalStyles.indexOf("@import './project.css'"),
+    );
+    expect(await readFile(join(path, 'astro.config.mjs'), 'utf8'))
+      .toContain('createStyleRuntime');
+  });
+
+  it('selects only the default theme package in a generated default project', async () => {
+    const root = await createFixture(true);
+    const path = await createProject(
+      'Default Website',
+      { template: 'stardrive', theme: 'default', pages: 'home' },
+      root,
+    );
+    const manifest = JSON.parse(await readFile(join(path, 'package.json'), 'utf8')) as {
+      dependencies: Record<string, string>;
+    };
+
+    expect(await readFile(join(path, 'webfactory.config.ts'), 'utf8')).toContain("theme: 'default'");
+    expect(manifest.dependencies['@webfactory/theme-default']).toBe('workspace:*');
+    expect(manifest.dependencies['@webfactory/theme-luxury']).toBeUndefined();
+    expect((await readFile(join(path, 'src/styles/global.css'), 'utf8')).trimEnd())
+      .toMatch(/@import '\.\/project\.css';[\s\S]*@source/);
   });
 });
 

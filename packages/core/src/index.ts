@@ -13,4 +13,22 @@ export { resolveSection, resolveSections } from './page-builder/resolveSection';
 export type { PageBuilderProps, ResolvedSection, ResolvedSectionRegistry, SectionComponent } from './page-builder/types';
 export { resolveStyleOrder } from './styles/styleOrder';
 export type { StyleLayer, StyleSources } from './styles/styleOrder';
-export type { ActionLink, ImageSource, Link, MediaSource, NavigationItem, SectionContainerProps } from './types';
+export {
+  createStyleRuntime,
+  renderStyleComposition,
+  resolveStyleComposition,
+  WEB_FACTORY_STYLE_ENTRY,
+  WEB_FACTORY_TEMPLATE_STYLE,
+  WEB_FACTORY_THEME_STYLE,
+} from './styles/styleRuntime';
+export type { StyleCatalog, StyleRuntimeOptions, StylesheetResolverPlugin } from './styles/styleRuntime';
+export type {
+  ActionLink,
+  ImageSource,
+  Link,
+  MediaSource,
+  NavigationItem,
+  SectionContainerProps,
+  TemplateConfig,
+  ThemeConfig,
+} from './types';

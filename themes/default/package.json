@@ -5,15 +5,12 @@
   "type": "module",
   "exports": {
     ".": "./theme.config.ts",
-    "./styles/tokens.css": "./src/styles/tokens.css",
-    "./styles/theme.css": "./src/styles/theme.css",
-    "./styles/typography.css": "./src/styles/typography.css",
-    "./styles/motion.css": "./src/styles/motion.css"
+    "./styles": "./src/styles/index.css"
   },
   "scripts": {
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "@webfactory/tokens": "workspace:*"
+    "@webfactory/core": "workspace:*"
   }
 }

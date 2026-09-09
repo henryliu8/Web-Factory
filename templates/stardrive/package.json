@@ -9,7 +9,7 @@
     "./layouts/BaseLayout.astro": "./src/layouts/BaseLayout.astro",
     "./page-templates/HomeTemplate": "./src/page-templates/HomeTemplate.astro",
     "./page-templates/StandardPageTemplate": "./src/page-templates/StandardPageTemplate.astro",
-    "./styles/template.css": "./src/styles/template.css"
+    "./styles": "./src/styles/template.css"
   },
   "scripts": {
     "check": "astro check"

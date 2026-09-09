@@ -11,7 +11,9 @@
     "@webfactory/core": "workspace:*",
     "@webfactory/sections": "workspace:*",
     "@webfactory/template-stardrive": "workspace:*",
+    "@webfactory/theme-{{theme}}": "workspace:*",
     "@webfactory/tokens": "workspace:*",
+    "@webfactory/ui": "workspace:*",
     "astro": "^5.15.0"
   },
   "devDependencies": {

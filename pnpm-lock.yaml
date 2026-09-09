@@ -114,15 +114,15 @@ importers:
 
   themes/default:
     dependencies:
-      '@webfactory/tokens':
+      '@webfactory/core':
         specifier: workspace:*
-        version: link:../../packages/tokens
+        version: link:../../packages/core
 
   themes/luxury:
     dependencies:
-      '@webfactory/tokens':
+      '@webfactory/core':
         specifier: workspace:*
-        version: link:../../packages/tokens
+        version: link:../../packages/core
 
   tools/cli:
     dependencies:

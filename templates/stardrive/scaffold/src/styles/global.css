@@ -1,2 +1,8 @@
 @import '@webfactory/tokens';
-@import '@webfactory/template-stardrive/styles/template.css';
+@import 'virtual:webfactory-template-style';
+@import 'virtual:webfactory-theme-style';
+@import './project.css';
+
+@source '../../node_modules/@webfactory/ui/src';
+@source '../../node_modules/@webfactory/sections/src';
+@source '../../node_modules/@webfactory/template-stardrive/src';

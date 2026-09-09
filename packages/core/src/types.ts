@@ -27,3 +27,20 @@ export interface SectionContainerProps {
   class?: string;
   id?: string;
 }
+
+export interface ThemeConfig {
+  id: string;
+  name: string;
+  style: string;
+  description?: string;
+  metadata?: Readonly<Record<string, unknown>>;
+}
+
+export interface TemplateConfig {
+  id: string;
+  name: string;
+  style: string;
+  description?: string;
+  layouts?: Readonly<Record<string, string>>;
+  metadata?: Readonly<Record<string, unknown>>;
+}

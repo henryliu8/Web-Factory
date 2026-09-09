@@ -1,1 +1,5 @@
-/* Add project-specific token overrides and styles here. */
+/* Project overrides load last. For example:
+:root {
+  --wf-color-primary: ...;
+}
+*/

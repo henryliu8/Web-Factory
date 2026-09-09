@@ -1,21 +1,13 @@
-export interface StardriveTemplateConfig {
-  id: 'stardrive';
-  name: string;
-  description: string;
-  layouts: {
-    default: string;
-  };
-  styles: string[];
-}
+import type { TemplateConfig } from '@webfactory/core';
 
-const template: StardriveTemplateConfig = {
+const template: TemplateConfig = {
   id: 'stardrive',
   name: 'Stardrive',
   description: 'A flexible, content-first Astro website structure.',
   layouts: {
     default: './src/layouts/SiteLayout.astro',
   },
-  styles: ['@webfactory/tokens', './src/styles/template.css'],
+  style: '@webfactory/template-stardrive/styles',
 };
 
 export default template;

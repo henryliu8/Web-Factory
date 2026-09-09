@@ -1,20 +1,10 @@
-export interface WebFactoryThemeConfig {
-  id: string;
-  name: string;
-  description: string;
-  styles: string[];
-}
+import type { ThemeConfig } from '@webfactory/core';
 
-const theme: WebFactoryThemeConfig = {
+const theme: ThemeConfig = {
   id: 'luxury',
   name: 'Luxury',
   description: 'A clean, spacious, and architectural visual direction.',
-  styles: [
-    './src/styles/tokens.css',
-    './src/styles/theme.css',
-    './src/styles/typography.css',
-    './src/styles/motion.css',
-  ],
+  style: '@webfactory/theme-luxury/styles',
 };
 
 export default theme;
