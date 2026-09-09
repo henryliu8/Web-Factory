@@ -17,7 +17,7 @@ const { brand, logo, items = [], cta } = Astro.props satisfies Props;
 ---
 
 <header class="wf-section-header">
-  <TypedContainer as="header" class="wf-section-header__inner">
+  <TypedContainer as="div" class="wf-section-header__inner">
     <a class="wf-section-header__brand" href="/" aria-label={brand ?? logo?.alt ?? 'Home'}>
       {logo ? <img src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} /> : brand}
     </a>
@@ -32,12 +32,17 @@ const { brand, logo, items = [], cta } = Astro.props satisfies Props;
 
 <style>
   .wf-section-header { border-bottom: 1px solid var(--wf-color-border); }
-  .wf-section-header__inner { align-items: center; display: flex; gap: var(--wf-space-8); justify-content: space-between; min-height: 4.5rem; }
+  :global(.wf-section-header__inner) { align-items: center; display: flex; gap: var(--wf-space-8); justify-content: space-between; min-height: 4.5rem; }
   .wf-section-header__brand { color: var(--wf-color-text); font: 700 var(--wf-font-size-lg)/1 var(--wf-font-heading); text-decoration: none; }
   .wf-section-header__brand img { display: block; max-height: 2.5rem; width: auto; }
   nav { margin-inline: auto; }
   ul { display: flex; flex-wrap: wrap; gap: var(--wf-space-6); list-style: none; margin: 0; padding: 0; }
   nav a { color: var(--wf-color-text); font: 500 var(--wf-font-size-sm)/var(--wf-line-height-normal) var(--wf-font-body); text-decoration: none; }
   nav a:hover { color: var(--wf-color-primary); }
-  @media (max-width: 40rem) { nav { display: none; } }
+  @media (max-width: 40rem) {
+    :global(.wf-section-header__inner) { align-items: flex-start; flex-direction: column; gap: var(--wf-space-4); padding-block: var(--wf-space-4); }
+    nav { margin-inline: 0; width: 100%; }
+    ul { gap: var(--wf-space-3) var(--wf-space-4); }
+    nav a { display: inline-block; padding-block: var(--wf-space-1); }
+  }
 </style>

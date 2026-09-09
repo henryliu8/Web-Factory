@@ -13,3 +13,33 @@ of Web Factory in your project documentation.
 
 Original project:
 https://github.com/henryliu8/Web-Factory.git
+
+## Development workflow
+
+Install the workspace dependencies:
+
+```sh
+pnpm install --frozen-lockfile
+```
+
+List the available building blocks and create a project:
+
+```sh
+pnpm wf list templates
+pnpm wf list themes
+pnpm wf create my-site --template stardrive --theme default --pages home,about,services,projects,contact
+```
+
+Run, check, or build a generated project by its directory name under `apps/`:
+
+```sh
+pnpm wf dev demo-site
+pnpm wf check demo-site
+pnpm wf build demo-site
+```
+
+Run the persistent cross-package integration gate:
+
+```sh
+pnpm test:integration
+```

@@ -6,9 +6,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./primitives/Container": "./src/primitives/Container.astro",
-    "./primitives/Button": "./src/primitives/Button.astro",
-    "./primitives/Container.astro": "./src/primitives/Container.astro",
-    "./primitives/Button.astro": "./src/primitives/Button.astro"
+    "./primitives/Button": "./src/primitives/Button.astro"
   },
   "scripts": {
     "check": "astro check"

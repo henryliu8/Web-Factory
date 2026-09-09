@@ -1,0 +1,20 @@
+---
+import { getEntry } from 'astro:content';
+import StandardPageTemplate from '@webfactory/template-stardrive/page-templates/StandardPageTemplate';
+import { site } from '../config/site';
+
+const entry = await getEntry('pages', 'projects');
+if (!entry) throw new Error('Missing content entry: projects');
+---
+
+<StandardPageTemplate
+  metadata={{ title: entry.data.title, description: entry.data.description, lang: site.language }}
+  header={{ brand: site.name, items: site.navigation }}
+  heading={entry.data.title}
+  intro="Generic examples of how the architecture can support different project goals without copying shared code."
+>
+  <div class="demo-project-list">
+    <article><p class="demo-label">Reference application</p><h2>Content-led website</h2><p>Reusable sections compose a clear public-facing site with project-owned content.</p></article>
+    <article><p class="demo-label">Theme variation</p><h2>Alternate visual direction</h2><p>The same pages can switch theme packages without rewriting their components.</p></article>
+  </div>
+</StandardPageTemplate>

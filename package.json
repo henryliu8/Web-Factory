@@ -11,7 +11,8 @@
     "build": "turbo run build",
     "check": "turbo run check",
     "dev": "turbo run dev",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "test:integration": "pnpm --filter @webfactory/app-demo-site test:integration && pnpm wf check demo-site && pnpm wf build demo-site && pnpm exec tsx tools/integration/src/verifyDemoBuild.ts"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

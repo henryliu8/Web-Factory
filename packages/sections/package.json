@@ -8,10 +8,7 @@
     "./header/Header": "./src/header/Header.astro",
     "./hero/HeroFullscreen": "./src/hero/HeroFullscreen.astro",
     "./features/FeatureGrid": "./src/features/FeatureGrid.astro",
-    "./cta/CTA": "./src/cta/CTA.astro",
-    "./hero/HeroFullscreen.astro": "./src/hero/HeroFullscreen.astro",
-    "./features/FeatureGrid.astro": "./src/features/FeatureGrid.astro",
-    "./cta/CTA.astro": "./src/cta/CTA.astro"
+    "./cta/CTA": "./src/cta/CTA.astro"
   },
   "scripts": {
     "check": "astro check"

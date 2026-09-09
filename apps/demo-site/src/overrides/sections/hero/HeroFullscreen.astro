@@ -1,0 +1,27 @@
+---
+import SharedHero from '@webfactory/sections/hero/HeroFullscreen';
+
+type Props = Parameters<typeof SharedHero>[0];
+---
+
+<div class="demo-project-hero">
+  <SharedHero {...Astro.props as Props} />
+  <p class="demo-project-hero__note">Composed through a project-level Hero override.</p>
+</div>
+
+<style>
+  .demo-project-hero {
+    background: var(--wf-color-surface-alt);
+    border-end-end-radius: var(--wf-radius-lg);
+    border-end-start-radius: var(--wf-radius-lg);
+    overflow: hidden;
+  }
+
+  .demo-project-hero__note {
+    color: var(--wf-color-text-muted);
+    font: 500 var(--wf-font-size-sm)/var(--wf-line-height-normal) var(--wf-font-body);
+    margin: 0;
+    padding: var(--wf-space-3) var(--wf-container-padding);
+    text-align: center;
+  }
+</style>

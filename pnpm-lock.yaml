@@ -51,6 +51,43 @@ importers:
         specifier: ^3.25.76
         version: 3.25.76
 
+  apps/demo-site:
+    dependencies:
+      '@webfactory/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@webfactory/sections':
+        specifier: workspace:*
+        version: link:../../packages/sections
+      '@webfactory/template-stardrive':
+        specifier: workspace:*
+        version: link:../../templates/stardrive
+      '@webfactory/theme-default':
+        specifier: workspace:*
+        version: link:../../themes/default
+      '@webfactory/theme-luxury':
+        specifier: workspace:*
+        version: link:../../themes/luxury
+      '@webfactory/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      '@webfactory/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      astro:
+        specifier: ^5.15.0
+        version: 5.18.2(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.63.1)(tsx@4.23.13)(typescript@5.9.3)(yaml@2.9.0)
+    devDependencies:
+      '@astrojs/check':
+        specifier: ^0.9.4
+        version: 0.9.10(prettier@3.9.6)(typescript@5.9.3)
+      '@tailwindcss/vite':
+        specifier: ^4.1.14
+        version: 4.3.3(vite@6.4.3(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.13)(yaml@2.9.0))
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.7(@types/debug@4.1.13)(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.13)(yaml@2.9.0)
+
   packages/animations: {}
 
   packages/core:

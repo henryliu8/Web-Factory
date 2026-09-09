@@ -1,0 +1,19 @@
+---
+import { getEntry } from 'astro:content';
+import HomeTemplate from '@webfactory/template-stardrive/page-templates/HomeTemplate';
+import { sectionRegistry } from '../config/sectionRegistry';
+import { home as homeData } from '../config/site';
+
+const homeEntry = await getEntry('pages', 'home');
+if (!homeEntry) throw new Error('Home content entry is missing.');
+const { title, description } = homeEntry.data;
+---
+
+<HomeTemplate
+  metadata={{ title, description }}
+  header={homeData.header}
+  hero={homeData.hero}
+  features={homeData.features}
+  cta={homeData.cta}
+  sectionRegistry={sectionRegistry}
+/>

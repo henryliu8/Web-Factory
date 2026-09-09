@@ -1,0 +1,78 @@
+/* This visible radius adjustment proves Project > Theme > Template > Shared. */
+:root {
+  --wf-radius-lg: 1.5rem;
+}
+
+.demo-prose,
+.demo-content-grid,
+.demo-project-list {
+  color: var(--wf-color-text);
+  font: 400 var(--wf-font-size-md)/var(--wf-line-height-relaxed) var(--wf-font-body);
+}
+
+.demo-prose {
+  max-width: 45rem;
+}
+
+.demo-prose h2,
+.demo-content-grid h2,
+.demo-project-list h2 {
+  font: 650 var(--wf-font-size-2xl)/var(--wf-line-height-snug) var(--wf-font-heading);
+  margin: 0 0 var(--wf-space-3);
+}
+
+.demo-prose p,
+.demo-prose address,
+.demo-content-grid p,
+.demo-project-list p {
+  margin: 0;
+}
+
+.demo-prose > * + * {
+  margin-top: var(--wf-space-6);
+}
+
+.demo-prose address {
+  font-style: normal;
+}
+
+.demo-prose a {
+  color: var(--wf-color-primary);
+}
+
+.demo-content-grid {
+  display: grid;
+  gap: var(--wf-space-6);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.demo-content-grid article,
+.demo-project-list article {
+  border: 1px solid var(--wf-color-border);
+  border-radius: var(--wf-radius-lg);
+  padding: var(--wf-space-8);
+}
+
+.demo-project-list {
+  display: grid;
+  gap: var(--wf-space-6);
+}
+
+.demo-label {
+  color: var(--wf-color-text-muted);
+  font-size: var(--wf-font-size-sm);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--wf-space-3) !important;
+  text-transform: uppercase;
+}
+
+@media (max-width: 48rem) {
+  .demo-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-content-grid article,
+  .demo-project-list article {
+    padding: var(--wf-space-6);
+  }
+}

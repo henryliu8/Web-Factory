@@ -2,6 +2,7 @@ import type {
   ActionLink,
   ImageSource,
   NavigationItem,
+  ResolvedSectionRegistry,
 } from '@webfactory/core';
 
 export interface PageMetadata {
@@ -54,6 +55,7 @@ export interface HomeTemplateProps {
   hero: HeroData;
   features?: FeaturesData;
   cta?: CTAData;
+  sectionRegistry?: ResolvedSectionRegistry;
   class?: string;
 }
 

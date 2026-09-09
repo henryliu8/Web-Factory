@@ -1,0 +1,21 @@
+---
+import { getEntry } from 'astro:content';
+import StandardPageTemplate from '@webfactory/template-stardrive/page-templates/StandardPageTemplate';
+import { site } from '../config/site';
+
+const entry = await getEntry('pages', 'services');
+if (!entry) throw new Error('Missing content entry: services');
+---
+
+<StandardPageTemplate
+  metadata={{ title: entry.data.title, description: entry.data.description, lang: site.language }}
+  header={{ brand: site.name, items: site.navigation }}
+  heading={entry.data.title}
+  intro="The current foundation separates reusable capabilities into clear architectural layers."
+>
+  <div class="demo-content-grid">
+    <article><h2>Shared foundation</h2><p>Semantic tokens, UI primitives, and common sections establish consistent behavior.</p></article>
+    <article><h2>Structural templates</h2><p>Stardrive supplies layouts and page composition without imposing a brand.</p></article>
+    <article><h2>Selectable themes</h2><p>Theme packages change visual direction while components continue using the same token contract.</p></article>
+  </div>
+</StandardPageTemplate>

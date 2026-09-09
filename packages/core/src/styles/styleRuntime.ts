@@ -22,7 +22,7 @@ export interface StylesheetResolverPlugin {
   name: string;
   enforce: 'pre';
   resolveId(id: string): string | null;
-  load(id: string): string | null;
+  transform(source: string, id: string): string | null;
 }
 
 export function resolveStyleComposition(
@@ -46,20 +46,18 @@ export function createStyleRuntime(options: StyleRuntimeOptions): {
 } {
   const styles = resolveStyleComposition(options.project, options.catalog);
   const [, templateStyle, themeStyle] = styles;
-  const resolvedApplicationStyle = `${options.applicationStyle}?webfactory-runtime`;
-
   return {
     styles,
     vitePlugin: {
       name: 'webfactory-style-runtime',
       enforce: 'pre',
       resolveId(id) {
-        return id === WEB_FACTORY_STYLE_ENTRY ? resolvedApplicationStyle : null;
+        return id === WEB_FACTORY_STYLE_ENTRY ? options.applicationStyle : null;
       },
-      load(id) {
-        if (id !== resolvedApplicationStyle) return null;
+      transform(source, id) {
+        if (id.split('?', 1)[0] !== options.applicationStyle) return null;
         return renderStyleComposition(
-          readFileSync(options.applicationStyle, 'utf8'),
+          source || readFileSync(options.applicationStyle, 'utf8'),
           templateStyle,
           themeStyle,
         );
