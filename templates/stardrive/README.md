@@ -7,7 +7,7 @@ The template intentionally does not define a visual brand. Projects and themes p
 ## Structure
 
 - `src/layouts/BaseLayout.astro` — document shell with token and template styles.
-- `src/components/Header.astro` — integration with the shared UI header.
+- `@webfactory/sections/header/Header` — the canonical shared site header used by Stardrive page templates.
 - `src/components/Footer.astro` — reusable template footer.
 - `src/styles/template.css` — structural defaults only.
 - `scaffold/` — minimal files used when creating a project from this template.
