@@ -3,7 +3,3 @@ export interface CreateOptions {
   theme?: string;
   pages?: string;
 }
-
-export interface ProjectOptions {
-  cwd: string;
-}

@@ -12,8 +12,10 @@
     "@webfactory/sections": "workspace:*",
     "@webfactory/template-stardrive": "workspace:*",
     "@webfactory/tokens": "workspace:*",
-    "@webfactory/ui": "workspace:*",
-    "@astrojs/check": "^0.9.4",
     "astro": "^5.15.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@tailwindcss/vite": "^4.1.14"
   }
 }
