@@ -1,3 +1,3 @@
-import theme from '../../theme.config';
+import theme from "../../theme.config";
 
 export default theme;

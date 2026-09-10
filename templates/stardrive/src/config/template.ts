@@ -1,3 +1,3 @@
-import template from '../../template.config';
+import template from "../../template.config";
 
 export default template;

@@ -5,7 +5,7 @@ interface Slide {
   image: { src: string; alt: string };
   primaryAction: { label: string; href: string };
   secondaryAction?: { label: string; href: string };
-  tone: 'light' | 'dark';
+  tone: "light" | "dark";
 }
 
 interface Props {
@@ -17,33 +17,66 @@ const { slides } = Astro.props;
 
 <home-slider class="home-slider" data-slide-count={slides.length}>
   <div class="home-slider__track" aria-live="polite">
-    {slides.map((slide, index) => (
-      <article class:list={['home-slide', `home-slide--${slide.tone}`]} data-slide hidden={index !== 0}>
-        <img src={slide.image.src} alt={slide.image.alt} width="1536" height="1024" loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />
-        <div class="home-slide__scrim"></div>
-        <div class="home-slide__content">
-          <h1>{slide.title}</h1>
-          <p>{slide.description}</p>
-          <div class="home-slide__actions">
-            <a class="button button--solid" href={slide.primaryAction.href}>{slide.primaryAction.label}</a>
-            {slide.secondaryAction && <a class="button button--quiet" href={slide.secondaryAction.href}>{slide.secondaryAction.label}</a>}
+    {
+      slides.map((slide, index) => (
+        <article
+          class:list={["home-slide", `home-slide--${slide.tone}`]}
+          data-slide
+          hidden={index !== 0}
+        >
+          <img
+            src={slide.image.src}
+            alt={slide.image.alt}
+            width="1536"
+            height="1024"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchpriority={index === 0 ? "high" : "auto"}
+          />
+          <div class="home-slide__scrim" />
+          <div class="home-slide__content">
+            <h1>{slide.title}</h1>
+            <p>{slide.description}</p>
+            <div class="home-slide__actions">
+              <a class="button button--solid" href={slide.primaryAction.href}>
+                {slide.primaryAction.label}
+              </a>
+              {slide.secondaryAction && (
+                <a
+                  class="button button--quiet"
+                  href={slide.secondaryAction.href}
+                >
+                  {slide.secondaryAction.label}
+                </a>
+              )}
+            </div>
           </div>
-        </div>
-      </article>
-    ))}
+        </article>
+      ))
+    }
   </div>
 
   <div class="home-slider__controls">
     <button type="button" data-slider-previous aria-label="Previous slide">
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="m15 5-7 7 7 7" /></svg>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"
+        ><path d="m15 5-7 7 7 7"></path></svg
+      >
     </button>
     <div class="home-slider__progress" aria-label="Choose slide">
-      {slides.map((slide, index) => (
-        <button type="button" data-slider-dot={index} aria-label={`Show slide ${index + 1}: ${slide.title}`} aria-current={index === 0 ? 'true' : undefined}></button>
-      ))}
+      {
+        slides.map((slide, index) => (
+          <button
+            type="button"
+            data-slider-dot={index}
+            aria-label={`Show slide ${index + 1}: ${slide.title}`}
+            aria-current={index === 0 ? "true" : undefined}
+          />
+        ))
+      }
     </div>
     <button type="button" data-slider-next aria-label="Next slide">
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="m9 5 7 7-7 7" /></svg>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"
+        ><path d="m9 5 7 7-7 7"></path></svg
+      >
     </button>
   </div>
 </home-slider>
@@ -56,15 +89,24 @@ const { slides } = Astro.props;
     private timer?: number;
 
     connectedCallback() {
-      this.slides = [...this.querySelectorAll<HTMLElement>('[data-slide]')];
-      this.dots = [...this.querySelectorAll<HTMLButtonElement>('[data-slider-dot]')];
-      this.querySelector('[data-slider-previous]')?.addEventListener('click', () => this.show(this.index - 1));
-      this.querySelector('[data-slider-next]')?.addEventListener('click', () => this.show(this.index + 1));
-      this.dots.forEach((dot, index) => dot.addEventListener('click', () => this.show(index)));
-      this.addEventListener('mouseenter', () => this.stop());
-      this.addEventListener('mouseleave', () => this.start());
-      this.addEventListener('focusin', () => this.stop());
-      this.addEventListener('focusout', () => this.start());
+      this.slides = [...this.querySelectorAll<HTMLElement>("[data-slide]")];
+      this.dots = [
+        ...this.querySelectorAll<HTMLButtonElement>("[data-slider-dot]"),
+      ];
+      this.querySelector("[data-slider-previous]")?.addEventListener(
+        "click",
+        () => this.show(this.index - 1),
+      );
+      this.querySelector("[data-slider-next]")?.addEventListener("click", () =>
+        this.show(this.index + 1),
+      );
+      this.dots.forEach((dot, index) =>
+        dot.addEventListener("click", () => this.show(index)),
+      );
+      this.addEventListener("mouseenter", () => this.stop());
+      this.addEventListener("mouseleave", () => this.start());
+      this.addEventListener("focusin", () => this.stop());
+      this.addEventListener("focusout", () => this.start());
       this.start();
     }
 
@@ -75,17 +117,23 @@ const { slides } = Astro.props;
     private show(nextIndex: number) {
       if (!this.slides.length) return;
       this.index = (nextIndex + this.slides.length) % this.slides.length;
-      this.slides.forEach((slide, index) => { slide.hidden = index !== this.index; });
+      this.slides.forEach((slide, index) => {
+        slide.hidden = index !== this.index;
+      });
       this.dots.forEach((dot, index) => {
-        if (index === this.index) dot.setAttribute('aria-current', 'true');
-        else dot.removeAttribute('aria-current');
+        if (index === this.index) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
       });
       this.start();
     }
 
     private start() {
       this.stop();
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || this.slides.length < 2) return;
+      if (
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        this.slides.length < 2
+      )
+        return;
       this.timer = window.setTimeout(() => this.show(this.index + 1), 7000);
     }
 
@@ -94,5 +142,6 @@ const { slides } = Astro.props;
     }
   }
 
-  if (!customElements.get('home-slider')) customElements.define('home-slider', HomeSlider);
+  if (!customElements.get("home-slider"))
+    customElements.define("home-slider", HomeSlider);
 </script>

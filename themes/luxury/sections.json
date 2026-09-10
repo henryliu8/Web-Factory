@@ -1,8 +1,4 @@
 {
-  "preferred": [
-    "hero/HeroFullscreen",
-    "features/FeatureGrid",
-    "cta/CTA"
-  ],
+  "preferred": ["hero/HeroFullscreen", "features/FeatureGrid", "cta/CTA"],
   "overrides": {}
 }

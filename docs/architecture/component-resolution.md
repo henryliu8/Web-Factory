@@ -18,15 +18,15 @@ Registry layer names are fixed to `shared | template | theme | project`. Core me
 ## Build a Registry
 
 ```ts
-import { createSectionRegistry } from '@webfactory/core';
-import SharedHero from '@webfactory/sections/hero/HeroFullscreen';
-import ProjectHero from '../overrides/sections/hero/HeroFullscreen.astro';
+import { createSectionRegistry } from "@webfactory/core";
+import SharedHero from "@webfactory/sections/hero/HeroFullscreen";
+import ProjectHero from "../overrides/sections/hero/HeroFullscreen.astro";
 
 export const sectionRegistry = createSectionRegistry([
-  { name: 'shared', entries: { 'hero/HeroFullscreen': SharedHero } },
-  { name: 'template', entries: {} },
-  { name: 'theme', entries: {} },
-  { name: 'project', entries: { 'hero/HeroFullscreen': ProjectHero } },
+  { name: "shared", entries: { "hero/HeroFullscreen": SharedHero } },
+  { name: "template", entries: {} },
+  { name: "theme", entries: {} },
+  { name: "project", entries: { "hero/HeroFullscreen": ProjectHero } },
 ]);
 ```
 

@@ -55,6 +55,7 @@ The first release must establish the architecture required for that future workf
 ---
 
 # 2. Core Architectural Principles
+
 ## 2.1 Separate Template, Theme and Project
 
 These concepts must remain independent.
@@ -149,6 +150,7 @@ Projects must not directly modify shared Web Factory packages, templates or them
 ---
 
 # 3. Design Token Model
+
 Web Factory must use **semantic design tokens** as the stable design contract between shared components, themes and projects.
 
 A design token is a named design decision, for example:
@@ -229,6 +231,7 @@ This allows shared components to stay reusable while themes and individual proje
 ---
 
 # 4. Monorepo Structure
+
 Create the repository with the following high-level structure:
 
 ```text
@@ -302,7 +305,9 @@ Do not implement LangGraph or other agent orchestration in the first phase.
 ---
 
 # 5. Shared Packages
+
 ## 5.1 `packages/core`
+
 Purpose:
 
 - PageBuilder
@@ -344,6 +349,7 @@ packages/core/
 ---
 
 ## 5.2 `packages/tokens`
+
 Purpose:
 
 - centralize framework-wide design tokens,
@@ -389,6 +395,7 @@ Shared components should consume tokens instead of hard-coded project-specific v
 ---
 
 ## 5.3 `packages/ui`
+
 Shared low-level reusable components.
 
 Example:
@@ -421,6 +428,7 @@ Avoid hard-coded project-specific colors or branding.
 ---
 
 ## 5.4 `packages/sections`
+
 Large page sections.
 
 Initial sections:
@@ -463,6 +471,7 @@ Create a small but working initial library.
 ---
 
 ## 5.5 Other packages
+
 Create basic package shells for:
 
 ```text
@@ -478,6 +487,7 @@ They may initially contain only a few working utilities/components and documenta
 ---
 
 # 6. Template Structure
+
 Create:
 
 ```text
@@ -517,6 +527,7 @@ Do not copy the entire Web Factory component library into every project.
 ---
 
 # 7. Theme Structure
+
 Web Factory uses the following styling stack:
 
 ```text
@@ -580,14 +591,9 @@ Example theme metadata:
 
 ```ts
 export default {
-  id: 'luxury',
-  name: 'Luxury',
-  styles: [
-    'premium',
-    'minimal',
-    'editorial',
-    'architectural'
-  ]
+  id: "luxury",
+  name: "Luxury",
+  styles: ["premium", "minimal", "editorial", "architectural"],
 };
 ```
 
@@ -596,6 +602,7 @@ Themes may optionally override shared components/sections by using the same logi
 ---
 
 # 8. Project Structure
+
 Every generated project under `apps/` must use the following structure:
 
 ```text
@@ -649,6 +656,7 @@ apps/<project-name>/
 ---
 
 # 9. Override / Inheritance System
+
 This is a mandatory Web Factory feature.
 
 The same logical component, section, style or config entry may exist at multiple levels.
@@ -689,6 +697,7 @@ If the theme does not contain it, fall back to the template, then the shared pac
 ---
 
 ## 9.1 Logical paths, not only basenames
+
 Overrides must be based on relative logical paths.
 
 Correct:
@@ -703,6 +712,7 @@ Do not resolve only by basename because duplicate filenames will eventually exis
 ---
 
 ## 9.2 Component and Section Resolution
+
 Implement a registry/resolver in `packages/core`.
 
 The registry should be able to merge entries in this order:
@@ -735,6 +745,7 @@ Avoid runtime filesystem access in production.
 ---
 
 ## 9.3 Styles
+
 Styles should cascade in this order:
 
 ```text
@@ -771,6 +782,7 @@ without editing the theme.
 ---
 
 ## 9.4 CSS Architecture and Cascade Order
+
 Use this predictable style loading order:
 
 ```text
@@ -821,6 +833,7 @@ Example:
 ---
 
 ## 9.5 Configuration
+
 Configuration should be deep-merged:
 
 ```text
@@ -839,36 +852,31 @@ Implement and test a `mergeConfig()` utility.
 ---
 
 # 10. `webfactory.config.ts`
+
 Every project must have a simple central configuration file.
 
 Example:
 
 ```ts
-import { defineProject } from '@webfactory/core';
+import { defineProject } from "@webfactory/core";
 
 export default defineProject({
-  name: 'Demo Site',
-  slug: 'demo-site',
+  name: "Demo Site",
+  slug: "demo-site",
 
-  template: 'stardrive',
-  theme: 'luxury',
+  template: "stardrive",
+  theme: "luxury",
 
   site: {
-    url: 'https://example.com',
-    language: 'en-AU'
+    url: "https://example.com",
+    language: "en-AU",
   },
 
-  pages: [
-    'home',
-    'about',
-    'services',
-    'projects',
-    'contact'
-  ],
+  pages: ["home", "about", "services", "projects", "contact"],
 
   deploy: {
-    provider: 'cloudflare'
-  }
+    provider: "cloudflare",
+  },
 });
 ```
 
@@ -877,6 +885,7 @@ The CLI and build system should use this file as the project's source of truth.
 ---
 
 # 11. Content-First Website Model
+
 Use **Astro Content Collections** for structured website content where practical.
 
 Use **Zod** to validate:
@@ -940,6 +949,7 @@ The user should normally update content and images without editing Astro compone
 ---
 
 # 12. PageBuilder
+
 Create an initial PageBuilder that:
 
 1. Receives a `sections` array.
@@ -966,12 +976,15 @@ project
 ---
 
 # 13. Supporting Front-End Libraries
+
 ## 13.1 Icons
+
 Use **Iconify**, with **Lucide** as a preferred default icon family.
 
 Expose icons through a Web Factory wrapper where useful.
 
 ## 13.2 Sliders / Carousels
+
 Use **Embla Carousel** as the preferred shared carousel engine.
 
 Wrap it in Web Factory components such as:
@@ -987,6 +1000,7 @@ LogoCarousel
 Themes should control presentation.
 
 ## 13.3 Animation
+
 Default:
 
 ```text
@@ -1006,10 +1020,11 @@ Use GSAP only where advanced behavior is genuinely needed, such as complex paral
 All motion must respect:
 
 ```css
-@media (prefers-reduced-motion: reduce)
+@media (prefers-reduced-motion: reduce);
 ```
 
 ## 13.4 Images
+
 Use Astro's image capabilities:
 
 ```text
@@ -1022,6 +1037,7 @@ Only create wrappers when Web Factory needs reusable responsive/image behavior.
 ---
 
 # 14. CLI
+
 Create a CLI under:
 
 ```text
@@ -1049,6 +1065,7 @@ pnpm wf
 ---
 
 ## 14.1 Required initial commands
+
 Implement:
 
 ```bash
@@ -1064,6 +1081,7 @@ pnpm wf list themes
 ---
 
 ## 14.2 Create command
+
 Example:
 
 ```bash
@@ -1126,6 +1144,7 @@ Do not duplicate all shared packages inside the new project.
 ---
 
 ## 14.3 Non-interactive CLI
+
 Also support:
 
 ```bash
@@ -1140,6 +1159,7 @@ This will be useful later for AI/automation.
 ---
 
 ## 14.4 Development command
+
 ```bash
 pnpm wf dev forest-flooring
 ```
@@ -1157,6 +1177,7 @@ but the user should not need to remember workspace filters.
 ---
 
 ## 14.5 Build
+
 ```bash
 pnpm wf build forest-flooring
 ```
@@ -1172,6 +1193,7 @@ Must:
 ---
 
 ## 14.6 Check
+
 ```bash
 pnpm wf check forest-flooring
 ```
@@ -1190,6 +1212,7 @@ Future versions can add Lighthouse, accessibility and broken-link checks.
 ---
 
 ## 14.7 Sync
+
 ```bash
 pnpm wf sync forest-flooring
 ```
@@ -1205,6 +1228,7 @@ This command must be safe to run repeatedly.
 ---
 
 # 15. Root Commands
+
 Root `package.json` should provide:
 
 ```json
@@ -1224,6 +1248,7 @@ Exact implementation may vary, but the developer experience should remain simple
 ---
 
 # 16. Initial Demo Site
+
 Create a working project:
 
 ```text
@@ -1260,6 +1285,7 @@ The demo must:
 ---
 
 # 17. Mandatory Override Demonstration
+
 The demo must include at least one visible project override.
 
 For example:
@@ -1291,6 +1317,7 @@ Also demonstrate project CSS overriding a theme token.
 ---
 
 # 18. Theme Design Requirements
+
 The initial `luxury` theme should demonstrate the intended visual quality.
 
 Guidelines:
@@ -1322,12 +1349,13 @@ mobile-first responsive behavior
 Respect:
 
 ```css
-@media (prefers-reduced-motion: reduce)
+@media (prefers-reduced-motion: reduce);
 ```
 
 ---
 
 # 19. Skills Architecture
+
 Global skills live in:
 
 ```text
@@ -1380,6 +1408,7 @@ content
 ---
 
 # 20. Project Documentation Files
+
 Every project must contain:
 
 ## `PROJECT.md`
@@ -1411,6 +1440,7 @@ These files may initially contain templates/placeholders generated by the CLI.
 ---
 
 # 21. Component Showcase Application
+
 Create:
 
 ```text
@@ -1445,11 +1475,11 @@ Future component metadata may include:
 
 ```ts
 export default {
-  id: 'hero/HeroFullscreen',
-  category: 'hero',
-  styles: ['luxury', 'minimal', 'architecture'],
-  features: ['image', 'overlay', 'cta', 'motion'],
-  recommendedFor: ['construction', 'property', 'flooring']
+  id: "hero/HeroFullscreen",
+  category: "hero",
+  styles: ["luxury", "minimal", "architecture"],
+  features: ["image", "overlay", "cta", "motion"],
+  recommendedFor: ["construction", "property", "flooring"],
 };
 ```
 
@@ -1458,6 +1488,7 @@ The initial implementation can remain small.
 ---
 
 # 22. Future AI Workflow — Do Not Implement Yet
+
 The architecture must support this future workflow:
 
 ```text
@@ -1505,6 +1536,7 @@ The initial architecture must not make this future automation difficult.
 ---
 
 # 23. Open-Source Requirements
+
 The repository will be published publicly on GitHub and should be suitable for community use.
 
 Create:
@@ -1539,6 +1571,7 @@ Add relevant `.gitignore` entries.
 ---
 
 # 24. Naming Conventions
+
 Use:
 
 ```text
@@ -1591,6 +1624,7 @@ Web Factory
 ---
 
 # 25. Versioning and Upgrade Rules
+
 Important maintenance rule:
 
 **Never modify a project when upgrading shared Web Factory packages unless explicitly requested.**
@@ -1622,6 +1656,7 @@ It is acceptable to add Changesets in the initial setup if implementation remain
 ---
 
 # 26. Technology Choices for Initial Version
+
 Use:
 
 ```text
@@ -1653,6 +1688,7 @@ Do not introduce a large framework when a small dependency is enough.
 ---
 
 # 27. Error Handling
+
 CLI errors must be clear.
 
 Bad:
@@ -1684,6 +1720,7 @@ Examples to handle:
 ---
 
 # 28. Initial Implementation Phases
+
 Continue should implement in this order.
 
 ## Phase 1 — Repository foundation
@@ -1789,6 +1826,7 @@ Do not start AI orchestration until the above phases are stable.
 ---
 
 # 29. Acceptance Criteria
+
 The initial implementation is complete only when all of these are true.
 
 ### Repository
@@ -1834,6 +1872,7 @@ The initial implementation is complete only when all of these are true.
 ---
 
 # 30. Continue Implementation Instructions
+
 When implementing this specification:
 
 1. **Do not rewrite the architecture into a completely different design.**
@@ -1860,6 +1899,7 @@ When implementing this specification:
 ---
 
 # 31. First Continue Task
+
 Use the following as the first execution task:
 
 ```text
@@ -1892,6 +1932,7 @@ After Phase 1 and Phase 2 pass successfully, execute Phase 3–6 one phase at a 
 ---
 
 # 32. Target Developer Experience
+
 The long-term developer experience should become:
 
 ```bash
@@ -1926,6 +1967,7 @@ apps/forest-flooring/src/config/
 ---
 
 # 33. Final Architecture Rule
+
 The most important Web Factory rule is:
 
 > **Shared layers provide capabilities; projects provide identity and customization.**

@@ -12,6 +12,8 @@
     "check": "turbo run check",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ",
     "test:integration": "pnpm --filter @webfactory/app-demo-site test:integration && pnpm wf check demo-site && pnpm wf build demo-site && pnpm exec tsx tools/integration/src/verifyDemoBuild.ts"
   },
   "devDependencies": {
@@ -23,6 +25,8 @@
     "commander": "^13.1.0",
     "execa": "^9.5.2",
     "picocolors": "^1.1.1",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^1.0.0",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.19.3",
     "turbo": "^2.5.0",

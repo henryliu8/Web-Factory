@@ -1,4 +1,4 @@
 export const site = {
-  name: '{{projectName}}',
-  language: 'en',
+  name: "{{projectName}}",
+  language: "en",
 };

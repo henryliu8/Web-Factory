@@ -20,10 +20,10 @@ Content schema field names should match component props, or a template should pe
 ## Registry Example
 
 ```ts
-import Testimonials from '@webfactory/sections/testimonials/Testimonials';
+import Testimonials from "@webfactory/sections/testimonials/Testimonials";
 
 const shared = {
-  'testimonials/Testimonials': Testimonials,
+  "testimonials/Testimonials": Testimonials,
 };
 ```
 

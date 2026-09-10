@@ -3,36 +3,36 @@
 Every application uses its root-level `webfactory.config.ts` as the Web Factory project configuration entry.
 
 ```ts
-import { defineProject } from '@webfactory/core';
+import { defineProject } from "@webfactory/core";
 
 export default defineProject({
-  name: 'Example Site',
-  slug: 'example-site',
-  template: 'stardrive',
-  theme: 'default',
-  pages: ['home', 'about'],
+  name: "Example Site",
+  slug: "example-site",
+  template: "stardrive",
+  theme: "default",
+  pages: ["home", "about"],
   site: {
-    url: 'https://example.com',
-    language: 'en-AU',
+    url: "https://example.com",
+    language: "en-AU",
   },
   deploy: {
-    provider: 'cloudflare',
+    provider: "cloudflare",
   },
 });
 ```
 
 ## Fields
 
-| Field | Required | Constraint |
-| --- | --- | --- |
-| `name` | Yes | Non-empty string |
-| `slug` | Yes | Lowercase kebab-case |
-| `template` | Yes | Non-empty ID; the CLI additionally confirms it exists in the catalog |
-| `theme` | Yes | Non-empty ID; the CLI additionally confirms it exists in the catalog |
-| `pages` | Yes | At least one non-empty ID |
-| `site.url` | No | Valid URL |
-| `site.language` | No | Non-empty string |
-| `deploy.provider` | No | Non-empty string |
+| Field             | Required | Constraint                                                           |
+| ----------------- | -------- | -------------------------------------------------------------------- |
+| `name`            | Yes      | Non-empty string                                                     |
+| `slug`            | Yes      | Lowercase kebab-case                                                 |
+| `template`        | Yes      | Non-empty ID; the CLI additionally confirms it exists in the catalog |
+| `theme`           | Yes      | Non-empty ID; the CLI additionally confirms it exists in the catalog |
+| `pages`           | Yes      | At least one non-empty ID                                            |
+| `site.url`        | No       | Valid URL                                                            |
+| `site.language`   | No       | Non-empty string                                                     |
+| `deploy.provider` | No       | Non-empty string                                                     |
 
 The schema uses `.passthrough()`, so a project may carry additional fields. Their presence does not mean Core or the CLI currently consumes them.
 

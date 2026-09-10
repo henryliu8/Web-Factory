@@ -1,6 +1,6 @@
-export { default as SiteLayout } from './layouts/SiteLayout.astro';
-export { default as HomeTemplate } from './page-templates/HomeTemplate.astro';
-export { default as StandardPageTemplate } from './page-templates/StandardPageTemplate.astro';
+export { default as SiteLayout } from "./layouts/SiteLayout.astro";
+export { default as HomeTemplate } from "./page-templates/HomeTemplate.astro";
+export { default as StandardPageTemplate } from "./page-templates/StandardPageTemplate.astro";
 export type {
   CTAData,
   FeatureItem,
@@ -10,4 +10,4 @@ export type {
   HomeTemplateProps,
   PageMetadata,
   StandardPageTemplateProps,
-} from './types';
+} from "./types";

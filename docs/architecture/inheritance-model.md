@@ -54,13 +54,13 @@ Content belongs to the Project. The Template defines how structured content is p
 
 ## Placement Decisions
 
-| Requirement | Correct location |
-| --- | --- |
-| Button behavior used by multiple projects | `packages/ui` |
-| A complete Hero used by multiple projects | `packages/sections` |
-| Header, footer, and page skeleton | `templates/<template>` |
-| A switchable visual language | `themes/<theme>` |
-| Copy, images, or a special Hero for one customer | `apps/<project>` |
-| A semantic value consumed by all components | Define it in `packages/tokens`; Theme and Project only override its value |
+| Requirement                                      | Correct location                                                          |
+| ------------------------------------------------ | ------------------------------------------------------------------------- |
+| Button behavior used by multiple projects        | `packages/ui`                                                             |
+| A complete Hero used by multiple projects        | `packages/sections`                                                       |
+| Header, footer, and page skeleton                | `templates/<template>`                                                    |
+| A switchable visual language                     | `themes/<theme>`                                                          |
+| Copy, images, or a special Hero for one customer | `apps/<project>`                                                          |
+| A semantic value consumed by all components      | Define it in `packages/tokens`; Theme and Project only override its value |
 
 If a customer requirement appears to require changing Shared code, first determine whether tokens, slots, props, or a project override can express it.

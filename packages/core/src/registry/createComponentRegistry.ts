@@ -1,6 +1,8 @@
-import { createRegistry } from './createRegistry';
-import type { ComponentRegistry, RegistryLayer } from './types';
+import { createRegistry } from "./createRegistry";
+import type { ComponentRegistry, RegistryLayer } from "./types";
 
-export function createComponentRegistry<T>(layers: readonly RegistryLayer<T>[]): ComponentRegistry<T> {
+export function createComponentRegistry<T>(
+  layers: readonly RegistryLayer<T>[],
+): ComponentRegistry<T> {
   return createRegistry(layers);
 }

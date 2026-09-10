@@ -23,7 +23,6 @@ function mergeInto(target: ConfigObject, source: ConfigObject): void {
     if (isPlainObject(sourceValue) && isPlainObject(targetValue)) {
       mergeInto(targetValue, sourceValue);
       continue;
-
     }
 
     target[key] = cloneValue(sourceValue);
@@ -45,7 +44,7 @@ function cloneValue<T>(value: T): T {
 }
 
 function isPlainObject(value: unknown): value is ConfigObject {
-  if (value === null || typeof value !== 'object') return false;
+  if (value === null || typeof value !== "object") return false;
   const prototype = Object.getPrototypeOf(value);
   return prototype === Object.prototype || prototype === null;
 }

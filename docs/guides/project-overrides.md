@@ -38,7 +38,7 @@ Do not edit theme files or copy the entire theme stylesheet. Project styles alre
 When configuration from multiple layers must be composed, use:
 
 ```ts
-mergeConfig(sharedDefaults, templateConfig, themeConfig, projectConfig)
+mergeConfig(sharedDefaults, templateConfig, themeConfig, projectConfig);
 ```
 
 Plain objects merge recursively, while arrays are replaced as a whole. Do not assume arrays concatenate.

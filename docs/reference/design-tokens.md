@@ -23,12 +23,12 @@ Avoid theme- or customer-specific names such as `--luxury-gold` and `--forest-gr
 
 ## Ownership
 
-| Layer | Responsibility |
-| --- | --- |
-| Shared tokens | Define names, semantics, and safe defaults |
-| Theme | Redefine token values for a complete visual direction |
-| Project | Apply final brand adjustments and a small number of special overrides |
-| Component | Consume tokens without deciding customer branding |
+| Layer         | Responsibility                                                        |
+| ------------- | --------------------------------------------------------------------- |
+| Shared tokens | Define names, semantics, and safe defaults                            |
+| Theme         | Redefine token values for a complete visual direction                 |
+| Project       | Apply final brand adjustments and a small number of special overrides |
+| Component     | Consume tokens without deciding customer branding                     |
 
 ## Add a Token
 
@@ -58,7 +58,7 @@ Prefer fluid CSS values with `clamp()`. The repository includes `packages/tokens
 /* apps/example-site/src/styles/project.css */
 :root {
   --wf-color-primary: #513d2d;
-  --wf-font-heading: 'Example Sans', sans-serif;
+  --wf-font-heading: "Example Sans", sans-serif;
 }
 ```
 

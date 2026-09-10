@@ -1,1 +1,1 @@
-export const formsPackage = '@webfactory/forms' as const;
+export const formsPackage = "@webfactory/forms" as const;

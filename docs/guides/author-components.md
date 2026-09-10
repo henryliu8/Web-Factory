@@ -36,7 +36,7 @@ After adding a component, update `src/index.ts` and `package.json`:
 Consumers should use:
 
 ```ts
-import NewComponent from '@webfactory/ui/primitives/NewComponent';
+import NewComponent from "@webfactory/ui/primitives/NewComponent";
 ```
 
 Do not use `../../packages/ui/src/...` or depend on unexported internal paths.

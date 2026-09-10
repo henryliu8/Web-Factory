@@ -1,6 +1,10 @@
 @layer wf.theme {
   :where(a, button) {
-    transition: color var(--wf-motion-normal), background-color var(--wf-motion-normal), border-color var(--wf-motion-normal), transform var(--wf-motion-normal);
+    transition:
+      color var(--wf-motion-normal),
+      background-color var(--wf-motion-normal),
+      border-color var(--wf-motion-normal),
+      transform var(--wf-motion-normal);
   }
 
   @media (prefers-reduced-motion: reduce) {

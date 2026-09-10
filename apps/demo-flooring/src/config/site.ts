@@ -1,1 +1,1 @@
-export { site } from '../data/site';
+export { site } from "../data/site";

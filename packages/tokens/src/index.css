@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import './base.css';
+@import "tailwindcss";
+@import "./base.css";
 
 @theme inline {
   --color-primary: var(--wf-color-primary);

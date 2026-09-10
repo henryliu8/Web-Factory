@@ -1,1 +1,1 @@
-export const animationsPackage = '@webfactory/animations' as const;
+export const animationsPackage = "@webfactory/animations" as const;

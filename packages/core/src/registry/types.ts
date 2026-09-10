@@ -1,4 +1,4 @@
-export type LayerName = 'shared' | 'template' | 'theme' | 'project';
+export type LayerName = "shared" | "template" | "theme" | "project";
 
 export interface RegistryLayer<T> {
   name: LayerName;

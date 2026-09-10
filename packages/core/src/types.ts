@@ -5,7 +5,7 @@ export interface Link {
 }
 
 export interface ActionLink extends Link {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: "primary" | "secondary" | "outline" | "ghost";
 }
 
 export interface NavigationItem extends Link {

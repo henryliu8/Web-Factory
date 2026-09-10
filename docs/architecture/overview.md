@@ -9,12 +9,12 @@ Shared packages → Template → Theme → Project
                                   Later layers override earlier layers
 ```
 
-| Layer | Directory | Primary responsibility |
-| --- | --- | --- |
-| Shared | `packages/` | Types, configuration validation, design tokens, UI primitives, reusable sections, and foundational capabilities |
-| Template | `templates/<id>/` | Page structure, layouts, structural defaults, and the project scaffold |
-| Theme | `themes/<id>/` | Visual direction such as color, typography, radius, and motion |
-| Project | `apps/<slug>/` | Final content, images, site settings, brand overrides, and deployment configuration |
+| Layer    | Directory         | Primary responsibility                                                                                          |
+| -------- | ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| Shared   | `packages/`       | Types, configuration validation, design tokens, UI primitives, reusable sections, and foundational capabilities |
+| Template | `templates/<id>/` | Page structure, layouts, structural defaults, and the project scaffold                                          |
+| Theme    | `themes/<id>/`    | Visual direction such as color, typography, radius, and motion                                                  |
+| Project  | `apps/<slug>/`    | Final content, images, site settings, brand overrides, and deployment configuration                             |
 
 Selection precedence is `Project > Theme > Template > Shared`. The implementation merges from low to high precedence, so a later entry replaces an earlier entry with the same logical key.
 

@@ -1,1 +1,1 @@
-export const seoPackage = '@webfactory/seo' as const;
+export const seoPackage = "@webfactory/seo" as const;

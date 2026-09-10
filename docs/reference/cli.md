@@ -8,15 +8,15 @@ pnpm wf <command>
 
 ## Commands
 
-| Command | Status | Description |
-| --- | --- | --- |
-| `create <project>` | Implemented | Create a project from a template scaffold |
-| `dev <project>` | Implemented | Validate configuration, then run `astro dev` |
-| `build <project>` | Implemented | Validate configuration, then run `astro build` |
-| `check <project>` | Implemented | Validate configuration, then run `astro check` |
-| `sync <project>` | Not implemented | Currently fails safely and explicitly reports that no files were changed |
-| `list templates` | Implemented | List template packages that follow the naming convention |
-| `list themes` | Implemented | List theme packages that follow the naming convention |
+| Command            | Status          | Description                                                              |
+| ------------------ | --------------- | ------------------------------------------------------------------------ |
+| `create <project>` | Implemented     | Create a project from a template scaffold                                |
+| `dev <project>`    | Implemented     | Validate configuration, then run `astro dev`                             |
+| `build <project>`  | Implemented     | Validate configuration, then run `astro build`                           |
+| `check <project>`  | Implemented     | Validate configuration, then run `astro check`                           |
+| `sync <project>`   | Not implemented | Currently fails safely and explicitly reports that no files were changed |
+| `list templates`   | Implemented     | List template packages that follow the naming convention                 |
+| `list themes`      | Implemented     | List theme packages that follow the naming convention                    |
 
 ## `create`
 

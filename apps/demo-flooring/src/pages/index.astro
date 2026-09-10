@@ -1,11 +1,13 @@
 ---
-import { getEntry } from 'astro:content';
-import ProjectShell from '../layouts/ProjectShell.astro';
-import HomeSlider from '../components/home/HomeSlider.astro';
+import { getEntry } from "astro:content";
+import ProjectShell from "../layouts/ProjectShell.astro";
+import HomeSlider from "../components/home/HomeSlider.astro";
 
-const entry = await getEntry('pages', 'home');
-if (!entry || entry.data.kind !== 'home') throw new Error('Home content entry is missing or invalid.');
-const { title, description, slides, materials, projects, process, quote } = entry.data;
+const entry = await getEntry("pages", "home");
+if (!entry || entry.data.kind !== "home")
+  throw new Error("Home content entry is missing or invalid.");
+const { title, description, slides, materials, projects, process, quote } =
+  entry.data;
 ---
 
 <ProjectShell {title} {description} pageClass="page-home">
@@ -15,19 +17,26 @@ const { title, description, slides, materials, projects, process, quote } = entr
     <div class="section__heading">
       <div>
         <h2 id="materials-title">Materials selected for real life</h2>
-        <p>Beautiful floors should do more than look good. We choose surfaces that are durable, timeless, and easy to live with.</p>
+        <p>
+          Beautiful floors should do more than look good. We choose surfaces
+          that are durable, timeless, and easy to live with.
+        </p>
       </div>
-      <a class="text-link" href="/services">Explore all materials <span aria-hidden="true">→</span></a>
+      <a class="text-link" href="/services"
+        >Explore all materials <span aria-hidden="true">→</span></a
+      >
     </div>
     <div class="material-list">
-      {materials.map((material, index) => (
-        <article>
-          <span class="material-list__number">0{index + 1}</span>
-          <h3>{material.name}</h3>
-          <p>{material.detail}</p>
-          <small>{material.summary}</small>
-        </article>
-      ))}
+      {
+        materials.map((material, index) => (
+          <article>
+            <span class="material-list__number">0{index + 1}</span>
+            <h3>{material.name}</h3>
+            <p>{material.detail}</p>
+            <small>{material.summary}</small>
+          </article>
+        ))
+      }
     </div>
   </section>
 
@@ -36,28 +45,40 @@ const { title, description, slides, materials, projects, process, quote } = entr
       <h2 id="projects-title">Recent spaces</h2>
     </div>
     <div class="project-grid">
-      {projects.map((project) => (
-        <figure>
-          <img src={project.image.src} alt={project.image.alt} width="1536" height="1024" loading="lazy" />
-          <figcaption>
-            <span>{project.name}, {project.location}</span>
-            <small>{project.material}</small>
-          </figcaption>
-        </figure>
-      ))}
+      {
+        projects.map((project) => (
+          <figure>
+            <img
+              src={project.image.src}
+              alt={project.image.alt}
+              width="1536"
+              height="1024"
+              loading="lazy"
+            />
+            <figcaption>
+              <span>
+                {project.name}, {project.location}
+              </span>
+              <small>{project.material}</small>
+            </figcaption>
+          </figure>
+        ))
+      }
     </div>
   </section>
 
   <section class="section process" aria-labelledby="process-title">
     <h2 id="process-title">A considered process</h2>
     <ol>
-      {process.map((step, index) => (
-        <li>
-          <span>0{index + 1}</span>
-          <h3>{step.title}</h3>
-          <p>{step.description}</p>
-        </li>
-      ))}
+      {
+        process.map((step, index) => (
+          <li>
+            <span>0{index + 1}</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </li>
+        ))
+      }
     </ol>
   </section>
 
@@ -67,6 +88,12 @@ const { title, description, slides, materials, projects, process, quote } = entr
       <p>{quote.text}</p>
       <footer>{quote.author}<small>{quote.context}</small></footer>
     </blockquote>
-    <img src={quote.image.src} alt={quote.image.alt} width="1536" height="1024" loading="lazy" />
+    <img
+      src={quote.image.src}
+      alt={quote.image.alt}
+      width="1536"
+      height="1024"
+      loading="lazy"
+    />
   </section>
 </ProjectShell>

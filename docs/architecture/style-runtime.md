@@ -7,10 +7,10 @@ The Web Factory styling stack combines Tailwind CSS v4, CSS custom properties, a
 The project's `src/styles/global.css` is the single composition entry:
 
 ```css
-@import '@webfactory/tokens';
-@import 'virtual:webfactory-template-style';
-@import 'virtual:webfactory-theme-style';
-@import './project.css';
+@import "@webfactory/tokens";
+@import "virtual:webfactory-template-style";
+@import "virtual:webfactory-theme-style";
+@import "./project.css";
 ```
 
 The final order is always:

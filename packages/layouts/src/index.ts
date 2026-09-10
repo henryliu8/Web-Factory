@@ -1,1 +1,1 @@
-export const layoutsPackage = '@webfactory/layouts' as const;
+export const layoutsPackage = "@webfactory/layouts" as const;

@@ -1,6 +1,10 @@
-import { parseSections, type SectionDefinition } from '../content/schema';
-import { requireEntry } from '../registry/resolveEntry';
-import type { ResolvedSection, ResolvedSectionRegistry, SectionComponent } from './types';
+import { parseSections, type SectionDefinition } from "../content/schema";
+import { requireEntry } from "../registry/resolveEntry";
+import type {
+  ResolvedSection,
+  ResolvedSectionRegistry,
+  SectionComponent,
+} from "./types";
 
 export function resolveSection(
   registry: ResolvedSectionRegistry,
@@ -11,9 +15,11 @@ export function resolveSection(
   } catch {
     const available = Object.keys(registry).sort();
     const suffix = available.length
-      ? ` Available sections: ${available.join(', ')}.`
-      : ' No sections are registered.';
-    throw new Error(`Unknown Web Factory section "${definition.type}".${suffix}`);
+      ? ` Available sections: ${available.join(", ")}.`
+      : " No sections are registered.";
+    throw new Error(
+      `Unknown Web Factory section "${definition.type}".${suffix}`,
+    );
   }
 }
 

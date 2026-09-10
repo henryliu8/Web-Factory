@@ -1,1 +1,1 @@
-export const utilitiesPackage = '@webfactory/utilities' as const;
+export const utilitiesPackage = "@webfactory/utilities" as const;

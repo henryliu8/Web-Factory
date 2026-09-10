@@ -3,7 +3,7 @@ import type {
   ImageSource,
   NavigationItem,
   ResolvedSectionRegistry,
-} from '@webfactory/core';
+} from "@webfactory/core";
 
 export interface PageMetadata {
   title: string;
@@ -25,7 +25,7 @@ export interface HeroData {
   image?: ImageSource | string;
   primaryAction?: ActionLink;
   secondaryAction?: ActionLink;
-  align?: 'start' | 'center' | 'end';
+  align?: "start" | "center" | "end";
 }
 
 export interface FeatureItem {

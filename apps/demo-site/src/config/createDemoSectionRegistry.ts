@@ -1,4 +1,4 @@
-import { createSectionRegistry } from '@webfactory/core';
+import { createSectionRegistry } from "@webfactory/core";
 
 export interface DemoSectionComponents<T> {
   sharedHeader: T;
@@ -8,23 +8,25 @@ export interface DemoSectionComponents<T> {
   projectHero: T;
 }
 
-export function createDemoSectionRegistry<T>(components: DemoSectionComponents<T>) {
+export function createDemoSectionRegistry<T>(
+  components: DemoSectionComponents<T>,
+) {
   return createSectionRegistry<T>([
     {
-      name: 'shared',
+      name: "shared",
       entries: {
-        'header/Header': components.sharedHeader,
-        'hero/HeroFullscreen': components.sharedHero,
-        'features/FeatureGrid': components.sharedFeatures,
-        'cta/CTA': components.sharedCTA,
+        "header/Header": components.sharedHeader,
+        "hero/HeroFullscreen": components.sharedHero,
+        "features/FeatureGrid": components.sharedFeatures,
+        "cta/CTA": components.sharedCTA,
       },
     },
-    { name: 'template', entries: {} },
-    { name: 'theme', entries: {} },
+    { name: "template", entries: {} },
+    { name: "theme", entries: {} },
     {
-      name: 'project',
+      name: "project",
       entries: {
-        'hero/HeroFullscreen': components.projectHero,
+        "hero/HeroFullscreen": components.projectHero,
       },
     },
   ]);

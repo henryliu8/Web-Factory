@@ -7,7 +7,8 @@
 .demo-content-grid,
 .demo-project-list {
   color: var(--wf-color-text);
-  font: 400 var(--wf-font-size-md)/var(--wf-line-height-relaxed) var(--wf-font-body);
+  font: 400 var(--wf-font-size-md)/var(--wf-line-height-relaxed)
+    var(--wf-font-body);
 }
 
 .demo-prose {
@@ -17,7 +18,8 @@
 .demo-prose h2,
 .demo-content-grid h2,
 .demo-project-list h2 {
-  font: 650 var(--wf-font-size-2xl)/var(--wf-line-height-snug) var(--wf-font-heading);
+  font: 650 var(--wf-font-size-2xl)/var(--wf-line-height-snug)
+    var(--wf-font-heading);
   margin: 0 0 var(--wf-space-3);
 }
 

@@ -14,16 +14,16 @@ Turbo schedules `pnpm check` and `pnpm build` across workspaces that define the 
 
 ## Targeted Validation
 
-| Change | Minimum recommended validation |
-| --- | --- |
-| Core configuration, registry, schema, or style runtime | Core check/test plus integration gate |
-| UI component | UI check plus direct consumer checks |
-| Section | Sections check, content/schema tests, and application check |
-| Template | Template check plus a build of one consuming application |
-| Theme CSS | Theme check, at least one application build, and theme-isolation validation |
-| CLI | CLI check/test; create changes also require a temporary-project flow |
-| Project content only | `pnpm wf check <project>` plus build |
-| Documentation | Link and path checks; no build output is necessary |
+| Change                                                 | Minimum recommended validation                                              |
+| ------------------------------------------------------ | --------------------------------------------------------------------------- |
+| Core configuration, registry, schema, or style runtime | Core check/test plus integration gate                                       |
+| UI component                                           | UI check plus direct consumer checks                                        |
+| Section                                                | Sections check, content/schema tests, and application check                 |
+| Template                                               | Template check plus a build of one consuming application                    |
+| Theme CSS                                              | Theme check, at least one application build, and theme-isolation validation |
+| CLI                                                    | CLI check/test; create changes also require a temporary-project flow        |
+| Project content only                                   | `pnpm wf check <project>` plus build                                        |
+| Documentation                                          | Link and path checks; no build output is necessary                          |
 
 Package-level examples:
 

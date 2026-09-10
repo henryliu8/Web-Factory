@@ -5,7 +5,7 @@ A registry is a read-only mapping from logical paths to implementations. The rel
 ## Types
 
 ```ts
-type LayerName = 'shared' | 'template' | 'theme' | 'project';
+type LayerName = "shared" | "template" | "theme" | "project";
 
 interface RegistryLayer<T> {
   name: LayerName;
@@ -19,9 +19,9 @@ type SectionRegistry<T> = ComponentRegistry<T>;
 ## Creation
 
 ```ts
-createRegistry<T>(layers)
-createComponentRegistry<T>(layers)
-createSectionRegistry<T>(layers)
+createRegistry<T>(layers);
+createComponentRegistry<T>(layers);
+createSectionRegistry<T>(layers);
 ```
 
 All three functions use the same merge logic. Core sorts layers into Shared, Template, Theme, Project order, normalizes keys, and freezes the final top-level object. A matching key in a later layer replaces the earlier value.
@@ -29,10 +29,10 @@ All three functions use the same merge logic. Core sorts layers into Shared, Tem
 ## Lookup
 
 ```ts
-resolveEntry(registry, logicalPath) // T | undefined
-requireEntry(registry, logicalPath) // T; throws when missing
-resolveSection(registry, definition) // SectionComponent
-resolveSections(registry, unknownSections) // ResolvedSection[]
+resolveEntry(registry, logicalPath); // T | undefined
+requireEntry(registry, logicalPath); // T; throws when missing
+resolveSection(registry, definition); // SectionComponent
+resolveSections(registry, unknownSections); // ResolvedSection[]
 ```
 
 `resolveSection()` lists currently available sections in its error, which helps diagnose content and registry mismatches during development. `resolveSections()` first validates the array with the shared content schema.
