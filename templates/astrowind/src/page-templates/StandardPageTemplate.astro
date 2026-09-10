@@ -1,0 +1,20 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import HeroText from '../sections/HeroText.astro';
+import type { MetaData } from '../types';
+
+interface Props {
+  metadata: MetaData;
+  heading: string;
+  intro?: string;
+  header?: Record<string, unknown>;
+  footer?: Record<string, unknown>;
+}
+
+const { metadata, heading, intro, header, footer } = Astro.props;
+---
+
+<PageLayout metadata={metadata} header={header} footer={footer}>
+  <HeroText title={heading} subtitle={intro} />
+  <slot />
+</PageLayout>

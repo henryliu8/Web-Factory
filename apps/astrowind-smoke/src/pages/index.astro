@@ -1,0 +1,14 @@
+---
+import PageLayout from '@webfactory/template-astrowind/layouts/PageLayout.astro';
+import Hero from '@webfactory/template-astrowind/sections/Hero.astro';
+import Features from '@webfactory/template-astrowind/sections/Features.astro';
+import CallToAction from '@webfactory/template-astrowind/sections/CallToAction.astro';
+import { headerData, footerData } from '../navigation';
+import { home } from '../data/home';
+---
+
+<PageLayout metadata={{ title: home.hero.title }} header={headerData} footer={footerData}>
+  <Hero {...home.hero} />
+  <Features {...home.features} />
+  <CallToAction {...home.callToAction} />
+</PageLayout>

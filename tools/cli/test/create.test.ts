@@ -47,6 +47,40 @@ describe("createProject", () => {
     expect(existsSync(join(path, "packages"))).toBe(false);
   });
 
+  it("uses the selected template package for generated fallback pages", async () => {
+    const root = await createFixture();
+    const templateRoot = join(root, "templates/astrowind");
+    await mkdir(join(templateRoot, "scaffold/src/config"), { recursive: true });
+    await Promise.all([
+      writeFile(
+        join(templateRoot, "package.json"),
+        '{"name":"@webfactory/template-astrowind"}',
+      ),
+      writeFile(
+        join(templateRoot, "scaffold/package.json.template"),
+        '{"name":"@webfactory/app-{{project}}"}',
+      ),
+      writeFile(
+        join(templateRoot, "scaffold/webfactory.config.ts"),
+        "template: '{{template}}'; theme: '{{theme}}'; pages: {{pages}};",
+      ),
+      writeFile(
+        join(templateRoot, "scaffold/src/config/site.ts"),
+        "export const site = { name: '{{projectName}}', language: 'en' };",
+      ),
+    ]);
+
+    const path = await createProject(
+      "astrowind-project",
+      { template: "astrowind", theme: "default", pages: "about" },
+      root,
+    );
+
+    expect(await readFile(join(path, "src/pages/about.astro"), "utf8")).toContain(
+      "@webfactory/template-astrowind/page-templates/StandardPageTemplate",
+    );
+  });
+
   it("rejects duplicate projects without modifying them", async () => {
     const root = await createFixture();
     const existing = join(root, "apps/existing");
@@ -263,7 +297,7 @@ describe("safe naming and repository discovery", () => {
   it("discovers the repository from a nested CLI directory and catalogs package manifests", async () => {
     const actualRoot = repositoryRoot(join(process.cwd(), "src"));
     expect(actualRoot).toBe(repositoryRoot());
-    expect(listTemplates(actualRoot)).toContain("stardrive");
+    expect(listTemplates(actualRoot)).toEqual(["astrowind", "stardrive"]);
     expect(listThemes(actualRoot)).toEqual(["default", "luxury"]);
 
     const fixture = await createFixture();

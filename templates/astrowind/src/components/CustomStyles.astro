@@ -1,0 +1,39 @@
+---
+// AstroWind compatibility variables intentionally derive from Web Factory's
+// semantic design-token contract. Themes and projects remain responsible for
+// final brand values.
+---
+
+<style is:inline>
+  :root {
+    --aw-font-sans: var(--wf-font-body);
+    --aw-font-serif: var(--wf-font-heading);
+    --aw-font-heading: var(--wf-font-heading);
+    --aw-color-primary: var(--wf-color-primary);
+    --aw-color-secondary: var(--wf-color-secondary);
+    --aw-color-accent: var(--wf-color-accent, var(--wf-color-primary));
+    --aw-color-text-heading: var(--wf-color-text);
+    --aw-color-text-default: var(--wf-color-text);
+    --aw-color-text-muted: var(--wf-color-muted);
+    --aw-color-bg-page: var(--wf-color-background);
+    --aw-color-bg-page-dark: var(--wf-color-background);
+  }
+
+  .dark {
+    --aw-font-sans: var(--wf-font-body);
+    --aw-font-serif: var(--wf-font-heading);
+    --aw-font-heading: var(--wf-font-heading);
+    --aw-color-primary: var(--wf-color-primary);
+    --aw-color-secondary: var(--wf-color-secondary);
+    --aw-color-accent: var(--wf-color-accent, var(--wf-color-primary));
+    --aw-color-text-heading: var(--wf-color-text-dark);
+    --aw-color-text-default: var(--wf-color-text-dark);
+    --aw-color-text-muted: var(--wf-color-text-muted-dark);
+    --aw-color-bg-page: var(--wf-color-background-dark);
+    --aw-color-bg-page-dark: var(--wf-color-background-dark);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--wf-color-primary) 20%, transparent);
+  }
+</style>

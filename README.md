@@ -44,3 +44,14 @@ Run the persistent cross-package integration gate:
 ```sh
 pnpm test:integration
 ```
+
+## Templates
+
+- `stardrive` — the original flexible, content-first Web Factory structure.
+- `astrowind` — an Astro v7 and Tailwind CSS v4 marketing/blog template adapted from [AstroWind](https://github.com/arthelokyo/astrowind). Its 37 reusable widgets live in the template section registry, while site content, navigation, configuration, and public assets remain project-owned in the scaffold.
+
+Create an AstroWind-based project with:
+
+```sh
+pnpm wf create my-site --template astrowind --theme default --pages home,about,services,contact
+```

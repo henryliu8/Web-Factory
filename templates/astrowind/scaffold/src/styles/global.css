@@ -1,0 +1,6 @@
+@import '@webfactory/tokens';
+@import 'virtual:webfactory-template-style';
+@import 'virtual:webfactory-theme-style';
+@import './project.css';
+
+@source '../../node_modules/@webfactory/template-astrowind/src';

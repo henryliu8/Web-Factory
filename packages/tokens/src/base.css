@@ -6,12 +6,17 @@
     --wf-color-secondary: #52606d;
     --wf-color-on-secondary: #ffffff;
     --wf-color-background: #ffffff;
+    --wf-color-background-dark: #08090a;
     --wf-color-surface: #f8fafc;
+    --wf-color-surface-dark: #111827;
     --wf-color-surface-alt: #eef2f6;
     --wf-color-text: #1f2933;
+    --wf-color-text-dark: #e5ecf6;
     --wf-color-text-muted: #667085;
+    --wf-color-text-muted-dark: #a7b0c0;
     --wf-color-muted: var(--wf-color-text-muted);
     --wf-color-border: #d0d5dd;
+    --wf-color-border-dark: #334155;
     --wf-color-focus: #2563eb;
     --wf-color-success: #15803d;
     --wf-color-warning: #b45309;

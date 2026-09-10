@@ -1,0 +1,31 @@
+---
+import PageLayout from '@webfactory/template-astrowind/layouts/PageLayout.astro';
+import Header from '@webfactory/template-astrowind/sections/Header.astro';
+
+import type { MetaData } from '@webfactory/template-astrowind/types';
+
+export interface Props {
+  metadata?: MetaData;
+  links?: Array<Record<string, unknown>>;
+  actions?: Array<Record<string, unknown>>;
+}
+
+const { metadata, links, actions } = Astro.props;
+---
+
+<PageLayout metadata={metadata}>
+  <Fragment slot="announcement">
+    <slot name="announcement" />
+  </Fragment>
+  <Fragment slot="header">
+    <slot name="header">
+      <Header
+        links={links}
+        actions={actions}
+        showToggleTheme
+        position="right"
+      />
+    </slot>
+  </Fragment>
+  <slot />
+</PageLayout>

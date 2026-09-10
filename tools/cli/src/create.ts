@@ -26,6 +26,8 @@ const textExtensions = new Set([
   ".mjs",
   ".ts",
   ".txt",
+  ".yaml",
+  ".yml",
 ]);
 const placeholderPattern = /{{([A-Za-z][A-Za-z0-9]*)}}/g;
 
@@ -67,7 +69,7 @@ export async function createProject(
 
   try {
     await copyScaffold(scaffold, stagingDirectory);
-    await writePageFiles(stagingDirectory, pages, projectName);
+    await writePageFiles(stagingDirectory, pages, projectName, template);
     await writeProjectDocs(stagingDirectory, projectName);
     await processPlaceholders(stagingDirectory, {
       project: slug,
@@ -167,6 +169,7 @@ async function writePageFiles(
   destination: string,
   pages: string[],
   projectName: string,
+  template: string,
 ): Promise<void> {
   const pagesDir = resolve(destination, "src/pages");
   const contentDir = resolve(destination, "src/content");
@@ -187,7 +190,7 @@ async function writePageFiles(
     if (!existsSync(pagePath)) {
       await writeFile(
         pagePath,
-        `---\nimport { getEntry } from 'astro:content';\nimport StandardPageTemplate from '@webfactory/template-stardrive/page-templates/StandardPageTemplate';\nimport { site } from '../config/site';\n\nconst entry = await getEntry('pages', '${page}');\nif (!entry) throw new Error('Missing content entry: ${page}');\n---\n\n<StandardPageTemplate\n  metadata={{ title: entry.data.title, description: entry.data.description, lang: site.language }}\n  header={{ brand: site.name }}\n  heading={entry.data.title}\n/>\n`,
+        `---\nimport { getEntry } from 'astro:content';\nimport StandardPageTemplate from '@webfactory/template-${template}/page-templates/StandardPageTemplate';\nimport { site } from '../config/site';\n\nconst entry = await getEntry('pages', '${page}');\nif (!entry) throw new Error('Missing content entry: ${page}');\n---\n\n<StandardPageTemplate\n  metadata={{ title: entry.data.title, description: entry.data.description, lang: site.language }}\n  header={{ brand: site.name }}\n  heading={entry.data.title}\n/>\n`,
         { flag: "wx" },
       );
     }

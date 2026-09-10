@@ -1,0 +1,32 @@
+{
+  "name": "@webfactory/app-{{project}}",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^8.0.0",
+    "@astrojs/sitemap": "^3.7.3",
+    "@webfactory/core": "workspace:*",
+    "@webfactory/template-astrowind": "workspace:*",
+    "@webfactory/theme-{{theme}}": "workspace:*",
+    "@webfactory/tokens": "workspace:*",
+    "astro": "^7.3.1",
+    "astro-icon": "^1.1.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@iconify-json/flat-color-icons": "^1.2.3",
+    "@iconify-json/tabler": "^1.2.38",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  }
+}

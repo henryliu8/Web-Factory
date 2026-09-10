@@ -1,0 +1,26 @@
+site:
+  name: 'Astrowind Smoke'
+  site: 'https://example.com'
+  base: '/'
+  trailingSlash: false
+
+metadata:
+  title:
+    default: 'Astrowind Smoke'
+    template: '%s — Astrowind Smoke'
+  description: 'A website built with Web Factory and the AstroWind template.'
+  robots:
+    index: true
+    follow: true
+
+i18n:
+  language: 'en'
+  textDirection: 'ltr'
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 6
+
+ui:
+  theme: 'system'

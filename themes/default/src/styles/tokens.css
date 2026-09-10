@@ -2,10 +2,14 @@
   :root {
     --wf-color-primary: #1f2933;
     --wf-color-background: #ffffff;
+    --wf-color-background-dark: #08090a;
     --wf-color-surface: #f3f4f6;
+    --wf-color-surface-dark: #111827;
     --wf-color-on-primary: #ffffff;
     --wf-color-text: #1f2933;
+    --wf-color-text-dark: #e5ecf6;
     --wf-color-muted: #667085;
+    --wf-color-text-muted-dark: #a7b0c0;
     --wf-font-heading: ui-sans-serif, system-ui, sans-serif;
     --wf-font-body: ui-sans-serif, system-ui, sans-serif;
     --wf-content-width: 75rem;

@@ -2,10 +2,14 @@
   :root {
     --wf-color-primary: #211d19;
     --wf-color-background: #f8f7f4;
+    --wf-color-background-dark: #181512;
     --wf-color-surface: #eeece7;
+    --wf-color-surface-dark: #27221d;
     --wf-color-on-primary: #f8f7f4;
     --wf-color-text: #211d19;
+    --wf-color-text-dark: #f3eee6;
     --wf-color-muted: #716b63;
+    --wf-color-text-muted-dark: #b9afa2;
     --wf-color-accent: #9a8264;
     --wf-font-heading: Georgia, "Times New Roman", serif;
     --wf-font-body: Inter, ui-sans-serif, system-ui, sans-serif;

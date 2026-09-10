@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src/**/*.ts", "src/**/*.astro", "src/**/*.d.ts", "template.config.ts"],
+  "compilerOptions": {
+    "paths": {
+      "@webfactory/template-astrowind/*": ["templates/astrowind/src/*"],
+      "@webfactory/core/*": ["packages/core/src/*"]
+    }
+  }
+}
