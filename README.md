@@ -1,3 +1,15 @@
+<p align="center">
+  <img src="docs/assets/brand/web-factory-logo.png" alt="Web Factory" width="420" />
+</p>
+
+<p align="center">
+  <strong>Build Better Websites. Faster.</strong>
+</p>
+
+<p align="center">
+  <img src="docs/assets/brand/web-factory-promo.png" alt="Web Factory turns projects, themes, templates, and shared building blocks into production-ready websites" width="100%" />
+</p>
+
 # Web-Factory
 
 An AI-ready Astro website factory for rapidly creating modern, production-ready websites using reusable themes, components, project overrides, and CLI automation.

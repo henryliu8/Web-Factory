@@ -36,3 +36,22 @@ Rules:
 - Never proceed to another implementation phase while the current phase has build or test failures.
 - Run relevant checks after changes.
 - Explain major architecture deviations before implementing them.
+
+## Implementation discipline
+
+This repository uses Ponytail with Codex.
+
+Ponytail may simplify implementation, reuse native platform
+capabilities, reduce dependencies and remove unnecessary abstractions.
+
+However, simplification must preserve the established Web Factory
+architecture:
+
+Project > Theme > Template > Shared
+
+Do not remove framework boundaries, registries, style runtime,
+template/theme separation, public package contracts, or integration
+tests merely to reduce line count.
+
+Prefer the smallest implementation that preserves the documented
+architecture and public API.
