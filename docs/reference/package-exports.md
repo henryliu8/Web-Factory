@@ -8,7 +8,7 @@
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `@webfactory/core`                                   | Configuration, content schemas, registries, PageBuilder, style runtime, and shared types |
 | `@webfactory/tokens`                                 | Default CSS tokens and `base.css`                                                        |
-| `@webfactory/ui`                                     | `Badge`, `Button`, `Callout`, `Card`, `Container`, and component types                   |
+| `@webfactory/ui`                                     | Web Factory primitives plus 55 Starwind component families under `starwind/*`            |
 | `@webfactory/sections`                               | Header, HeroFullscreen, FeatureGrid, and CTA                                             |
 | `@webfactory/template-stardrive`                     | Layouts, page templates, template styles, and types                                      |
 | `@webfactory/theme-default`                          | Default theme configuration and styles                                                   |
@@ -23,6 +23,7 @@ import { createSectionRegistry, defineProject } from "@webfactory/core";
 import { pageContentSchema } from "@webfactory/core/content";
 import PageBuilder from "@webfactory/core/page-builder/PageBuilder.astro";
 import Button from "@webfactory/ui/primitives/Button";
+import { Carousel, CarouselItem } from "@webfactory/ui/starwind/carousel";
 import Hero from "@webfactory/sections/hero/HeroFullscreen";
 import SiteLayout from "@webfactory/template-stardrive/layouts/SiteLayout";
 ```
@@ -31,6 +32,7 @@ CSS:
 
 ```css
 @import "@webfactory/tokens";
+@import "@webfactory/ui/starwind/styles";
 @import "@webfactory/template-stardrive/styles";
 @import "@webfactory/theme-default/styles";
 ```

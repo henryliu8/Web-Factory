@@ -40,6 +40,26 @@
     var(--wf-font-heading);
 }
 
+.demo-starwind-showcase {
+  margin-top: var(--wf-space-6);
+  padding-inline: var(--wf-space-8);
+}
+
+.demo-starwind-showcase h2 {
+  font: 650 var(--wf-font-size-2xl) / var(--wf-line-height-snug)
+    var(--wf-font-heading);
+  margin: 0 0 var(--wf-space-6);
+}
+
+.demo-carousel-card {
+  align-items: center;
+  display: flex;
+  font-weight: 650;
+  justify-content: center;
+  min-height: 11rem;
+  text-align: center;
+}
+
 .demo-prose h2,
 .demo-content-grid h2,
 .demo-project-list h2 {
@@ -101,5 +121,9 @@
   .demo-content-grid article,
   .demo-project-list article {
     padding: var(--wf-space-6);
+  }
+
+  .demo-starwind-showcase {
+    padding-inline: 0;
   }
 }

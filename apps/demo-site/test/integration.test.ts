@@ -53,11 +53,12 @@ describe("demo-site integration architecture", () => {
 
   it("keeps the runtime CSS imports in Shared → Template → Theme → Project order", () => {
     const source = readFileSync(resolve(root, "src/styles/global.css"), "utf8");
-    const imports = [...source.matchAll(/@import '([^']+)'/g)].map(
+    const imports = [...source.matchAll(/@import ["']([^"']+)["']/g)].map(
       (match) => match[1],
     );
     expect(imports).toEqual([
       "@webfactory/tokens",
+      "@webfactory/ui/starwind/styles",
       "virtual:webfactory-template-style",
       "virtual:webfactory-theme-style",
       "./project.css",

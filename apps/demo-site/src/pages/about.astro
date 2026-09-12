@@ -4,10 +4,23 @@ import StandardPageTemplate from "@webfactory/template-stardrive/page-templates/
 import Badge from "@webfactory/ui/primitives/Badge";
 import Card from "@webfactory/ui/primitives/Card";
 import Callout from "@webfactory/ui/primitives/Callout";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@webfactory/ui/starwind/carousel";
+import {
+  Card as StarwindCard,
+  CardContent as StarwindCardContent,
+} from "@webfactory/ui/starwind/card";
 import { site } from "../config/site";
 
 const entry = await getEntry("pages", "about");
 if (!entry) throw new Error("Missing content entry: about");
+
+const carouselItems = ["Astro-native", "Theme-ready", "Accessible"];
 ---
 
 <StandardPageTemplate
@@ -59,5 +72,24 @@ if (!entry) throw new Error("Missing content entry: about");
       Shared components contain no project branding and can be restyled by Theme
       or Project token overrides.
     </Callout>
+
+    <section class="demo-starwind-showcase" aria-labelledby="starwind-heading">
+      <h2 id="starwind-heading">Starwind component layer</h2>
+      <Carousel opts={{ align: "start" }}>
+        <CarouselContent>
+          {carouselItems.map((item) => (
+            <CarouselItem class="md:basis-1/2">
+              <StarwindCard>
+                <StarwindCardContent class="demo-carousel-card">
+                  {item}
+                </StarwindCardContent>
+              </StarwindCard>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </section>
   </div>
 </StandardPageTemplate>

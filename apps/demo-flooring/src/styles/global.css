@@ -1,4 +1,5 @@
 @import "@webfactory/tokens";
+@import "@webfactory/ui/starwind/styles";
 @import "virtual:webfactory-template-style";
 @import "virtual:webfactory-theme-style";
 @import "./project.css";
