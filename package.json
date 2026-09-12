@@ -14,7 +14,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write .",
     "format:check": "prettier --check ",
-    "test:integration": "pnpm --filter @webfactory/app-demo-site test:integration && pnpm wf check demo-site && pnpm wf build demo-site && pnpm exec tsx tools/integration/src/verifyDemoBuild.ts"
+    "test:integration": "pnpm --filter @webfactory/seo test && pnpm --filter @webfactory/utilities test && pnpm --filter @webfactory/app-demo-site test:integration && pnpm wf check demo-site && pnpm wf build demo-site && pnpm exec tsx tools/integration/src/verifyDemoBuild.ts"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

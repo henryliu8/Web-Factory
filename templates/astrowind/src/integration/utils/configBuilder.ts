@@ -28,7 +28,7 @@ export interface MetaDataConfig extends Omit<MetaData, 'title'> {
 }
 export interface I18NConfig {
   language: string;
-  textDirection: string;
+  textDirection: 'ltr' | 'rtl' | 'auto';
   dateFormatter?: Intl.DateTimeFormat;
 }
 export interface AppBlogConfig {

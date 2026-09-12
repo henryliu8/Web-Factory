@@ -7,4 +7,10 @@ describe("serializeJsonLd", () => {
       serializeJsonLd({ name: "</script><script>alert(1)</script>" }),
     ).toBe('{"name":"\\u003c/script>\\u003cscript>alert(1)\\u003c/script>"}');
   });
+
+  it("rejects values that JSON cannot serialize", () => {
+    expect(() => serializeJsonLd(undefined)).toThrow(
+      "JSON-LD must be JSON-serializable.",
+    );
+  });
 });

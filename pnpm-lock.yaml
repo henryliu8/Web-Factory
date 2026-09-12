@@ -263,7 +263,11 @@ importers:
         specifier: ^5.13.5
         version: 5.18.2(@types/node@24.13.4)(jiti@2.7.0)(lightningcss@1.33.0)(rollup@4.63.1)(tsx@4.23.13)(typescript@5.9.3)(yaml@2.9.0)
 
-  packages/utilities: {}
+  packages/utilities:
+    devDependencies:
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.7(@types/debug@4.1.13)(@types/node@24.13.4)(jiti@2.7.0)(lightningcss@1.33.0)(tsx@4.23.13)(yaml@2.9.0)
 
   templates/astrowind:
     dependencies:
@@ -279,6 +283,9 @@ importers:
       '@webfactory/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
+      '@webfactory/utilities':
+        specifier: workspace:*
+        version: link:../../packages/utilities
       astro-icon:
         specifier: ^1.1.5
         version: 1.2.0

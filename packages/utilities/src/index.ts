@@ -1,1 +1,1 @@
-export const utilitiesPackage = "@webfactory/utilities" as const;
+export { joinUrlPath, normalizePathTrailingSlash, trimSlashes } from "./url";

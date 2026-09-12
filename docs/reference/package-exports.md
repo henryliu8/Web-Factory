@@ -4,18 +4,21 @@
 
 ## Current Packages
 
-| Package                                   | Current public capabilities                                                              |
-| ----------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `@webfactory/core`                        | Configuration, content schemas, registries, PageBuilder, style runtime, and shared types |
-| `@webfactory/tokens`                      | Default CSS tokens and `base.css`                                                        |
-| `@webfactory/ui`                          | Web Factory primitives plus 55 Starwind component families under `starwind/*`            |
-| `@webfactory/sections`                    | Header, HeroFullscreen, FeatureGrid, and CTA                                             |
-| `@webfactory/template-stardrive`          | Layouts, page templates, template styles, and types                                      |
-| `@webfactory/theme-default`               | Default theme configuration and styles                                                   |
-| `@webfactory/theme-luxury`                | Luxury theme configuration and styles                                                    |
-| `@webfactory/cli`                         | The `webfactory` command-line program                                                    |
-| `@webfactory/animations`                  | Reduced-motion policy plus isolated Motion and GSAP entry points                         |
-| `@webfactory/layouts/forms/seo/utilities` | Minimal package shells at present; they should not be presented as complete libraries    |
+| Package                          | Current public capabilities                                                              |
+| -------------------------------- | ---------------------------------------------------------------------------------------- |
+| `@webfactory/core`               | Configuration, content schemas, registries, PageBuilder, style runtime, and shared types |
+| `@webfactory/tokens`             | Default CSS tokens and `base.css`                                                        |
+| `@webfactory/ui`                 | Web Factory primitives plus 55 Starwind component families under `starwind/*`            |
+| `@webfactory/sections`           | Header, HeroFullscreen, FeatureGrid, and CTA                                             |
+| `@webfactory/template-stardrive` | Layouts, page templates, template styles, and types                                      |
+| `@webfactory/theme-default`      | Default theme configuration and styles                                                   |
+| `@webfactory/theme-luxury`       | Luxury theme configuration and styles                                                    |
+| `@webfactory/cli`                | The `webfactory` command-line program                                                    |
+| `@webfactory/animations`         | Reduced-motion policy plus isolated Motion and GSAP entry points                         |
+| `@webfactory/layouts`            | Shared document shell with accessible skip navigation                                    |
+| `@webfactory/seo`                | Metadata, site verification, sitemap links, and safe JSON-LD                             |
+| `@webfactory/utilities`          | Tested URL path composition and trailing-slash utilities                                 |
+| `@webfactory/forms`              | Minimal package shell at present                                                         |
 
 ## Recommended Imports
 
@@ -30,6 +33,10 @@ import SiteLayout from "@webfactory/template-stardrive/layouts/SiteLayout";
 import { prefersReducedMotion } from "@webfactory/animations";
 import { animate } from "@webfactory/animations/motion";
 import { gsap } from "@webfactory/animations/gsap";
+import DocumentLayout from "@webfactory/layouts/DocumentLayout.astro";
+import SeoHead from "@webfactory/seo/SeoHead.astro";
+import StructuredData from "@webfactory/seo/StructuredData.astro";
+import { joinUrlPath } from "@webfactory/utilities";
 ```
 
 CSS:

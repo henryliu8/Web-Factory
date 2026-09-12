@@ -22,6 +22,9 @@ for (const marker of [
   "wf-section-header",
   "wf-feature-grid",
   "wf-cta",
+  "Skip to main content",
+  'id="main-content"',
+  'name="description"',
 ]) {
   if (!home.includes(marker))
     throw new Error(`Missing rendered integration marker: ${marker}`);
@@ -54,5 +57,5 @@ if (!css.includes(".flex-wrap"))
   throw new Error("Tailwind utilities from monorepo sources are missing.");
 
 console.log(
-  "Verified demo routes, registry output, navigation, selected theme, project override, and Tailwind CSS.",
+  "Verified demo routes, shared layout and SEO output, registry output, navigation, selected theme, project override, and Tailwind CSS.",
 );

@@ -5,3 +5,11 @@ This product includes software developed as part of the Web Factory project.
 
 Original project:
 https://github.com/henryliu8/Web-Factory.git
+
+Portions of the shared layout and SEO structure are adapted from AstroWind,
+copyright its contributors, under the MIT License. The retained license is at
+templates/astrowind/LICENSE.md.
+
+The shared document layout incorporates accessibility patterns from Accessible
+Astro Starter, copyright (c) 2021-2025 Incluud / Mark Teekman, under the MIT
+License. The retained license is at packages/layouts/LICENSE.incluud.md.

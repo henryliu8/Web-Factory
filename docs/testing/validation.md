@@ -17,6 +17,8 @@ Turbo schedules `pnpm check` and `pnpm build` across workspaces that define the 
 | Change                                                 | Minimum recommended validation                                              |
 | ------------------------------------------------------ | --------------------------------------------------------------------------- |
 | Core configuration, registry, schema, or style runtime | Core check/test plus integration gate                                       |
+| Shared layout or SEO                                   | Package check/test plus both template checks and consumer builds            |
+| Shared utility                                         | Package check/test plus checks for every migrated consumer                  |
 | UI component                                           | UI check plus direct consumer checks                                        |
 | Section                                                | Sections check, content/schema tests, and application check                 |
 | Template                                               | Template check plus a build of one consuming application                    |
