@@ -1,14 +1,17 @@
 ---
-import merge from 'lodash.merge';
-import { SEO } from 'astro-seo';
+import merge from "lodash.merge";
+import SeoHead from "@webfactory/seo/SeoHead.astro";
 
-import type { SEOProps } from 'astro-seo';
+import type { SEOProps } from "@webfactory/seo";
 
-import { SITE, METADATA, I18N } from 'astrowind:config';
-import type { MetaData, MetaDataOpenGraph } from '@webfactory/template-astrowind/types';
-import { getCanonical } from '@webfactory/template-astrowind/utils/permalinks';
+import { SITE, METADATA, I18N } from "astrowind:config";
+import type {
+  MetaData,
+  MetaDataOpenGraph,
+} from "@webfactory/template-astrowind/types";
+import { getCanonical } from "@webfactory/template-astrowind/utils/permalinks";
 
-import { adaptOpenGraphImages } from '@webfactory/template-astrowind/utils/images';
+import { adaptOpenGraphImages } from "@webfactory/template-astrowind/utils/images";
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
@@ -29,27 +32,29 @@ const mergedOg: MetaDataOpenGraph = merge(
     url: canonical,
     siteName: SITE?.name,
     images: [],
-    locale: I18N?.language || 'en',
-    type: 'website',
+    locale: I18N?.language || "en",
+    type: "website",
   },
   METADATA?.openGraph,
-  { url: canonical, ...openGraph }
+  { url: canonical, ...openGraph },
 );
 
 const adaptedOg = await adaptOpenGraphImages(mergedOg, Astro.site);
 
 const firstImage = adaptedOg?.images?.[0];
 
-function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefined {
+function buildOpenGraph(
+  og: MetaDataOpenGraph,
+): SEOProps["openGraph"] | undefined {
   if (!og) return undefined;
 
-  const imageUrl = firstImage?.url || '';
+  const imageUrl = firstImage?.url || "";
   if (!imageUrl) return undefined;
 
   return {
     basic: {
-      title: title || METADATA?.title?.default || '',
-      type: og.type || 'website',
+      title: title || METADATA?.title?.default || "",
+      type: og.type || "website",
       image: imageUrl,
       url: og.url,
     },
@@ -62,46 +67,48 @@ function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefine
       url: imageUrl,
       width: firstImage?.width,
       height: firstImage?.height,
-      alt: title || METADATA?.title?.default || '',
+      alt: title || METADATA?.title?.default || "",
     },
-    ...(og.type === 'article' && og.article ? { article: og.article } : {}),
+    ...(og.type === "article" && og.article ? { article: og.article } : {}),
   };
 }
 
 const mergedTwitter = merge(
   {
-    card: (adaptedOg?.images?.length ? 'summary_large_image' : 'summary') as 'summary_large_image' | 'summary',
+    card: (adaptedOg?.images?.length ? "summary_large_image" : "summary") as
+      "summary_large_image" | "summary",
   },
   METADATA?.twitter
     ? {
-        card: METADATA.twitter.cardType as 'summary_large_image' | 'summary' | undefined,
+        card: METADATA.twitter.cardType as
+          "summary_large_image" | "summary" | undefined,
         site: METADATA.twitter.site,
         creator: METADATA.twitter.handle,
       }
     : {},
   twitter
     ? {
-        card: twitter.cardType as 'summary_large_image' | 'summary' | undefined,
+        card: twitter.cardType as "summary_large_image" | "summary" | undefined,
         site: twitter.site,
         creator: twitter.handle,
       }
-    : {}
+    : {},
 );
 
 const seoProps: SEOProps = {
-  title: title || METADATA?.title?.default || '',
-  titleTemplate: ignoreTitleTemplate ? '%s' : METADATA?.title?.template || '%s',
+  title: title || METADATA?.title?.default || "",
+  titleTemplate: ignoreTitleTemplate ? "%s" : METADATA?.title?.template || "%s",
   canonical: canonical,
   noindex:
-    typeof robots?.index !== 'undefined'
+    typeof robots?.index !== "undefined"
       ? !robots.index
-      : typeof METADATA?.robots?.index !== 'undefined'
+      : typeof METADATA?.robots?.index !== "undefined"
         ? !METADATA.robots.index
         : true,
   nofollow:
-    typeof robots?.follow !== 'undefined'
+    typeof robots?.follow !== "undefined"
       ? !robots.follow
-      : typeof METADATA?.robots?.follow !== 'undefined'
+      : typeof METADATA?.robots?.follow !== "undefined"
         ? !METADATA.robots.follow
         : true,
   description: description || METADATA?.description,
@@ -111,4 +118,4 @@ const seoProps: SEOProps = {
 };
 ---
 
-<SEO {...seoProps} />
+<SeoHead {...seoProps} />

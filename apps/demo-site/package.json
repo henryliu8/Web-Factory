@@ -9,6 +9,7 @@
     "test:integration": "vitest run"
   },
   "dependencies": {
+    "@webfactory/animations": "workspace:*",
     "@webfactory/core": "workspace:*",
     "@webfactory/sections": "workspace:*",
     "@webfactory/template-stardrive": "workspace:*",

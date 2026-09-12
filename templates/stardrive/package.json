@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@webfactory/core": "workspace:*",
+    "@webfactory/layouts": "workspace:*",
+    "@webfactory/seo": "workspace:*",
     "@webfactory/sections": "workspace:*",
     "@webfactory/tokens": "workspace:*"
   },

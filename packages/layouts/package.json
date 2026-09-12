@@ -4,6 +4,17 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./DocumentLayout.astro": "./src/DocumentLayout.astro"
+  },
+  "scripts": {
+    "check": "astro check"
+  },
+  "peerDependencies": {
+    "astro": ">=5.0.0 <8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "astro": "^5.18.2"
   }
 }

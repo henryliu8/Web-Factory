@@ -4,17 +4,18 @@
 
 ## Current Packages
 
-| Package                                              | Current public capabilities                                                              |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `@webfactory/core`                                   | Configuration, content schemas, registries, PageBuilder, style runtime, and shared types |
-| `@webfactory/tokens`                                 | Default CSS tokens and `base.css`                                                        |
-| `@webfactory/ui`                                     | Web Factory primitives plus 55 Starwind component families under `starwind/*`            |
-| `@webfactory/sections`                               | Header, HeroFullscreen, FeatureGrid, and CTA                                             |
-| `@webfactory/template-stardrive`                     | Layouts, page templates, template styles, and types                                      |
-| `@webfactory/theme-default`                          | Default theme configuration and styles                                                   |
-| `@webfactory/theme-luxury`                           | Luxury theme configuration and styles                                                    |
-| `@webfactory/cli`                                    | The `webfactory` command-line program                                                    |
-| `@webfactory/layouts/forms/seo/animations/utilities` | Minimal package shells at present; they should not be presented as complete libraries    |
+| Package                                   | Current public capabilities                                                              |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `@webfactory/core`                        | Configuration, content schemas, registries, PageBuilder, style runtime, and shared types |
+| `@webfactory/tokens`                      | Default CSS tokens and `base.css`                                                        |
+| `@webfactory/ui`                          | Web Factory primitives plus 55 Starwind component families under `starwind/*`            |
+| `@webfactory/sections`                    | Header, HeroFullscreen, FeatureGrid, and CTA                                             |
+| `@webfactory/template-stardrive`          | Layouts, page templates, template styles, and types                                      |
+| `@webfactory/theme-default`               | Default theme configuration and styles                                                   |
+| `@webfactory/theme-luxury`                | Luxury theme configuration and styles                                                    |
+| `@webfactory/cli`                         | The `webfactory` command-line program                                                    |
+| `@webfactory/animations`                  | Reduced-motion policy plus isolated Motion and GSAP entry points                         |
+| `@webfactory/layouts/forms/seo/utilities` | Minimal package shells at present; they should not be presented as complete libraries    |
 
 ## Recommended Imports
 
@@ -26,6 +27,9 @@ import Button from "@webfactory/ui/primitives/Button";
 import { Carousel, CarouselItem } from "@webfactory/ui/starwind/carousel";
 import Hero from "@webfactory/sections/hero/HeroFullscreen";
 import SiteLayout from "@webfactory/template-stardrive/layouts/SiteLayout";
+import { prefersReducedMotion } from "@webfactory/animations";
+import { animate } from "@webfactory/animations/motion";
+import { gsap } from "@webfactory/animations/gsap";
 ```
 
 CSS:

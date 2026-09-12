@@ -1,0 +1,10 @@
+---
+import { SEO } from "astro-seo";
+import type { SEOProps } from "astro-seo";
+
+export interface Props extends SEOProps {}
+
+const props = Astro.props;
+---
+
+<SEO {...props} />

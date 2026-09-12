@@ -22,9 +22,10 @@
   },
   "dependencies": {
     "@webfactory/core": "workspace:*",
+    "@webfactory/layouts": "workspace:*",
+    "@webfactory/seo": "workspace:*",
     "@webfactory/tokens": "workspace:*",
     "astro-icon": "^1.1.5",
-    "astro-seo": "^1.2.0",
     "js-yaml": "^4.1.1",
     "limax": "4.2.3",
     "lodash.merge": "^4.6.2",

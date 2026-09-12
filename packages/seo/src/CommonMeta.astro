@@ -1,0 +1,11 @@
+---
+export interface Props {
+  sitemapHref?: string;
+}
+
+const { sitemapHref } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{sitemapHref && <link rel="sitemap" href={sitemapHref} />}

@@ -15,6 +15,7 @@ import {
   Card as StarwindCard,
   CardContent as StarwindCardContent,
 } from "@webfactory/ui/starwind/card";
+import AnimationDemo from "../components/AnimationDemo.astro";
 import { site } from "../config/site";
 
 const entry = await getEntry("pages", "about");
@@ -92,4 +93,6 @@ const carouselItems = ["Astro-native", "Theme-ready", "Accessible"];
       </Carousel>
     </section>
   </div>
+
+  <AnimationDemo />
 </StandardPageTemplate>

@@ -4,6 +4,25 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./CommonMeta.astro": "./src/CommonMeta.astro",
+    "./SeoHead.astro": "./src/SeoHead.astro",
+    "./SiteVerification.astro": "./src/SiteVerification.astro",
+    "./StructuredData.astro": "./src/StructuredData.astro"
+  },
+  "scripts": {
+    "check": "astro check",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "astro-seo": "^1.2.0"
+  },
+  "peerDependencies": {
+    "astro": ">=5.16.0 <8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "astro": "^5.18.2",
+    "vitest": "^3.2.4"
   }
 }

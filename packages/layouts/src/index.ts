@@ -1,1 +1,1 @@
-export const layoutsPackage = "@webfactory/layouts" as const;
+export type { Props as DocumentLayoutProps } from "./DocumentLayout.astro";

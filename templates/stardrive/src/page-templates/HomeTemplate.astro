@@ -1,29 +1,53 @@
 ---
-import { CTA, FeatureGrid, Header, HeroFullscreen } from '@webfactory/sections';
-import { resolveSection } from '@webfactory/core';
-import SiteLayout from '../layouts/SiteLayout.astro';
-import type { HomeTemplateProps } from '../types';
+import { CTA, FeatureGrid, Header, HeroFullscreen } from "@webfactory/sections";
+import { resolveSection } from "@webfactory/core";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import type { HomeTemplateProps } from "../types";
 
 interface Props extends HomeTemplateProps {}
 
-const { metadata, header, hero, features, cta, sectionRegistry, class: className = '' } = Astro.props;
-const HeaderSection = (sectionRegistry
-  ? resolveSection(sectionRegistry, { type: 'header/Header' })
-  : Header) as typeof Header;
-const HeroSection = (sectionRegistry
-  ? resolveSection(sectionRegistry, { type: 'hero/HeroFullscreen' })
-  : HeroFullscreen) as typeof HeroFullscreen;
-const FeaturesSection = (sectionRegistry
-  ? resolveSection(sectionRegistry, { type: 'features/FeatureGrid' })
-  : FeatureGrid) as typeof FeatureGrid;
-const CTASection = (sectionRegistry
-  ? resolveSection(sectionRegistry, { type: 'cta/CTA' })
-  : CTA) as typeof CTA;
+const {
+  metadata,
+  header,
+  hero,
+  features,
+  cta,
+  sectionRegistry,
+  class: className = "",
+} = Astro.props;
+const HeaderSection = (
+  sectionRegistry
+    ? resolveSection(sectionRegistry, { type: "header/Header" })
+    : Header
+) as typeof Header;
+const HeroSection = (
+  sectionRegistry
+    ? resolveSection(sectionRegistry, { type: "hero/HeroFullscreen" })
+    : HeroFullscreen
+) as typeof HeroFullscreen;
+const FeaturesSection = (
+  sectionRegistry
+    ? resolveSection(sectionRegistry, { type: "features/FeatureGrid" })
+    : FeatureGrid
+) as typeof FeatureGrid;
+const CTASection = (
+  sectionRegistry ? resolveSection(sectionRegistry, { type: "cta/CTA" }) : CTA
+) as typeof CTA;
 ---
 
-<SiteLayout title={metadata.title} description={metadata.description} lang={metadata.lang} bodyClass={className}>
-  <HeaderSection brand={header.brand} logo={header.logo} items={header.items} cta={header.cta} />
-  <main>
+<SiteLayout
+  title={metadata.title}
+  description={metadata.description}
+  lang={metadata.lang}
+  bodyClass={className}
+>
+  <HeaderSection
+    brand={header.brand}
+    logo={header.logo}
+    items={header.items}
+    cta={header.cta}
+  />
+  <main id="main-content">
     <slot name="beforeHero" />
     <HeroSection
       eyebrow={hero.eyebrow}
@@ -35,7 +59,13 @@ const CTASection = (sectionRegistry
       align={hero.align}
     />
     <slot name="afterHero" />
-    {features && <FeaturesSection title={features.title} intro={features.intro} items={features.items} />}
+    {features && (
+      <FeaturesSection
+        title={features.title}
+        intro={features.intro}
+        items={features.items}
+      />
+    )}
     <slot name="beforeCTA" />
     {cta && (
       <CTASection

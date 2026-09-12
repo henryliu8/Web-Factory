@@ -4,6 +4,16 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./gsap": "./src/gsap.ts",
+    "./motion": "./src/motion.ts",
+    "./motion/mini": "./src/motion-mini.ts"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "gsap": "3.15.0",
+    "motion": "13.2.0"
   }
 }

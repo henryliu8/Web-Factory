@@ -1,0 +1,53 @@
+---
+export interface Props {
+  lang?: string;
+  dir?: "ltr" | "rtl" | "auto";
+  htmlClass?: string;
+  bodyClass?: string;
+  skipTargetId?: string;
+  skipLinkLabel?: string;
+}
+
+const {
+  lang = "en",
+  dir,
+  htmlClass = "",
+  bodyClass = "",
+  skipTargetId,
+  skipLinkLabel = "Skip to main content",
+} = Astro.props;
+---
+
+<!doctype html>
+<html {lang} {dir} class={htmlClass}>
+  <head>
+    <slot name="head" />
+  </head>
+  <body class={bodyClass}>
+    {skipTargetId && (
+      <a class="wf-skip-link" href={`#${skipTargetId}`}>
+        {skipLinkLabel}
+      </a>
+    )}
+    <slot />
+  </body>
+</html>
+
+<style>
+  .wf-skip-link {
+    background: var(--wf-color-background);
+    color: var(--wf-color-text);
+    inset-block-start: var(--wf-space-2, 0.5rem);
+    inset-inline-start: var(--wf-space-2, 0.5rem);
+    padding: var(--wf-space-3, 0.75rem) var(--wf-space-4, 1rem);
+    position: fixed;
+    transform: translateY(calc(-100% - var(--wf-space-4, 1rem)));
+    z-index: 9999;
+  }
+
+  .wf-skip-link:focus {
+    outline: 3px solid var(--wf-color-focus, currentColor);
+    outline-offset: 2px;
+    transform: translateY(0);
+  }
+</style>

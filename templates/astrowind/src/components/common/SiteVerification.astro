@@ -1,5 +1,6 @@
 ---
-import { SITE } from 'astrowind:config';
+import { SITE } from "astrowind:config";
+import SiteVerification from "@webfactory/seo/SiteVerification.astro";
 ---
 
-{SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />}
+<SiteVerification google={SITE.googleSiteVerificationId || undefined} />

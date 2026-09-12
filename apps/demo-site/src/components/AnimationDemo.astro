@@ -1,0 +1,167 @@
+<section class="animation-demo" aria-labelledby="animation-demo-heading">
+  <header>
+    <p class="animation-demo__eyebrow">Shared runtime</p>
+    <h2 id="animation-demo-heading">Motion and GSAP</h2>
+    <p>Two isolated entry points, one reduced-motion policy.</p>
+  </header>
+
+  <div class="animation-demo__grid">
+    <article data-animation-demo="motion">
+      <div class="animation-demo__stage">
+        <span data-animation-target>Motion</span>
+      </div>
+      <button type="button" data-animation-run>
+        Run Motion
+      </button>
+      <output aria-live="polite">Ready</output>
+    </article>
+
+    <article data-animation-demo="gsap">
+      <div class="animation-demo__stage">
+        <span data-animation-target>GSAP</span>
+      </div>
+      <button type="button" data-animation-run>
+        Run GSAP
+      </button>
+      <output aria-live="polite">Ready</output>
+    </article>
+  </div>
+</section>
+
+<script>
+  import { prefersReducedMotion } from "@webfactory/animations";
+  import { gsap } from "@webfactory/animations/gsap";
+  import { animate } from "@webfactory/animations/motion";
+
+  document
+    .querySelectorAll<HTMLElement>("[data-animation-demo]")
+    .forEach((demo) => {
+      const button = demo.querySelector<HTMLButtonElement>(
+        "[data-animation-run]",
+      );
+      const target = demo.querySelector<HTMLElement>("[data-animation-target]");
+      const status = demo.querySelector<HTMLOutputElement>("output");
+      if (!button || !target || !status) return;
+
+      button.addEventListener("click", async () => {
+        const duration = prefersReducedMotion() ? 0 : 0.7;
+        status.value = "Running";
+
+        if (demo.dataset.animationDemo === "motion") {
+          await animate(
+            target,
+            { x: [0, 48, 0], rotate: [0, 4, 0] },
+            { duration, ease: "easeInOut" },
+          );
+        } else {
+          await gsap
+            .timeline()
+            .to(target, { duration: duration / 2, rotation: -4, x: 48 })
+            .to(target, { duration: duration / 2, rotation: 0, x: 0 });
+        }
+
+        status.value = "Complete";
+      });
+    });
+</script>
+
+<style>
+  .animation-demo {
+    display: grid;
+    gap: var(--wf-space-6);
+    margin-top: var(--wf-space-12);
+    max-width: 52rem;
+  }
+
+  header > * {
+    margin: 0;
+  }
+
+  header > * + * {
+    margin-top: var(--wf-space-2);
+  }
+
+  h2 {
+    color: var(--wf-color-text);
+    font: 650 var(--wf-font-size-2xl) / var(--wf-line-height-snug)
+      var(--wf-font-heading);
+  }
+
+  header > p:last-child,
+  output {
+    color: var(--wf-color-text-muted);
+  }
+
+  .animation-demo__eyebrow {
+    color: var(--wf-color-primary);
+    font-size: var(--wf-font-size-sm);
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .animation-demo__grid {
+    display: grid;
+    gap: var(--wf-space-4);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  article {
+    border: 1px solid var(--wf-color-border);
+    border-radius: var(--wf-radius-lg);
+    display: grid;
+    gap: var(--wf-space-4);
+    padding: var(--wf-space-6);
+  }
+
+  .animation-demo__stage {
+    align-items: center;
+    background: var(--wf-color-surface-alt);
+    border-radius: var(--wf-radius-md);
+    display: flex;
+    min-height: 8rem;
+    overflow: hidden;
+    padding: var(--wf-space-4);
+  }
+
+  [data-animation-target] {
+    background: var(--wf-color-primary);
+    border-radius: 999px;
+    color: var(--wf-color-on-primary);
+    display: inline-grid;
+    font-weight: 650;
+    min-height: 3rem;
+    min-width: 5.5rem;
+    place-items: center;
+    will-change: transform;
+  }
+
+  button {
+    background: var(--wf-color-primary);
+    border: 0;
+    border-radius: var(--wf-radius-md);
+    color: var(--wf-color-on-primary);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 650;
+    min-height: 2.75rem;
+    padding-inline: var(--wf-space-4);
+  }
+
+  button:focus-visible {
+    outline: 3px solid var(--wf-color-focus);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 40rem) {
+    .animation-demo__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-animation-target] {
+      will-change: auto;
+    }
+  }
+</style>

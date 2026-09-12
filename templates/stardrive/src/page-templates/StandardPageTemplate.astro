@@ -1,16 +1,33 @@
 ---
-import { CTA, Header } from '@webfactory/sections';
-import SiteLayout from '../layouts/SiteLayout.astro';
-import type { StandardPageTemplateProps } from '../types';
+import { CTA, Header } from "@webfactory/sections";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import type { StandardPageTemplateProps } from "../types";
 
 interface Props extends StandardPageTemplateProps {}
 
-const { metadata, header, heading, intro, cta, class: className = '' } = Astro.props;
+const {
+  metadata,
+  header,
+  heading,
+  intro,
+  cta,
+  class: className = "",
+} = Astro.props;
 ---
 
-<SiteLayout title={metadata.title} description={metadata.description} lang={metadata.lang} bodyClass={className}>
-  <Header brand={header.brand} logo={header.logo} items={header.items} cta={header.cta} />
-  <main>
+<SiteLayout
+  title={metadata.title}
+  description={metadata.description}
+  lang={metadata.lang}
+  bodyClass={className}
+>
+  <Header
+    brand={header.brand}
+    logo={header.logo}
+    items={header.items}
+    cta={header.cta}
+  />
+  <main id="main-content">
     <header class="wf-standard-page__intro">
       <h1>{heading}</h1>
       {intro && <p>{intro}</p>}
@@ -34,12 +51,14 @@ const { metadata, header, heading, intro, cta, class: className = '' } = Astro.p
   .wf-standard-page__intro {
     margin-inline: auto;
     max-width: var(--wf-container-max);
-    padding: var(--wf-section-space) var(--wf-container-padding) calc(var(--wf-section-space) / 2);
+    padding: var(--wf-section-space) var(--wf-container-padding)
+      calc(var(--wf-section-space) / 2);
   }
 
   .wf-standard-page__intro h1 {
     color: var(--wf-color-text);
-    font: 700 clamp(2.5rem, 7vw, 5rem)/var(--wf-line-height-tight) var(--wf-font-heading);
+    font: 700 clamp(2.5rem, 7vw, 5rem)/var(--wf-line-height-tight)
+      var(--wf-font-heading);
     letter-spacing: -0.04em;
     margin: 0;
     max-width: 14ch;
@@ -47,7 +66,8 @@ const { metadata, header, heading, intro, cta, class: className = '' } = Astro.p
 
   .wf-standard-page__intro p {
     color: var(--wf-color-text-muted);
-    font: 400 var(--wf-font-size-lg)/var(--wf-line-height-relaxed) var(--wf-font-body);
+    font: 400 var(--wf-font-size-lg)/var(--wf-line-height-relaxed)
+      var(--wf-font-body);
     margin: var(--wf-space-6) 0 0;
     max-width: 42rem;
   }

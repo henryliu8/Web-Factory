@@ -1,1 +1,2 @@
-export const seoPackage = "@webfactory/seo" as const;
+export { serializeJsonLd } from "./serializeJsonLd";
+export type { SEOProps } from "astro-seo";
