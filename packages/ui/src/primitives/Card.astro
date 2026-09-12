@@ -1,0 +1,96 @@
+---
+import type { CardProps } from "../component-types";
+
+const {
+  as: Element = "article",
+  variant = "bordered",
+  padding = "md",
+  class: className = "",
+} = Astro.props satisfies CardProps;
+---
+
+<Element
+  class:list={[
+    "wf-card",
+    `wf-card--${variant}`,
+    `wf-card--${padding}`,
+    className,
+  ]}
+>
+  {Astro.slots.has("media") && (
+    <div class="wf-card__media">
+      <slot name="media" />
+    </div>
+  )}
+  <div class="wf-card__body">
+    {Astro.slots.has("header") && (
+      <header class="wf-card__header">
+        <slot name="header" />
+      </header>
+    )}
+    <div class="wf-card__content">
+      <slot />
+    </div>
+    {Astro.slots.has("footer") && (
+      <footer class="wf-card__footer">
+        <slot name="footer" />
+      </footer>
+    )}
+  </div>
+</Element>
+
+<style>
+  .wf-card {
+    background: var(--wf-color-background);
+    border-radius: var(--wf-radius-lg);
+    color: var(--wf-color-text);
+    overflow: hidden;
+  }
+
+  .wf-card--bordered {
+    border: 1px solid var(--wf-color-border);
+  }
+  .wf-card--elevated {
+    box-shadow: var(--wf-shadow-md);
+  }
+  .wf-card--subtle {
+    background: var(--wf-color-surface);
+  }
+
+  .wf-card__media {
+    background: var(--wf-color-surface-alt);
+  }
+  .wf-card__media > :global(*) {
+    display: block;
+    width: 100%;
+  }
+
+  .wf-card__body {
+    padding: var(--wf-card-padding);
+  }
+  .wf-card--sm {
+    --wf-card-padding: var(--wf-space-4);
+  }
+  .wf-card--md {
+    --wf-card-padding: var(--wf-space-6);
+  }
+  .wf-card--lg {
+    --wf-card-padding: var(--wf-space-8);
+  }
+
+  .wf-card__header,
+  .wf-card__footer {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wf-space-3);
+    justify-content: space-between;
+  }
+
+  .wf-card__header {
+    margin-bottom: var(--wf-space-4);
+  }
+  .wf-card__footer {
+    margin-top: var(--wf-space-6);
+  }
+</style>

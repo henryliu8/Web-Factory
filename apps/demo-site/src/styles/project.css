@@ -15,6 +15,31 @@
   max-width: 45rem;
 }
 
+.demo-component-showcase {
+  display: grid;
+  gap: var(--wf-space-6);
+  margin-top: var(--wf-space-12);
+  max-width: 52rem;
+}
+
+.demo-component-showcase p,
+.demo-component-heading h2 {
+  margin: 0;
+}
+
+.demo-component-heading,
+.demo-badge-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wf-space-3);
+}
+
+.demo-component-heading h2 {
+  font: 650 var(--wf-font-size-2xl)/var(--wf-line-height-snug)
+    var(--wf-font-heading);
+}
+
 .demo-prose h2,
 .demo-content-grid h2,
 .demo-project-list h2 {

@@ -6,7 +6,10 @@
   "exports": {
     ".": "./src/index.ts",
     "./primitives/Container": "./src/primitives/Container.astro",
-    "./primitives/Button": "./src/primitives/Button.astro"
+    "./primitives/Button": "./src/primitives/Button.astro",
+    "./primitives/Badge": "./src/primitives/Badge.astro",
+    "./primitives/Card": "./src/primitives/Card.astro",
+    "./primitives/Callout": "./src/primitives/Callout.astro"
   },
   "scripts": {
     "check": "astro check"

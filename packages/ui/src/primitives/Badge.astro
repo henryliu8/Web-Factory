@@ -1,0 +1,48 @@
+---
+import type { BadgeProps } from "../component-types";
+
+const {
+  tone = "neutral",
+  size = "md",
+  class: className = "",
+} = Astro.props satisfies BadgeProps;
+---
+
+<span
+  class:list={["wf-badge", `wf-badge--${tone}`, `wf-badge--${size}`, className]}
+>
+  <slot />
+</span>
+
+<style>
+  .wf-badge {
+    align-items: center;
+    background: color-mix(in srgb, var(--wf-badge-color) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--wf-badge-color) 24%, transparent);
+    border-radius: var(--wf-radius-full);
+    color: var(--wf-badge-color);
+    display: inline-flex;
+    font: 650 var(--wf-font-size-xs)/1 var(--wf-font-body);
+    letter-spacing: 0.02em;
+    padding: 0.45rem 0.7rem;
+  }
+
+  .wf-badge--sm {
+    padding: 0.35rem 0.55rem;
+  }
+  .wf-badge--neutral {
+    --wf-badge-color: var(--wf-color-text-muted);
+  }
+  .wf-badge--primary {
+    --wf-badge-color: var(--wf-color-primary);
+  }
+  .wf-badge--success {
+    --wf-badge-color: var(--wf-color-success);
+  }
+  .wf-badge--warning {
+    --wf-badge-color: var(--wf-color-warning);
+  }
+  .wf-badge--error {
+    --wf-badge-color: var(--wf-color-error);
+  }
+</style>

@@ -1,21 +1,63 @@
 ---
-import { getEntry } from 'astro:content';
-import StandardPageTemplate from '@webfactory/template-stardrive/page-templates/StandardPageTemplate';
-import { site } from '../config/site';
+import { getEntry } from "astro:content";
+import StandardPageTemplate from "@webfactory/template-stardrive/page-templates/StandardPageTemplate";
+import Badge from "@webfactory/ui/primitives/Badge";
+import Card from "@webfactory/ui/primitives/Card";
+import Callout from "@webfactory/ui/primitives/Callout";
+import { site } from "../config/site";
 
-const entry = await getEntry('pages', 'about');
-if (!entry) throw new Error('Missing content entry: about');
+const entry = await getEntry("pages", "about");
+if (!entry) throw new Error("Missing content entry: about");
 ---
 
 <StandardPageTemplate
-  metadata={{ title: entry.data.title, description: entry.data.description, lang: site.language }}
+  metadata={{
+    title: entry.data.title,
+    description: entry.data.description,
+    lang: site.language,
+  }}
   header={{ brand: site.name, items: site.navigation }}
   heading={entry.data.title}
   intro="A compact reference application proving the Web Factory layers work together in a real Astro project."
 >
   <div class="demo-prose">
     <h2>Built as an integration reference</h2>
-    <p>This site began with the Stardrive CLI scaffold, then added project content and one focused component override.</p>
-    <p>Shared packages remain reusable, the template owns page structure, the selected theme owns appearance, and this application owns its final content and adjustments.</p>
+    <p>
+      This site began with the Stardrive CLI scaffold, then added project
+      content and one focused component override.
+    </p>
+    <p>
+      Shared packages remain reusable, the template owns page structure, the
+      selected theme owns appearance, and this application owns its final
+      content and adjustments.
+    </p>
+  </div>
+
+  <div class="demo-component-showcase">
+    <Card variant="elevated" padding="lg">
+      <div slot="header" class="demo-component-heading">
+        <h2>Theme-ready UI primitives</h2>
+        <Badge tone="primary">Shared</Badge>
+      </div>
+      <p>
+        Badge, Card, and Callout inherit the active theme through semantic Web
+        Factory tokens.
+      </p>
+      <div
+        slot="footer"
+        class="demo-badge-row"
+        aria-label="Available status styles"
+      >
+        <Badge>Neutral</Badge>
+        <Badge tone="success">Ready</Badge>
+        <Badge tone="warning">Review</Badge>
+        <Badge tone="error">Blocked</Badge>
+      </div>
+    </Card>
+
+    <Callout title="Built for reuse" tone="success">
+      Shared components contain no project branding and can be restyled by Theme
+      or Project token overrides.
+    </Callout>
   </div>
 </StandardPageTemplate>

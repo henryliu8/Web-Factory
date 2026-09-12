@@ -1,0 +1,71 @@
+---
+import type { CalloutProps } from "../component-types";
+
+const {
+  title,
+  tone = "info",
+  class: className = "",
+} = Astro.props satisfies CalloutProps;
+---
+
+<aside class:list={["wf-callout", `wf-callout--${tone}`, className]}>
+  <span class="wf-callout__marker" aria-hidden="true"></span>
+  <div>
+    {title && <p class="wf-callout__title">{title}</p>}
+    <div class="wf-callout__content">
+      <slot />
+    </div>
+  </div>
+</aside>
+
+<style>
+  .wf-callout {
+    --wf-callout-color: var(--wf-color-primary);
+    background: color-mix(
+      in srgb,
+      var(--wf-callout-color) 7%,
+      var(--wf-color-background)
+    );
+    border: 1px solid
+      color-mix(in srgb, var(--wf-callout-color) 22%, transparent);
+    border-radius: var(--wf-radius-lg);
+    color: var(--wf-color-text);
+    display: grid;
+    font: 400 var(--wf-font-size-sm)/var(--wf-line-height-relaxed)
+      var(--wf-font-body);
+    gap: var(--wf-space-3);
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: var(--wf-space-4);
+  }
+
+  .wf-callout--success {
+    --wf-callout-color: var(--wf-color-success);
+  }
+  .wf-callout--warning {
+    --wf-callout-color: var(--wf-color-warning);
+  }
+  .wf-callout--error {
+    --wf-callout-color: var(--wf-color-error);
+  }
+
+  .wf-callout__marker {
+    background: var(--wf-callout-color);
+    border-radius: var(--wf-radius-full);
+    height: 0.625rem;
+    margin-top: 0.4rem;
+    width: 0.625rem;
+  }
+
+  .wf-callout__title {
+    color: var(--wf-callout-color);
+    font-weight: 700;
+    margin: 0 0 var(--wf-space-1);
+  }
+
+  .wf-callout__content > :global(:first-child) {
+    margin-top: 0;
+  }
+  .wf-callout__content > :global(:last-child) {
+    margin-bottom: 0;
+  }
+</style>

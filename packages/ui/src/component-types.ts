@@ -12,3 +12,22 @@ export interface ButtonProps {
   type?: "button" | "submit" | "reset";
   class?: string;
 }
+
+export interface BadgeProps {
+  tone?: "neutral" | "primary" | "success" | "warning" | "error";
+  size?: "sm" | "md";
+  class?: string;
+}
+
+export interface CardProps {
+  as?: "article" | "div" | "section" | "li";
+  variant?: "bordered" | "elevated" | "subtle";
+  padding?: "sm" | "md" | "lg";
+  class?: string;
+}
+
+export interface CalloutProps {
+  title?: string;
+  tone?: "info" | "success" | "warning" | "error";
+  class?: string;
+}

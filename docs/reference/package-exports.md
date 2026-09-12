@@ -8,7 +8,7 @@
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `@webfactory/core`                                   | Configuration, content schemas, registries, PageBuilder, style runtime, and shared types |
 | `@webfactory/tokens`                                 | Default CSS tokens and `base.css`                                                        |
-| `@webfactory/ui`                                     | `Button`, `Container`, and component types                                               |
+| `@webfactory/ui`                                     | `Badge`, `Button`, `Callout`, `Card`, `Container`, and component types                   |
 | `@webfactory/sections`                               | Header, HeroFullscreen, FeatureGrid, and CTA                                             |
 | `@webfactory/template-stardrive`                     | Layouts, page templates, template styles, and types                                      |
 | `@webfactory/theme-default`                          | Default theme configuration and styles                                                   |
