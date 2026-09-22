@@ -1,0 +1,129 @@
+{
+  "slug": "joanne",
+  "title": "Joanne | Rising Tree Allied Health Services",
+  "description": "Joanne brings more than six years of Occupational Therapy experience, with a broad clinical background across hospital, school, community and home settings. Her supplied profile highlights practical support for children across different developmental stages.",
+  "card": {
+    "title": "Joanne",
+    "description": "6+ years of Occupational Therapy experience",
+    "href": "/team/joanne/",
+    "role": "Occupational Therapist",
+    "eyebrow": "Meet the team",
+    "linkLabel": "View profile →",
+    "image": {
+      "src": "/assets/team/joanne-profile.jpg",
+      "alt": "Joanne",
+      "position": "35% 14%"
+    }
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "Our team",
+      "title": "Joanne",
+      "intro": "Joanne brings more than six years of Occupational Therapy experience, with a broad clinical background across hospital, school, community and home settings. Her supplied profile highlights practical support for children across different developmental stages.",
+      "variant": "profile",
+      "images": [
+        {
+          "src": "/assets/team/joanne-profile.jpg",
+          "alt": "Joanne",
+          "position": "35% 14%"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Back to team",
+          "href": "/team/",
+          "variant": "ghost"
+        }
+      ],
+      "role": "Occupational Therapist",
+      "strapline": "6+ years of Occupational Therapy experience"
+    },
+    {
+      "type": "clinic/ProfileBio",
+      "eyebrow": "About Joanne",
+      "title": "Her work focuses on helping everyday skills become more achievable, transferable and meaningful across real routines.",
+      "intro": "",
+      "qualificationsLabel": "Education & qualifications",
+      "languagesLabel": "Languages",
+      "personalLabel": "Outside the clinic",
+      "qualifications": [],
+      "languages": [],
+      "personal": ""
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Areas of focus",
+      "title": "Professional interests & support areas.",
+      "intro": "Learn more about the areas of interest and support described in this profile.",
+      "tint": true,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Executive function",
+          "description": "Attention, planning, organisation, task initiation and completion, time management and self-monitoring."
+        },
+        {
+          "title": "Functional application",
+          "description": "Applying learned skills in daily living, learning, work and social settings."
+        },
+        {
+          "title": "Daily living & independence",
+          "description": "Self-care, routines, habit-building, process management and independent task completion."
+        },
+        {
+          "title": "Fine & gross motor skills",
+          "description": "Hand-eye coordination, hand skills, posture, balance, coordination and body planning."
+        },
+        {
+          "title": "Emotional regulation & social communication",
+          "description": "Self-regulation, social interaction, communication and positive relationship-building."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Timeline",
+      "eyebrow": "Experience & approach",
+      "title": "A practical background across real-world settings.",
+      "intro": "Experience and approaches that inform everyday support.",
+      "items": [
+        {
+          "title": "Hospital",
+          "description": "Worked with multidisciplinary teams and participated in inpatient and outpatient care."
+        },
+        {
+          "title": "School",
+          "description": "Provided OT support and practical strategies for students across different age groups."
+        },
+        {
+          "title": "Community & home",
+          "description": "Provided individualised assessment and training to support everyday family life."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Talk with Rising Tree",
+      "title": "Have a question about therapy or referrals?",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Contact us",
+          "href": "/contact/",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ],
+  "order": 0
+}

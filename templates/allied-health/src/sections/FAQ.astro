@@ -1,0 +1,29 @@
+---
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/FAQ"> {}
+const { eyebrow, title, intro, items, tint } = Astro.props;
+---
+
+<section
+  class:list={["section", { "section-tint": tint }]}
+  data-section="clinic/FAQ"
+>
+  <div class="wrap faq-layout">
+    <div>
+      <div class="eyebrow">{eyebrow}</div>
+      <h2>{title}</h2>
+      <p>{intro}</p>
+    </div>
+    <div>
+      {items.map((item, index) => (
+        <details class="faq-item" open={index === 0}>
+          <summary>
+            {item.question}
+            <span aria-hidden="true">+</span>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

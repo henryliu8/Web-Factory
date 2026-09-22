@@ -25,6 +25,8 @@ export type {
 export { resolveSection, resolveSections } from "./page-builder/resolveSection";
 export type {
   PageBuilderProps,
+  RegisteredSectionDefinition,
+  SectionParser,
   ResolvedSection,
   ResolvedSectionRegistry,
   SectionComponent,

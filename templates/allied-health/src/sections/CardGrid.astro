@@ -1,0 +1,86 @@
+---
+import Heading from "../components/Heading.astro";
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/CardGrid"> {}
+const { variant, items, action, tint, ...heading } = Astro.props;
+const gridClass = {
+  services: "service-grid",
+  team: "team-grid",
+  features: "feature-grid",
+  values: "value-grid",
+  process: "steps",
+  pathways: "support-pathways",
+}[variant];
+---
+
+<section
+  class:list={["section", { "section-tint": tint }]}
+  data-section="clinic/CardGrid"
+>
+  <div class="wrap">
+    <Heading {...heading} />
+    <div class={gridClass}>
+      {items.map((item, index) => {
+        const Tag = item.href ? "a" : "div";
+        return (
+          <Tag
+            href={item.href}
+            class:list={[
+              {
+                "service-card": variant === "services",
+                "team-card": variant === "team",
+                "feature-card": variant === "features",
+                "value-card": variant === "values",
+              },
+            ]}
+          >
+            {variant === "services" && (
+              <div class="service-number">{item.number}</div>
+            )}
+            {item.image && (
+              <div class="team-image">
+                <img
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  style={{ objectPosition: item.image.position }}
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                />
+              </div>
+            )}
+            <div class:list={[{ "team-card-copy": variant === "team" }]}>
+              {item.eyebrow && <div class="eyebrow">{item.eyebrow}</div>}
+              {variant === "features" && (
+                <div class="feature-icon" aria-hidden="true">
+                  ✓
+                </div>
+              )}
+              {(variant === "values" || variant === "process") && (
+                <span>{item.number ?? String(index + 1).padStart(2, "0")}</span>
+              )}
+              <h3>{item.title}</h3>
+              {item.role && <p class="team-role">{item.role}</p>}
+              <p>{item.description}</p>
+              {item.linkLabel && (
+                <span class="text-link">{item.linkLabel}</span>
+              )}
+            </div>
+            {variant === "services" && (
+              <span class="card-arrow" aria-hidden="true">
+                →
+              </span>
+            )}
+          </Tag>
+        );
+      })}
+    </div>
+    {action && (
+      <div class="grid-action">
+        <a class={`btn btn-${action.variant}`} href={action.href}>
+          {action.label}
+        </a>
+      </div>
+    )}
+  </div>
+</section>

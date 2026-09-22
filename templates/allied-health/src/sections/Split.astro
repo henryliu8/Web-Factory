@@ -1,0 +1,36 @@
+---
+import Panel from "../components/Panel.astro";
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/Split"> {}
+const { variant, tint, image, panels } = Astro.props;
+const layout = {
+  image: "home-intro",
+  story: "story-grid",
+  approach: "approach-banner",
+  columns: "two-col",
+}[variant];
+---
+
+<section
+  class:list={["section", { "section-tint": tint }]}
+  data-section="clinic/Split"
+>
+  <div class={`wrap ${layout}`}>
+    {image && (
+      <div class="home-intro-photo">
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+          width="900"
+          height="1000"
+        />
+      </div>
+    )}
+    {panels.map((panel) => (
+      <div class:list={[{ "home-intro-card": variant === "image" }]}>
+        <Panel {panel} />
+      </div>
+    ))}
+  </div>
+</section>

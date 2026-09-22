@@ -1,0 +1,16 @@
+---
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/Stats"> {}
+const { items } = Astro.props;
+---
+
+<div class="statbar" data-section="clinic/Stats">
+  <div class="wrap stats">
+    {items.map((item) => (
+      <div class="stat">
+        <b>{item.title}</b>
+        <span>{item.description}</span>
+      </div>
+    ))}
+  </div>
+</div>

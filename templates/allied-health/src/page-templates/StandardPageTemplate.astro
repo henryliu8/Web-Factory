@@ -1,0 +1,85 @@
+---
+import PageBuilder from "@webfactory/core/page-builder/PageBuilder.astro";
+import {
+  createSectionRegistry,
+  createComponentRegistry,
+  requireEntry,
+} from "@webfactory/core";
+import type { ResolvedSectionRegistry } from "@webfactory/core";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import {
+  templateSections,
+  templateComponents,
+  sharedSections,
+} from "../registry";
+import { sectionsSchema, siteSchema } from "../schema";
+import type { ClinicSite } from "../schema";
+interface Props {
+  metadata: { title: string; description?: string; lang?: string };
+  site?: ClinicSite;
+  header?: { brand?: string };
+  heading?: string;
+  sections?: unknown;
+  themeSections?: ResolvedSectionRegistry;
+  projectSections?: ResolvedSectionRegistry;
+  themeComponents?: ResolvedSectionRegistry;
+  projectComponents?: ResolvedSectionRegistry;
+}
+const {
+  metadata,
+  header,
+  heading,
+  sections = [],
+  themeSections = {},
+  projectSections = {},
+  themeComponents = {},
+  projectComponents = {},
+} = Astro.props;
+const site = Astro.props.site ? siteSchema.parse(Astro.props.site) : undefined;
+const sectionRegistry = createSectionRegistry([
+  { name: "shared", entries: sharedSections },
+  { name: "template", entries: templateSections },
+  { name: "theme", entries: themeSections },
+  { name: "project", entries: projectSections },
+]);
+const components = createComponentRegistry([
+  { name: "template", entries: templateComponents },
+  { name: "theme", entries: themeComponents },
+  { name: "project", entries: projectComponents },
+]);
+const Header = requireEntry(
+  components,
+  "navigation/Header",
+) as typeof import("../components/Header.astro").default;
+const Footer = requireEntry(
+  components,
+  "navigation/Footer",
+) as typeof import("../components/Footer.astro").default;
+const parsedSections = sectionsSchema.parse(sections);
+---
+
+<SiteLayout {...metadata}>
+  {site ? (
+    <Header {site} />
+  ) : (
+    <header class="wrap">
+      <a href="/">{header?.brand ?? metadata.title}</a>
+    </header>
+  )}
+  <main id="main-content">
+    {heading && (
+      <section class="page-hero page-hero-simple">
+        <div class="wrap">
+          <h1>{heading}</h1>
+        </div>
+      </section>
+    )}
+    <PageBuilder
+      sections={parsedSections}
+      {sectionRegistry}
+      sectionParser={(input: unknown) => sectionsSchema.parse(input)}
+    />
+    <slot />
+  </main>
+  {site && <Footer {site} />}
+</SiteLayout>

@@ -1,0 +1,172 @@
+{
+  "slug": "speech-pathology",
+  "title": "Speech Pathology | Rising Tree Allied Health Services",
+  "description": "Speech Pathology supports people to communicate more confidently and effectively. Therapy can be tailored around speech sounds, language, fluency, social communication, early communication and participation in everyday conversations.",
+  "card": {
+    "title": "Speech Pathology",
+    "description": "Support communication, language, speech development and social connection.",
+    "href": "/services/speech-pathology/",
+    "number": "02"
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "02 · Service",
+      "title": "Speech Pathology",
+      "intro": "Speech Pathology supports people to communicate more confidently and effectively. Therapy can be tailored around speech sounds, language, fluency, social communication, early communication and participation in everyday conversations.",
+      "variant": "service",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/8653951/pexels-photo-8653951.jpeg?auto=compress&cs=tinysrgb&w=1400",
+          "alt": "Speech Pathology"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Ask a question",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "How we can help",
+      "title": "Support built around everyday participation.",
+      "intro": "Therapy goals are individual. These examples show common areas that may be explored when they are relevant to the person and their priorities.",
+      "tint": false,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Speech sound development",
+          "description": "Support for clearer speech and age-appropriate speech sound development."
+        },
+        {
+          "title": "Receptive language",
+          "description": "Understanding words, instructions, questions and everyday language."
+        },
+        {
+          "title": "Expressive language",
+          "description": "Building vocabulary, sentences, storytelling and the ability to share ideas."
+        },
+        {
+          "title": "Fluency",
+          "description": "Support for stuttering and comfortable, confident communication."
+        },
+        {
+          "title": "Social communication",
+          "description": "Conversation, turn-taking, perspective-taking and communication with peers."
+        },
+        {
+          "title": "Early communication",
+          "description": "Play-based support for early language, connection and communication development."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Split",
+      "tint": true,
+      "variant": "columns",
+      "panels": [
+        {
+          "eyebrow": "What therapy may include",
+          "title": "A clear, practical pathway.",
+          "paragraphs": [],
+          "checks": [
+            "Communication assessment",
+            "Individualised therapy goals",
+            "Play-based and functional activities",
+            "Family-centred strategies",
+            "Progress review and collaboration"
+          ],
+          "dark": true
+        },
+        {
+          "eyebrow": "Who we support",
+          "title": "Goals first, service second.",
+          "paragraphs": [
+            "Speech Pathology can support children and young people across a wide range of communication needs. Service suitability is discussed individually.",
+            "We start by understanding what is working well, what feels difficult and what meaningful change would look like in daily life. From there, the clinician can recommend a suitable next step."
+          ],
+          "checks": [],
+          "dark": false,
+          "action": {
+            "label": "Talk with our team →",
+            "href": "/contact/",
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Our process",
+      "title": "Simple steps. Shared direction.",
+      "intro": "",
+      "tint": false,
+      "variant": "process",
+      "items": [
+        {
+          "title": "Start with your priorities",
+          "description": "Tell us what matters, what is currently difficult and what you hope to change."
+        },
+        {
+          "title": "Understand strengths & needs",
+          "description": "Your clinician gathers relevant information and completes assessment where appropriate."
+        },
+        {
+          "title": "Build practical strategies",
+          "description": "Sessions focus on meaningful goals and strategies that make sense in real routines."
+        },
+        {
+          "title": "Review & adapt",
+          "description": "Progress is reviewed together and the plan is adjusted as needs and goals change."
+        }
+      ]
+    },
+    {
+      "type": "clinic/FAQ",
+      "eyebrow": "Common questions",
+      "title": "Before you get started.",
+      "intro": "These answers are general. We can discuss individual circumstances when you contact the team.",
+      "tint": true,
+      "items": [
+        {
+          "question": "What happens in the first appointment?",
+          "answer": "The first appointment is usually used to understand communication strengths, concerns, priorities and the environments where support is most needed."
+        },
+        {
+          "question": "Is therapy play-based?",
+          "answer": "For many children, play can be an effective and engaging way to build communication skills. The approach is adjusted to the person's age, goals and preferences."
+        },
+        {
+          "question": "Can parents and carers be involved?",
+          "answer": "Yes. Family involvement can help strategies transfer into everyday communication and routines."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Ready to begin?",
+      "title": "Let’s find the right starting point.",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

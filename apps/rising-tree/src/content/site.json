@@ -1,0 +1,40 @@
+{
+  "name": "Rising Tree Allied Health Services",
+  "tagline": "Supporting abilities · Building confidence · Brighter tomorrows",
+  "logo": {
+    "src": "/assets/logo/rising-tree-horizontal.png",
+    "alt": "Rising Tree Allied Health Services"
+  },
+  "navigation": [
+    {
+      "label": "About Us",
+      "href": "/about-us/"
+    },
+    {
+      "label": "Services",
+      "href": "/services/"
+    },
+    {
+      "label": "Team",
+      "href": "/team/"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact/"
+    }
+  ],
+  "cta": {
+    "label": "Make a Referral",
+    "href": "/contact/#referral"
+  },
+  "phone": "0400 888 998",
+  "phoneHref": "tel:+61400888998",
+  "email": "risingtreealliedhealth@gmail.com",
+  "address": ["Level 1, 14/445 Victoria Avenue", "Chatswood NSW 2069"],
+  "footer": {
+    "explore": "Explore",
+    "services": "Services",
+    "contact": "Contact",
+    "copyright": "© 2026 Rising Tree Allied Health Services"
+  }
+}

@@ -1,0 +1,21 @@
+---
+import "virtual:webfactory-styles";
+import DocumentLayout from "@webfactory/layouts/DocumentLayout.astro";
+import CommonMeta from "@webfactory/seo/CommonMeta.astro";
+import SeoHead from "@webfactory/seo/SeoHead.astro";
+interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+}
+const { title, description, lang = "en" } = Astro.props;
+---
+
+<DocumentLayout {lang} skipTargetId="main-content">
+  <Fragment slot="head">
+    <CommonMeta />
+    <SeoHead {title} {description} />
+    <slot name="head" />
+  </Fragment>
+  <slot />
+</DocumentLayout>

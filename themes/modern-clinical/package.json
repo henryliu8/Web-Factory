@@ -1,0 +1,16 @@
+{
+  "name": "@webfactory/theme-modern-clinical",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./theme.config.ts",
+    "./styles": "./src/styles/index.css"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@webfactory/core": "workspace:*"
+  }
+}

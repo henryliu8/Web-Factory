@@ -1,0 +1,17 @@
+---
+import type { Action } from "../schema";
+interface Props {
+  actions: Action[];
+}
+const { actions } = Astro.props;
+---
+
+{actions.length > 0 && (
+  <div class="hero-actions">
+    {actions.map((action) => (
+      <a class={`btn btn-${action.variant}`} href={action.href}>
+        {action.label}
+      </a>
+    ))}
+  </div>
+)}

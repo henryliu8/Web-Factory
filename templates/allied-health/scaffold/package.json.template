@@ -1,0 +1,21 @@
+{
+  "name": "@webfactory/app-{{project}}",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@webfactory/core": "workspace:*",
+    "@webfactory/template-allied-health": "workspace:*",
+    "@webfactory/theme-{{theme}}": "workspace:*",
+    "@webfactory/tokens": "workspace:*",
+    "astro": "^5.15.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@tailwindcss/vite": "^4.1.14"
+  }
+}

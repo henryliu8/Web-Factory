@@ -1,0 +1,172 @@
+{
+  "slug": "psychology",
+  "title": "Psychology | Rising Tree Allied Health Services",
+  "description": "Psychology provides a supportive space to understand emotions, thoughts, behaviour and relationships. Therapy can help people develop practical coping strategies, self-awareness and confidence in navigating everyday challenges.",
+  "card": {
+    "title": "Psychology",
+    "description": "Support emotional wellbeing, coping, confidence, behaviour and relationships.",
+    "href": "/services/psychology/",
+    "number": "05"
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "05 · Service",
+      "title": "Psychology",
+      "intro": "Psychology provides a supportive space to understand emotions, thoughts, behaviour and relationships. Therapy can help people develop practical coping strategies, self-awareness and confidence in navigating everyday challenges.",
+      "variant": "service",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/7447261/pexels-photo-7447261.jpeg?auto=compress&cs=tinysrgb&w=1400",
+          "alt": "Psychology"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Ask a question",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "How we can help",
+      "title": "Support built around everyday participation.",
+      "intro": "Therapy goals are individual. These examples show common areas that may be explored when they are relevant to the person and their priorities.",
+      "tint": false,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Emotional regulation",
+          "description": "Understanding emotions and developing strategies to respond more effectively."
+        },
+        {
+          "title": "Anxiety & stress",
+          "description": "Practical approaches for managing worry, stress and overwhelming situations."
+        },
+        {
+          "title": "Behaviour patterns",
+          "description": "Understanding what may be driving behaviour and building more helpful responses."
+        },
+        {
+          "title": "Confidence & self-esteem",
+          "description": "Supporting a stronger sense of capability, identity and self-belief."
+        },
+        {
+          "title": "Relationships",
+          "description": "Building communication, boundaries and healthier ways of relating to others."
+        },
+        {
+          "title": "Coping & resilience",
+          "description": "Developing tools for change, setbacks and everyday pressures."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Split",
+      "tint": true,
+      "variant": "columns",
+      "panels": [
+        {
+          "eyebrow": "What therapy may include",
+          "title": "A clear, practical pathway.",
+          "paragraphs": [],
+          "checks": [
+            "Understanding current concerns",
+            "Collaborative goal setting",
+            "Evidence-informed psychological strategies",
+            "Practical skills between sessions",
+            "Reviewing progress together"
+          ],
+          "dark": true
+        },
+        {
+          "eyebrow": "Who we support",
+          "title": "Goals first, service second.",
+          "paragraphs": [
+            "Psychology support is tailored to the individual and is provided within the scope and availability of the treating clinician.",
+            "We start by understanding what is working well, what feels difficult and what meaningful change would look like in daily life. From there, the clinician can recommend a suitable next step."
+          ],
+          "checks": [],
+          "dark": false,
+          "action": {
+            "label": "Talk with our team →",
+            "href": "/contact/",
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Our process",
+      "title": "Simple steps. Shared direction.",
+      "intro": "",
+      "tint": false,
+      "variant": "process",
+      "items": [
+        {
+          "title": "Start with your priorities",
+          "description": "Tell us what matters, what is currently difficult and what you hope to change."
+        },
+        {
+          "title": "Understand strengths & needs",
+          "description": "Your clinician gathers relevant information and completes assessment where appropriate."
+        },
+        {
+          "title": "Build practical strategies",
+          "description": "Sessions focus on meaningful goals and strategies that make sense in real routines."
+        },
+        {
+          "title": "Review & adapt",
+          "description": "Progress is reviewed together and the plan is adjusted as needs and goals change."
+        }
+      ]
+    },
+    {
+      "type": "clinic/FAQ",
+      "eyebrow": "Common questions",
+      "title": "Before you get started.",
+      "intro": "These answers are general. We can discuss individual circumstances when you contact the team.",
+      "tint": true,
+      "items": [
+        {
+          "question": "What should I expect from the first session?",
+          "answer": "The first session is typically focused on understanding your current concerns, strengths, priorities and what you would like to change."
+        },
+        {
+          "question": "Is psychology only for crisis situations?",
+          "answer": "No. People may seek psychology support for wellbeing, confidence, coping, relationships, behaviour or life changes as well as more significant concerns."
+        },
+        {
+          "question": "Can psychology work alongside other therapies?",
+          "answer": "Yes. With appropriate consent, coordinated care can help different disciplines work toward compatible goals."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Ready to begin?",
+      "title": "Let’s find the right starting point.",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

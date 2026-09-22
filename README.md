@@ -59,6 +59,7 @@ pnpm test:integration
 
 ## Templates
 
+- `allied-health` — reusable clinical service/team pages with ten validated section types, paired with the `modern-clinical` theme. See [template contracts](templates/allied-health/README.md).
 - `stardrive` — the original flexible, content-first Web Factory structure.
 - `astrowind` — an Astro v7 and Tailwind CSS v4 marketing/blog template adapted from [AstroWind](https://github.com/arthelokyo/astrowind). Its 37 reusable widgets live in the template section registry, while site content, navigation, configuration, and public assets remain project-owned in the scaffold.
 
@@ -67,3 +68,18 @@ Create an AstroWind-based project with:
 ```sh
 pnpm wf create my-site --template astrowind --theme default --pages home,about,services,contact
 ```
+
+## Rising Tree
+
+The migrated 15-page clinic site lives in `apps/rising-tree`, using the `allied-health` template and `modern-clinical` theme.
+
+```sh
+pnpm wf dev rising-tree
+pnpm wf check rising-tree
+pnpm wf build rising-tree
+pnpm --filter @webfactory/app-rising-tree test:integration
+```
+
+Edit JSON content and section order under `apps/rising-tree/src/content/`. Service and team detail files generate their routes and directory cards automatically. [Editing guide](apps/rising-tree/project/PROJECT.md) · [Storyblok integration plan](apps/rising-tree/project/STORYBLOK.md).
+
+The contact form remains a clearly labelled preview without delivery. Storyblok is supported as a future content/preview adapter; no CMS connection has been enabled.

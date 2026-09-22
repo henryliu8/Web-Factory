@@ -55,3 +55,6 @@ After extension removal, a key must still contain `/`. Empty strings and single 
 - Applications currently construct registries explicitly; directories are not scanned automatically.
 - The current PageBuilder boundary types component implementations as `unknown`, so a template often needs to narrow a resolved value to a concrete Astro component type.
 - Once a logical path appears in content, treat it as a long-term compatibility contract.
+
+
+Templates with additional section contracts can pass a `sectionParser` to `PageBuilder`, or a third parser argument to `resolveSections(registry, input, parser)`. The parser must validate input and return `{ type, ...props }` definitions. Registry lookup still rejects unknown logical keys. Omitting the parser preserves the shared content schema; see `templates/allied-health/src/schema.ts` for an extension that also accepts shared sections.

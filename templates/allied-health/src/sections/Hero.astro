@@ -1,0 +1,62 @@
+---
+import Actions from "../components/Actions.astro";
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/Hero"> {}
+const { variant, eyebrow, title, intro, images, actions, role, strapline } =
+  Astro.props;
+const profile = variant === "profile";
+const pictureClass = profile
+  ? "profile-portrait"
+  : variant === "mosaic"
+    ? "mosaic"
+    : "hero-photo";
+---
+
+<section
+  class:list={[
+    variant === "mosaic" ? "hero" : profile ? "profile-hero" : "page-hero",
+    { "page-hero-simple": variant === "simple" },
+  ]}
+  data-section="clinic/Hero"
+>
+  <div
+    class:list={[
+      "wrap",
+      {
+        "hero-grid": variant === "mosaic",
+        "service-hero-grid": variant === "service",
+        "profile-grid": profile,
+      },
+    ]}
+  >
+    {profile && images[0] && (
+      <div class={pictureClass}>
+        <img
+          src={images[0].src}
+          alt={images[0].alt}
+          style={{ objectPosition: images[0].position }}
+          fetchpriority="high"
+        />
+      </div>
+    )}
+    <div>
+      <div class="eyebrow light">{eyebrow}</div>
+      <h1>{title}</h1>
+      {role && <div class="profile-role">{role}</div>}
+      {strapline && <p class="profile-strap">{strapline}</p>}
+      {intro && <p>{intro}</p>}
+      <Actions {actions} />
+    </div>
+    {!profile && images.length > 0 && (
+      <div class={pictureClass}>
+        {images.map((image, i) => (
+          <img
+            src={image.src}
+            alt={image.alt}
+            fetchpriority={i === 0 ? "high" : "auto"}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+</section>

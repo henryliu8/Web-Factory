@@ -1,0 +1,82 @@
+---
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/Contact"> {}
+const { id = "referral", eyebrow, title, details, form } = Astro.props;
+---
+
+<section class="section" {id} data-section="clinic/Contact">
+  <div class="wrap contact-grid">
+    <div class="text-panel">
+      <div class="eyebrow">{eyebrow}</div>
+      <h2>{title}</h2>
+      <div class="contact-cards">
+        {details.map((detail) => (
+          <div class="contact-card">
+            <small>{detail.label}</small>
+            <strong>
+              {detail.href ? (
+                <a href={detail.href}>{detail.value}</a>
+              ) : (
+                detail.value
+              )}
+            </strong>
+          </div>
+        ))}
+      </div>
+    </div>
+    <form class="contact-form" data-demo-form>
+      <div class="eyebrow">{form.eyebrow}</div>
+      <h2>{form.title}</h2>
+      <p>{form.intro}</p>
+      <div class="form-grid">
+        {form.fields.map((field) => (
+          <div class:list={["field", { full: field.full }]}>
+            <label for={`${id}-${field.name}`}>{field.label}</label>
+            {field.type === "select" ? (
+              <select id={`${id}-${field.name}`} name={field.name}>
+                {field.options?.map((option) => (
+                  <option>{option}</option>
+                ))}
+              </select>
+            ) : field.type === "textarea" ? (
+              <textarea id={`${id}-${field.name}`} name={field.name}></textarea>
+            ) : (
+              <input
+                id={`${id}-${field.name}`}
+                name={field.name}
+                type={field.type}
+                autocomplete={
+                  field.autocomplete as "name" | "email" | "tel" | undefined
+                }
+              />
+            )}
+          </div>
+        ))}
+        <div class="field full">
+          <button class="btn btn-primary" type="button" data-demo-submit>
+            {form.button}
+          </button>
+        </div>
+      </div>
+      <p class="form-note">{form.note}</p>
+      <p data-form-message hidden role="status">
+        {form.message}
+      </p>
+    </form>
+  </div>
+</section>
+<script>
+  document
+    .querySelectorAll<HTMLFormElement>("[data-demo-form]")
+    .forEach((form) => {
+      form.addEventListener("submit", (event) => event.preventDefault());
+      form
+        .querySelector("[data-demo-submit]")
+        ?.addEventListener("click", () => {
+          const message = form.querySelector<HTMLElement>(
+            "[data-form-message]",
+          );
+          if (message) message.hidden = false;
+        });
+    });
+</script>

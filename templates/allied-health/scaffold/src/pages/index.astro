@@ -1,0 +1,8 @@
+---
+import { getEntry } from 'astro:content';
+import Page from '@webfactory/template-allied-health/page-templates/StandardPageTemplate';
+import { site } from '../config/site';
+const home = await getEntry('pages','home');
+if (!home) throw new Error('Missing home content');
+---
+<Page metadata={{title:home.data.title,description:home.data.description,lang:site.language}} header={{brand:site.name}} sections={home.data.sections}/>

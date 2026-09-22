@@ -1,0 +1,172 @@
+{
+  "slug": "physiotherapy",
+  "title": "Physiotherapy | Rising Tree Allied Health Services",
+  "description": "Physiotherapy focuses on movement, physical function and participation. Therapy may address mobility, balance, coordination, posture, strength, gross motor development and confidence in physical activities.",
+  "card": {
+    "title": "Physiotherapy",
+    "description": "Develop mobility, balance, coordination, strength and physical confidence.",
+    "href": "/services/physiotherapy/",
+    "number": "03"
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "03 · Service",
+      "title": "Physiotherapy",
+      "intro": "Physiotherapy focuses on movement, physical function and participation. Therapy may address mobility, balance, coordination, posture, strength, gross motor development and confidence in physical activities.",
+      "variant": "service",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/4506073/pexels-photo-4506073.jpeg?auto=compress&cs=tinysrgb&w=1400",
+          "alt": "Physiotherapy"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Ask a question",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "How we can help",
+      "title": "Support built around everyday participation.",
+      "intro": "Therapy goals are individual. These examples show common areas that may be explored when they are relevant to the person and their priorities.",
+      "tint": false,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Mobility",
+          "description": "Walking, transfers and functional movement across everyday environments."
+        },
+        {
+          "title": "Balance & coordination",
+          "description": "Developing body control, stability and coordinated movement."
+        },
+        {
+          "title": "Strength & endurance",
+          "description": "Building physical capacity for daily activities, recreation and participation."
+        },
+        {
+          "title": "Gross motor skills",
+          "description": "Running, jumping, stairs, playground skills and age-appropriate movement patterns."
+        },
+        {
+          "title": "Postural control",
+          "description": "Support for posture, core stability and efficient movement."
+        },
+        {
+          "title": "Physical participation",
+          "description": "Helping people take part more confidently in home, school and community activities."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Split",
+      "tint": true,
+      "variant": "columns",
+      "panels": [
+        {
+          "eyebrow": "What therapy may include",
+          "title": "A clear, practical pathway.",
+          "paragraphs": [],
+          "checks": [
+            "Movement and functional assessment",
+            "Meaningful mobility goals",
+            "Targeted exercises and activities",
+            "Home-program strategies",
+            "Review and progression"
+          ],
+          "dark": true
+        },
+        {
+          "eyebrow": "Who we support",
+          "title": "Goals first, service second.",
+          "paragraphs": [
+            "Physiotherapy can be adapted to different ages, abilities and functional goals, subject to clinician availability and individual assessment.",
+            "We start by understanding what is working well, what feels difficult and what meaningful change would look like in daily life. From there, the clinician can recommend a suitable next step."
+          ],
+          "checks": [],
+          "dark": false,
+          "action": {
+            "label": "Talk with our team →",
+            "href": "/contact/",
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Our process",
+      "title": "Simple steps. Shared direction.",
+      "intro": "",
+      "tint": false,
+      "variant": "process",
+      "items": [
+        {
+          "title": "Start with your priorities",
+          "description": "Tell us what matters, what is currently difficult and what you hope to change."
+        },
+        {
+          "title": "Understand strengths & needs",
+          "description": "Your clinician gathers relevant information and completes assessment where appropriate."
+        },
+        {
+          "title": "Build practical strategies",
+          "description": "Sessions focus on meaningful goals and strategies that make sense in real routines."
+        },
+        {
+          "title": "Review & adapt",
+          "description": "Progress is reviewed together and the plan is adjusted as needs and goals change."
+        }
+      ]
+    },
+    {
+      "type": "clinic/FAQ",
+      "eyebrow": "Common questions",
+      "title": "Before you get started.",
+      "intro": "These answers are general. We can discuss individual circumstances when you contact the team.",
+      "tint": true,
+      "items": [
+        {
+          "question": "Does physiotherapy only happen in the clinic?",
+          "answer": "Not necessarily. Depending on the service plan, useful strategies can be designed around everyday environments and routines."
+        },
+        {
+          "question": "Will I receive exercises to practise at home?",
+          "answer": "Where appropriate, your physiotherapist may recommend simple activities or exercises to reinforce therapy goals between sessions."
+        },
+        {
+          "question": "Can physiotherapy work alongside OT or Exercise Physiology?",
+          "answer": "Yes. When useful, disciplines can coordinate goals so support remains clear and complementary."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Ready to begin?",
+      "title": "Let’s find the right starting point.",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

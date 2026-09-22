@@ -1,0 +1,50 @@
+{
+  "title": "Our Team | Rising Tree",
+  "description": "Meet the Rising Tree Allied Health Services team.",
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "Our team",
+      "title": "Professional support with a human connection.",
+      "intro": "Meet Joanne, Wen and Annie Wang, and learn about their professional interests and backgrounds.",
+      "variant": "simple",
+      "images": [],
+      "actions": []
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Meet the team",
+      "title": "Different backgrounds. Shared commitment to progress.",
+      "intro": "Learn about each team member’s experience and approach to supporting everyday participation.",
+      "tint": true,
+      "variant": "team",
+      "items": [],
+      "collection": "team"
+    },
+    {
+      "type": "clinic/Split",
+      "tint": false,
+      "variant": "columns",
+      "panels": [
+        {
+          "eyebrow": "Working together",
+          "title": "Care feels clearer when everyone understands the direction.",
+          "paragraphs": [
+            "When multiple clinicians are involved, shared goals and communication can help therapy stay connected to the same everyday priorities."
+          ],
+          "checks": [],
+          "dark": false
+        },
+        {
+          "eyebrow": "Person-centred support",
+          "title": "Shared goals. Practical progress.",
+          "paragraphs": [
+            "We work with the individual, family and relevant supports so strategies can make sense in real routines."
+          ],
+          "checks": [],
+          "dark": true
+        }
+      ]
+    }
+  ]
+}

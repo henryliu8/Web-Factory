@@ -1,0 +1,140 @@
+{
+  "slug": "wen",
+  "title": "Wen | Rising Tree Allied Health Services",
+  "description": "Wen is passionate about helping children find their voice and connect with the world around them. Her supplied profile describes a strong interest in paediatric speech and language development, particularly early intervention and support for neurodivergent children and their families.",
+  "card": {
+    "title": "Wen",
+    "description": "Family-centred · Play-based · Neurodiversity-affirming",
+    "href": "/team/wen/",
+    "role": "Speech Pathologist",
+    "eyebrow": "Meet the team",
+    "linkLabel": "View profile →",
+    "image": {
+      "src": "/assets/team/wen-profile.jpg",
+      "alt": "Wen",
+      "position": "26% 19%"
+    }
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "Our team",
+      "title": "Wen",
+      "intro": "Wen is passionate about helping children find their voice and connect with the world around them. Her supplied profile describes a strong interest in paediatric speech and language development, particularly early intervention and support for neurodivergent children and their families.",
+      "variant": "profile",
+      "images": [
+        {
+          "src": "/assets/team/wen-profile.jpg",
+          "alt": "Wen",
+          "position": "26% 19%"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Back to team",
+          "href": "/team/",
+          "variant": "ghost"
+        }
+      ],
+      "role": "Speech Pathologist",
+      "strapline": "Family-centred · Play-based · Neurodiversity-affirming"
+    },
+    {
+      "type": "clinic/ProfileBio",
+      "eyebrow": "About Wen",
+      "title": "Wen has worked with children aged 2–12 across community health settings and private clinics, combining clinical knowledge with a warm and culturally responsive approach.",
+      "intro": "Outside the clinic, Wen enjoys singing, playing the piano, reading and spending quality time with her two young boys.",
+      "qualificationsLabel": "Education & qualifications",
+      "languagesLabel": "Languages",
+      "personalLabel": "Outside the clinic",
+      "qualifications": [
+        "Master of Speech Language Pathology — The University of Sydney",
+        "Master Degree — University of Oxford (field not specified in supplied profile)"
+      ],
+      "languages": ["English", "Mandarin", "Cantonese"],
+      "personal": "Outside the clinic, Wen enjoys singing, playing the piano, reading and spending quality time with her two young boys."
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Areas of focus",
+      "title": "Professional interests & support areas.",
+      "intro": "Learn more about the areas of interest and support described in this profile.",
+      "tint": true,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Speech sound development",
+          "description": "Supporting clearer speech and age-appropriate speech sound development."
+        },
+        {
+          "title": "Receptive & expressive language",
+          "description": "Building understanding, vocabulary, sentence development and communication of ideas."
+        },
+        {
+          "title": "Fluency",
+          "description": "Support relating to stuttering and comfortable communication."
+        },
+        {
+          "title": "Narrative & storytelling",
+          "description": "Developing sequencing, story structure and the ability to share experiences."
+        },
+        {
+          "title": "Social communication",
+          "description": "Supporting conversation, interaction and connection with others."
+        },
+        {
+          "title": "Emotional regulation",
+          "description": "Supporting communication and regulation in everyday situations."
+        },
+        {
+          "title": "Neurodivergent children",
+          "description": "Experience supporting neurodivergent children, including children with Autism and ADHD, as stated in the supplied profile."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Timeline",
+      "eyebrow": "Experience & approach",
+      "title": "A practical background across real-world settings.",
+      "intro": "Experience and approaches that inform everyday support.",
+      "items": [
+        {
+          "title": "Family-centred practice",
+          "description": "Working closely with families and recognising their role in ongoing progress."
+        },
+        {
+          "title": "Play-based therapy",
+          "description": "Using play, interaction and engaging activities to support learning."
+        },
+        {
+          "title": "Neurodiversity-affirming practice",
+          "description": "Respecting individual differences, communication styles and developmental profiles."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Talk with Rising Tree",
+      "title": "Have a question about therapy or referrals?",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Contact us",
+          "href": "/contact/",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ],
+  "order": 1
+}

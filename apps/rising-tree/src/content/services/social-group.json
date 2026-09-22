@@ -1,0 +1,172 @@
+{
+  "slug": "social-group",
+  "title": "Social Group | Rising Tree Allied Health Services",
+  "description": "Rising Tree social groups create structured opportunities to practise communication and social participation in a supportive peer setting. Activities are designed to be engaging, practical and connected to real-world interaction.",
+  "card": {
+    "title": "Social Group",
+    "description": "Practise communication, teamwork, friendship and confidence with peers.",
+    "href": "/services/social-group/",
+    "number": "07"
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "07 · Service",
+      "title": "Social Group",
+      "intro": "Rising Tree social groups create structured opportunities to practise communication and social participation in a supportive peer setting. Activities are designed to be engaging, practical and connected to real-world interaction.",
+      "variant": "service",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/8653974/pexels-photo-8653974.jpeg?auto=compress&cs=tinysrgb&w=1400",
+          "alt": "Social Group"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Ask a question",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "How we can help",
+      "title": "Support built around everyday participation.",
+      "intro": "Therapy goals are individual. These examples show common areas that may be explored when they are relevant to the person and their priorities.",
+      "tint": false,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Conversation",
+          "description": "Starting, maintaining and ending conversations in a natural way."
+        },
+        {
+          "title": "Turn-taking",
+          "description": "Practising shared attention, listening and flexible participation."
+        },
+        {
+          "title": "Teamwork",
+          "description": "Working with others, sharing roles and solving problems together."
+        },
+        {
+          "title": "Friendship skills",
+          "description": "Building confidence in connecting with peers and maintaining positive interactions."
+        },
+        {
+          "title": "Self-regulation",
+          "description": "Recognising feelings, managing frustration and participating in group routines."
+        },
+        {
+          "title": "Confidence",
+          "description": "Practising skills in a supportive setting where mistakes are part of learning."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Split",
+      "tint": true,
+      "variant": "columns",
+      "panels": [
+        {
+          "eyebrow": "What therapy may include",
+          "title": "A clear, practical pathway.",
+          "paragraphs": [],
+          "checks": [
+            "Group suitability discussion",
+            "Clear group goals",
+            "Structured and engaging activities",
+            "Supported peer practice",
+            "Feedback and progress review"
+          ],
+          "dark": true
+        },
+        {
+          "eyebrow": "Who we support",
+          "title": "Goals first, service second.",
+          "paragraphs": [
+            "Group placement depends on age, goals, group compatibility, current program availability and the level of support required.",
+            "We start by understanding what is working well, what feels difficult and what meaningful change would look like in daily life. From there, the clinician can recommend a suitable next step."
+          ],
+          "checks": [],
+          "dark": false,
+          "action": {
+            "label": "Talk with our team →",
+            "href": "/contact/",
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Our process",
+      "title": "Simple steps. Shared direction.",
+      "intro": "",
+      "tint": false,
+      "variant": "process",
+      "items": [
+        {
+          "title": "Start with your priorities",
+          "description": "Tell us what matters, what is currently difficult and what you hope to change."
+        },
+        {
+          "title": "Understand strengths & needs",
+          "description": "Your clinician gathers relevant information and completes assessment where appropriate."
+        },
+        {
+          "title": "Build practical strategies",
+          "description": "Sessions focus on meaningful goals and strategies that make sense in real routines."
+        },
+        {
+          "title": "Review & adapt",
+          "description": "Progress is reviewed together and the plan is adjusted as needs and goals change."
+        }
+      ]
+    },
+    {
+      "type": "clinic/FAQ",
+      "eyebrow": "Common questions",
+      "title": "Before you get started.",
+      "intro": "These answers are general. We can discuss individual circumstances when you contact the team.",
+      "tint": true,
+      "items": [
+        {
+          "question": "How are groups formed?",
+          "answer": "Groups are usually matched around factors such as age, communication needs, goals and group compatibility."
+        },
+        {
+          "question": "Can group therapy complement individual therapy?",
+          "answer": "Yes. Group programs can provide a useful setting to practise skills that have been introduced individually."
+        },
+        {
+          "question": "Are social groups always running?",
+          "answer": "Programs may be offered at selected times. Contact the team for current group availability and upcoming intakes."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Ready to begin?",
+      "title": "Let’s find the right starting point.",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

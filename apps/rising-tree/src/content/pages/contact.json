@@ -1,0 +1,107 @@
+{
+  "title": "Contact | Rising Tree",
+  "description": "Contact Rising Tree Allied Health Services in Chatswood.",
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "Contact",
+      "title": "Start with a conversation.",
+      "intro": "Whether you already know which service you need or you are still working out the right pathway, tell us what is happening and what you hope to achieve.",
+      "variant": "simple",
+      "images": [],
+      "actions": []
+    },
+    {
+      "type": "clinic/Contact",
+      "eyebrow": "Rising Tree Allied Health Services",
+      "title": "Contact details.",
+      "intro": "This is a prototype form. Web Factory can later connect it to your preferred form, CRM or email workflow.",
+      "id": "referral",
+      "details": [
+        {
+          "label": "Phone",
+          "value": "0400 888 998",
+          "href": "tel:+61400888998"
+        },
+        {
+          "label": "Email",
+          "value": "risingtreealliedhealth@gmail.com",
+          "href": "mailto:risingtreealliedhealth@gmail.com"
+        },
+        {
+          "label": "Clinic",
+          "value": "Level 1, 14/445 Victoria Avenue Chatswood NSW 2069"
+        },
+        {
+          "label": "Director",
+          "value": "Annie Wang"
+        }
+      ],
+      "form": {
+        "eyebrow": "Enquiry / referral",
+        "title": "Tell us how we can help.",
+        "intro": "Online enquiries are not connected yet. Please phone or email the clinic to make an enquiry or referral.",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Name",
+            "type": "text",
+            "full": false,
+            "autocomplete": "name"
+          },
+          {
+            "name": "phone",
+            "label": "Phone",
+            "type": "tel",
+            "full": false,
+            "autocomplete": "tel"
+          },
+          {
+            "name": "email",
+            "label": "Email",
+            "type": "email",
+            "full": true,
+            "autocomplete": "email"
+          },
+          {
+            "name": "service",
+            "label": "Service of interest",
+            "type": "select",
+            "full": true,
+            "options": [
+              "Not sure yet",
+              "Occupational Therapy",
+              "Speech Pathology",
+              "Physiotherapy",
+              "Exercise Physiology",
+              "Psychology",
+              "Music Therapy",
+              "Social Group"
+            ]
+          },
+          {
+            "name": "message",
+            "label": "How can we help?",
+            "type": "textarea",
+            "full": true
+          }
+        ],
+        "button": "Preview enquiry (not sent)",
+        "note": "Do not use this prototype form for urgent or emergency matters. Form delivery is not connected yet.",
+        "message": "No enquiry has been sent. Please contact the clinic by phone or email."
+      }
+    },
+    {
+      "type": "clinic/Location",
+      "eyebrow": "Chatswood clinic",
+      "title": "Level 1, 14/445 Victoria Avenue.",
+      "intro": "Chatswood NSW 2069",
+      "tint": true,
+      "action": {
+        "label": "Open in Maps",
+        "href": "https://www.google.com/maps/search/?api=1&query=Level+1%2C+14%2F445+Victoria+Avenue%2C+Chatswood+NSW+2069",
+        "variant": "light"
+      }
+    }
+  ]
+}

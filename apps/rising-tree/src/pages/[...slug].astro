@@ -1,0 +1,38 @@
+---
+import type { GetStaticPaths } from "astro";
+import Page from "@webfactory/template-allied-health/page-templates/StandardPageTemplate";
+import { site, services, team, loadPage } from "../config/content";
+import { projectSections, projectComponents } from "../config/overrides";
+export const getStaticPaths = (() => {
+  const pages = import.meta.glob("../content/pages/*.json", {
+    eager: true,
+    import: "default",
+  });
+  return [
+    ...Object.entries(pages).map(([path, content]) => {
+      const slug = path.split("/").pop()!.replace(".json", "");
+      return {
+        params: { slug: slug === "home" ? undefined : slug },
+        props: { page: loadPage(content) },
+      };
+    }),
+    ...services.map((content) => ({
+      params: { slug: `services/${content.slug}` },
+      props: { page: loadPage(content) },
+    })),
+    ...team.map((content) => ({
+      params: { slug: `team/${content.slug}` },
+      props: { page: loadPage(content) },
+    })),
+  ];
+}) satisfies GetStaticPaths;
+const { page } = Astro.props;
+---
+
+<Page
+  metadata={{ title: page.title, description: page.description }}
+  {site}
+  sections={page.sections}
+  {projectSections}
+  {projectComponents}
+/>

@@ -1,4 +1,9 @@
-import type { SectionDefinition } from "../content/schema";
+export interface RegisteredSectionDefinition {
+  type: string;
+  [key: string]: unknown;
+}
+
+export type SectionParser = (input: unknown) => RegisteredSectionDefinition[];
 
 export type SectionComponent = unknown;
 export type ResolvedSectionRegistry = Readonly<
@@ -6,11 +11,12 @@ export type ResolvedSectionRegistry = Readonly<
 >;
 
 export interface PageBuilderProps {
-  sections: SectionDefinition[];
+  sections: RegisteredSectionDefinition[];
   sectionRegistry: ResolvedSectionRegistry;
+  sectionParser?: SectionParser;
 }
 
 export interface ResolvedSection {
   component: SectionComponent;
-  definition: SectionDefinition;
+  definition: RegisteredSectionDefinition;
 }

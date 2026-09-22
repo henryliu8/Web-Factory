@@ -1,0 +1,69 @@
+{
+  "title": "Services | Rising Tree",
+  "description": "Rising Tree Allied Health Services — Occupational Therapy, Speech Pathology, Physiotherapy, Exercise Physiology, Psychology, Music Therapy and Social Group.",
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "Our services",
+      "title": "Different disciplines. Shared purpose.",
+      "intro": "Explore our seven core service areas and find support for your everyday goals.",
+      "variant": "simple",
+      "images": [],
+      "actions": []
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Core services",
+      "title": "Choose a service to learn more.",
+      "intro": "If you are unsure where to start, contact the team and describe your current goals or concerns.",
+      "tint": false,
+      "variant": "services",
+      "items": [],
+      "collection": "services"
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Additional support pathways",
+      "title": "More ways to organise care.",
+      "intro": "Speak with our team about these additional support pathways and whether they suit your goals.",
+      "tint": true,
+      "variant": "pathways",
+      "items": [
+        {
+          "title": "Early Intervention",
+          "description": "Early support focused on developmental growth and participation."
+        },
+        {
+          "title": "Assessments & Reports",
+          "description": "Assessment, documentation and tailored recommendations where clinically appropriate."
+        },
+        {
+          "title": "NDIS Support",
+          "description": "Support pathways that may be relevant to participants using NDIS funding, subject to service suitability."
+        },
+        {
+          "title": "Behaviour Intervention",
+          "description": "Contact our team to discuss behaviour-related support and service suitability."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Need help choosing?",
+      "title": "Tell us what you want life to feel easier, clearer or more possible.",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Contact us",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

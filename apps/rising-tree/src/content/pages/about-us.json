@@ -1,0 +1,136 @@
+{
+  "title": "About Us | Rising Tree",
+  "description": "About Rising Tree Allied Health Services.",
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "About Rising Tree",
+      "title": "Connected care with everyday life in mind.",
+      "intro": "Rising Tree is built around a simple idea: therapy should feel relevant, collaborative and connected to the places where life actually happens.",
+      "variant": "simple",
+      "images": [],
+      "actions": []
+    },
+    {
+      "type": "clinic/Split",
+      "tint": false,
+      "variant": "story",
+      "panels": [
+        {
+          "eyebrow": "Our purpose",
+          "title": "Supporting abilities. Building confidence. Brighter tomorrows.",
+          "paragraphs": [
+            "We bring allied health disciplines together around meaningful goals. Rather than treating skills in isolation, we look at how communication, movement, regulation, confidence and participation connect across everyday life."
+          ],
+          "checks": [],
+          "dark": true
+        },
+        {
+          "eyebrow": "Our story",
+          "title": "A growing team, one shared direction.",
+          "paragraphs": [
+            "Rising Tree Allied Health Services provides a multidisciplinary setting where therapy can be coordinated, understandable and practical.",
+            "Our services bring together Occupational Therapy, Speech Pathology, Physiotherapy, Exercise Physiology, Psychology, Music Therapy and Social Group programs."
+          ],
+          "checks": [],
+          "dark": false,
+          "action": {
+            "label": "Meet the team →",
+            "href": "/team/",
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "What guides us",
+      "title": "Care that is clear, respectful and useful.",
+      "intro": "",
+      "tint": true,
+      "variant": "values",
+      "items": [
+        {
+          "title": "Growth",
+          "description": "Progress can be built step by step around meaningful goals."
+        },
+        {
+          "title": "Connection",
+          "description": "People do better when support connects with relationships and routines."
+        },
+        {
+          "title": "Respect",
+          "description": "Strengths, preferences, culture and communication style all matter."
+        },
+        {
+          "title": "Practicality",
+          "description": "Strategies should make sense beyond the therapy room."
+        },
+        {
+          "title": "Partnership",
+          "description": "Families and relevant supports can be part of shared progress."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Split",
+      "tint": false,
+      "variant": "approach",
+      "panels": [
+        {
+          "eyebrow": "Our approach",
+          "title": "One person. One set of priorities. Multiple ways to help.",
+          "paragraphs": [
+            "When more than one discipline is involved, therapy should still feel coordinated. Shared goals and clear communication can help different supports complement rather than compete with one another."
+          ],
+          "checks": [],
+          "dark": false
+        },
+        {
+          "eyebrow": "",
+          "title": "",
+          "paragraphs": [],
+          "checks": [
+            "Person-centred goal setting",
+            "Evidence-informed clinical practice",
+            "Strengths-based and practical strategies",
+            "Collaboration across relevant supports",
+            "Regular review as needs change"
+          ],
+          "dark": false
+        }
+      ]
+    },
+    {
+      "type": "clinic/Split",
+      "tint": true,
+      "variant": "columns",
+      "panels": [
+        {
+          "eyebrow": "Our clinic",
+          "title": "Based in Chatswood.",
+          "paragraphs": [
+            "Level 1, 14/445 Victoria Avenue, Chatswood NSW 2069.",
+            "Contact our team to discuss appointment availability and service locations."
+          ],
+          "checks": [],
+          "dark": false
+        },
+        {
+          "eyebrow": "Talk with us",
+          "title": "Not sure which service fits?",
+          "paragraphs": [
+            "Start with the goals and concerns that matter most. Our team can help you identify a sensible next step."
+          ],
+          "checks": [],
+          "dark": true,
+          "action": {
+            "label": "Contact Rising Tree",
+            "href": "/contact/",
+            "variant": "light"
+          }
+        }
+      ]
+    }
+  ]
+}

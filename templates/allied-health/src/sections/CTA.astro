@@ -1,0 +1,16 @@
+---
+import Actions from "../components/Actions.astro";
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/CTA"> {}
+const { eyebrow, title, actions } = Astro.props;
+---
+
+<section class="cta-band" data-section="clinic/CTA">
+  <div class="wrap cta-inner">
+    <div>
+      <div class="eyebrow light">{eyebrow}</div>
+      <h2>{title}</h2>
+    </div>
+    <Actions {actions} />
+  </div>
+</section>

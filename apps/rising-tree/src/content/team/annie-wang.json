@@ -1,0 +1,129 @@
+{
+  "slug": "annie-wang",
+  "title": "Annie Wang | Rising Tree Allied Health Services",
+  "description": "The supplied Rising Tree business card identifies Annie Wang as Director. A separate supplied profile presents Annie as the founder of WisdomTree Sensory Integration Education and describes extensive experience in children's sensory integration education.",
+  "card": {
+    "title": "Annie Wang",
+    "description": "Sensory integration education & child development",
+    "href": "/team/annie-wang/",
+    "role": "Director",
+    "eyebrow": "Meet the team",
+    "linkLabel": "View profile →",
+    "image": {
+      "src": "/assets/team/annie-profile.jpg",
+      "alt": "Annie Wang",
+      "position": "78% 12%"
+    }
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "Our team",
+      "title": "Annie Wang",
+      "intro": "The supplied Rising Tree business card identifies Annie Wang as Director. A separate supplied profile presents Annie as the founder of WisdomTree Sensory Integration Education and describes extensive experience in children's sensory integration education.",
+      "variant": "profile",
+      "images": [
+        {
+          "src": "/assets/team/annie-profile.jpg",
+          "alt": "Annie Wang",
+          "position": "78% 12%"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Back to team",
+          "href": "/team/",
+          "variant": "ghost"
+        }
+      ],
+      "role": "Director",
+      "strapline": "Sensory integration education & child development"
+    },
+    {
+      "type": "clinic/ProfileBio",
+      "eyebrow": "About Annie Wang",
+      "title": "Her profile emphasises scientific assessment, individualised programs, whole-child development and family support, with six years of work in Australia noted in the supplied material.",
+      "intro": "",
+      "qualificationsLabel": "Education & qualifications",
+      "languagesLabel": "Languages",
+      "personalLabel": "Outside the clinic",
+      "qualifications": [],
+      "languages": [],
+      "personal": ""
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Areas of focus",
+      "title": "Professional interests & support areas.",
+      "intro": "Learn more about the areas of interest and support described in this profile.",
+      "tint": true,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Sensory assessment",
+          "description": "Understanding a child's sensory development profile and identifying areas that may benefit from support."
+        },
+        {
+          "title": "Sensory integration training",
+          "description": "Individualised activities designed around sensory processing and participation goals."
+        },
+        {
+          "title": "Integrated development",
+          "description": "Supporting attention, emotions, learning, movement and participation together."
+        },
+        {
+          "title": "Family support",
+          "description": "Working with families to understand needs and reinforce strategies beyond sessions."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Timeline",
+      "eyebrow": "Experience & approach",
+      "title": "A practical background across real-world settings.",
+      "intro": "Experience and approaches that inform everyday support.",
+      "items": [
+        {
+          "title": "Professional associations",
+          "description": "Member of the Beijing Preschool Education Association; Secretary-General of its Sensory Integration Professional Committee, as stated in the supplied profile."
+        },
+        {
+          "title": "Professional background",
+          "description": "Council member of a preschool education branch within the China Society of Life Science, as stated in the supplied profile."
+        },
+        {
+          "title": "Counselling credential",
+          "description": "National Level II Psychological Counsellor (China), as stated in the supplied profile."
+        },
+        {
+          "title": "Organisation leadership",
+          "description": "Founder of multiple sensory integration organisations in China and founder of WisdomTree Sensory Integration Education, as stated in the supplied profile."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Talk with Rising Tree",
+      "title": "Have a question about therapy or referrals?",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Contact us",
+          "href": "/contact/",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ],
+  "order": 2
+}

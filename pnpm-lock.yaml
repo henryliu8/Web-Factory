@@ -177,6 +177,34 @@ importers:
         specifier: ^3.2.4
         version: 3.2.7(@types/debug@4.1.13)(@types/node@24.13.4)(jiti@2.7.0)(lightningcss@1.33.0)(tsx@4.23.13)(yaml@2.9.0)
 
+  apps/rising-tree:
+    dependencies:
+      '@webfactory/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@webfactory/template-allied-health':
+        specifier: workspace:*
+        version: link:../../templates/allied-health
+      '@webfactory/theme-modern-clinical':
+        specifier: workspace:*
+        version: link:../../themes/modern-clinical
+      '@webfactory/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      astro:
+        specifier: ^5.15.0
+        version: 5.18.2(@types/node@24.13.4)(jiti@2.7.0)(lightningcss@1.33.0)(rollup@4.63.1)(tsx@4.23.13)(typescript@5.9.3)(yaml@2.9.0)
+      zod:
+        specifier: ^3.25.76
+        version: 3.25.76
+    devDependencies:
+      '@astrojs/check':
+        specifier: ^0.9.4
+        version: 0.9.10(prettier-plugin-astro@1.0.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(prettier@3.9.6))(prettier@3.9.6)(typescript@5.9.3)
+      '@tailwindcss/vite':
+        specifier: ^4.1.14
+        version: 4.3.3(vite@8.2.2(@types/node@24.13.4)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.0))
+
   packages/animations:
     dependencies:
       gsap:
@@ -268,6 +296,31 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.7(@types/debug@4.1.13)(@types/node@24.13.4)(jiti@2.7.0)(lightningcss@1.33.0)(tsx@4.23.13)(yaml@2.9.0)
+
+  templates/allied-health:
+    dependencies:
+      '@webfactory/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@webfactory/layouts':
+        specifier: workspace:*
+        version: link:../../packages/layouts
+      '@webfactory/sections':
+        specifier: workspace:*
+        version: link:../../packages/sections
+      '@webfactory/seo':
+        specifier: workspace:*
+        version: link:../../packages/seo
+      '@webfactory/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      zod:
+        specifier: ^3.25.76
+        version: 3.25.76
+    devDependencies:
+      astro:
+        specifier: ^5.15.0
+        version: 5.18.2(@types/node@24.13.4)(jiti@2.7.0)(lightningcss@1.33.0)(rollup@4.63.1)(tsx@4.23.13)(typescript@5.9.3)(yaml@2.9.0)
 
   templates/astrowind:
     dependencies:
@@ -374,6 +427,12 @@ importers:
         version: link:../../packages/core
 
   themes/luxury:
+    dependencies:
+      '@webfactory/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+
+  themes/modern-clinical:
     dependencies:
       '@webfactory/core':
         specifier: workspace:*

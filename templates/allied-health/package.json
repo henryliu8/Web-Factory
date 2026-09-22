@@ -1,0 +1,28 @@
+{
+  "name": "@webfactory/template-allied-health",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts",
+    "./registry": "./src/registry.ts",
+    "./layouts/SiteLayout": "./src/layouts/SiteLayout.astro",
+    "./page-templates/StandardPageTemplate": "./src/page-templates/StandardPageTemplate.astro",
+    "./styles": "./src/styles/template.css"
+  },
+  "scripts": {
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@webfactory/core": "workspace:*",
+    "@webfactory/layouts": "workspace:*",
+    "@webfactory/seo": "workspace:*",
+    "@webfactory/sections": "workspace:*",
+    "@webfactory/tokens": "workspace:*",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "astro": "^5.15.0"
+  }
+}

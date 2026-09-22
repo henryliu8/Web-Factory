@@ -4,6 +4,7 @@ import type {
   ResolvedSection,
   ResolvedSectionRegistry,
   SectionComponent,
+  SectionParser,
 } from "./types";
 
 export function resolveSection(
@@ -26,8 +27,9 @@ export function resolveSection(
 export function resolveSections(
   registry: ResolvedSectionRegistry,
   sections: unknown,
+  sectionParser: SectionParser = parseSections,
 ): ResolvedSection[] {
-  return parseSections(sections).map((definition) => ({
+  return sectionParser(sections).map((definition) => ({
     component: resolveSection(registry, definition),
     definition,
   }));

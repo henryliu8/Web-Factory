@@ -1,0 +1,45 @@
+---
+import type { ClinicSite } from "../schema";
+interface Props {
+  site: ClinicSite;
+}
+const { site } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img
+        src={site.logo.src}
+        alt={site.logo.alt}
+        width="240"
+        height="75"
+        loading="lazy"
+      />
+      <p>{site.tagline}</p>
+    </div>
+    <div>
+      <h3>{site.footer.explore}</h3>
+      {site.navigation.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </div>
+    <div class="footer-services">
+      <h3>{site.footer.services}</h3>
+      {site.services.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </div>
+    <div>
+      <h3>{site.footer.contact}</h3>
+      <a href={site.phoneHref}>{site.phone}</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      {site.address.map((line) => (
+        <p>{line}</p>
+      ))}
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>{site.footer.copyright}</span>
+  </div>
+</footer>

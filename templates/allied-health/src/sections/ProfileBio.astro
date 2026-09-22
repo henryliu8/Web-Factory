@@ -1,0 +1,51 @@
+---
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/ProfileBio"> {}
+const {
+  eyebrow,
+  title,
+  qualificationsLabel,
+  languagesLabel,
+  personalLabel,
+  qualifications,
+  languages,
+  personal,
+} = Astro.props;
+---
+
+<section class="section" data-section="clinic/ProfileBio">
+  <div class="wrap profile-content">
+    <div>
+      <div class="eyebrow">{eyebrow}</div>
+      <h2>{title}</h2>
+    </div>
+    <div class="profile-side">
+      {qualifications.length > 0 && (
+        <div class="profile-block">
+          <div class="eyebrow">{qualificationsLabel}</div>
+          <ul class="check-list plain">
+            {qualifications.map((value) => (
+              <li>{value}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {languages.length > 0 && (
+        <div class="profile-block">
+          <div class="eyebrow">{languagesLabel}</div>
+          <div class="chips">
+            {languages.map((value) => (
+              <span>{value}</span>
+            ))}
+          </div>
+        </div>
+      )}
+      {personal && (
+        <div class="profile-block">
+          <div class="eyebrow">{personalLabel}</div>
+          <p>{personal}</p>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

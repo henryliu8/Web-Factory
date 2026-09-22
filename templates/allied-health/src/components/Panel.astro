@@ -1,0 +1,32 @@
+---
+import type { SectionProps } from "../schema";
+interface Props {
+  panel: SectionProps<"clinic/Split">["panels"][number];
+}
+const { panel } = Astro.props;
+---
+
+<div class:list={["text-panel", { "content-card dark": panel.dark }]}>
+  {panel.eyebrow && (
+    <div class:list={["eyebrow", { light: panel.dark }]}>{panel.eyebrow}</div>
+  )}
+  {panel.title && <h2>{panel.title}</h2>}
+  {panel.paragraphs.map((text) => (
+    <p>{text}</p>
+  ))}
+  {panel.checks.length > 0 && (
+    <ul class:list={["check-list", { plain: !panel.dark }]}>
+      {panel.checks.map((text) => (
+        <li>{text}</li>
+      ))}
+    </ul>
+  )}
+  {panel.action && (
+    <a
+      class:list={[panel.dark ? "btn btn-light" : "text-link"]}
+      href={panel.action.href}
+    >
+      {panel.action.label}
+    </a>
+  )}
+</div>

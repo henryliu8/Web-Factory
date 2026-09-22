@@ -1,0 +1,21 @@
+---
+import type { SectionProps } from "../schema";
+interface Props extends SectionProps<"clinic/Location"> {}
+const { eyebrow, title, intro, action, tint } = Astro.props;
+---
+
+<section
+  class:list={["section", { "section-tint": tint }]}
+  data-section="clinic/Location"
+>
+  <div class="wrap location-panel">
+    <div>
+      <div class="eyebrow light">{eyebrow}</div>
+      <h2>{title}</h2>
+      <p>{intro}</p>
+    </div>
+    <a class="btn btn-light" href={action.href} target="_blank" rel="noopener">
+      {action.label}
+    </a>
+  </div>
+</section>

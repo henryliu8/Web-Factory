@@ -1,0 +1,81 @@
+---
+import type { ClinicSite } from "../schema";
+interface Props {
+  site: ClinicSite;
+}
+const { site } = Astro.props;
+const active = (href: string) =>
+  Astro.url.pathname === href ||
+  Astro.url.pathname.startsWith(href.replace(/\/$/, "") + "/");
+---
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span>{site.name}</span>
+    <div class="topbar-links">
+      <a href={site.phoneHref}>{site.phone}</a>
+      <span>·</span>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap nav-wrap">
+    <a class="brand" href="/" aria-label={`${site.name} home`}>
+      <img src={site.logo.src} alt={site.logo.alt} width="225" height="70" />
+    </a>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+      {site.navigation.map((item) => (
+        <a
+          href={item.href}
+          class:list={[{ active: active(item.href) }]}
+          aria-current={active(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a class="nav-cta" href={site.cta.href}>
+        {site.cta.label}
+      </a>
+    </nav>
+  </div>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const nav = document.querySelector<HTMLElement>(".main-nav");
+  if (toggle && nav) {
+    const close = () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    };
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    nav.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        close();
+        toggle.focus();
+      }
+    });
+    toggle.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") close();
+    });
+    nav.addEventListener("click", (event) => {
+      if ((event.target as HTMLElement).closest("a")) close();
+    });
+  }
+</script>

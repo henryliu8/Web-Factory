@@ -1,0 +1,172 @@
+{
+  "slug": "music-therapy",
+  "title": "Music Therapy | Rising Tree Allied Health Services",
+  "description": "Music Therapy uses purposeful musical experiences to work toward therapeutic goals. Sessions can support communication, emotional expression, regulation, attention, movement and social connection in an engaging and strengths-based way.",
+  "card": {
+    "title": "Music Therapy",
+    "description": "Use music to support communication, expression, regulation and connection.",
+    "href": "/services/music-therapy/",
+    "number": "06"
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "06 · Service",
+      "title": "Music Therapy",
+      "intro": "Music Therapy uses purposeful musical experiences to work toward therapeutic goals. Sessions can support communication, emotional expression, regulation, attention, movement and social connection in an engaging and strengths-based way.",
+      "variant": "service",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/8653951/pexels-photo-8653951.jpeg?auto=compress&cs=tinysrgb&w=1400",
+          "alt": "Music Therapy"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Ask a question",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "How we can help",
+      "title": "Support built around everyday participation.",
+      "intro": "Therapy goals are individual. These examples show common areas that may be explored when they are relevant to the person and their priorities.",
+      "tint": false,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Communication",
+          "description": "Using rhythm, songs and musical interaction to encourage expressive and receptive communication."
+        },
+        {
+          "title": "Emotional expression",
+          "description": "Creating safe ways to identify, express and explore emotions."
+        },
+        {
+          "title": "Regulation",
+          "description": "Using predictable musical experiences to support calm, engagement and transitions."
+        },
+        {
+          "title": "Social connection",
+          "description": "Shared music-making can encourage turn-taking, joint attention and connection."
+        },
+        {
+          "title": "Attention & participation",
+          "description": "Structured musical activities can support focus, motivation and active participation."
+        },
+        {
+          "title": "Movement",
+          "description": "Rhythm and music can be used to encourage coordinated movement and body awareness."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Split",
+      "tint": true,
+      "variant": "columns",
+      "panels": [
+        {
+          "eyebrow": "What therapy may include",
+          "title": "A clear, practical pathway.",
+          "paragraphs": [],
+          "checks": [
+            "Understanding strengths and interests",
+            "Therapeutic goal setting",
+            "Interactive music-based sessions",
+            "Collaboration with family and other supports",
+            "Regular review of progress"
+          ],
+          "dark": true
+        },
+        {
+          "eyebrow": "Who we support",
+          "title": "Goals first, service second.",
+          "paragraphs": [
+            "Music Therapy can be adapted to different ages, communication styles and support needs where the service is clinically suitable.",
+            "We start by understanding what is working well, what feels difficult and what meaningful change would look like in daily life. From there, the clinician can recommend a suitable next step."
+          ],
+          "checks": [],
+          "dark": false,
+          "action": {
+            "label": "Talk with our team →",
+            "href": "/contact/",
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Our process",
+      "title": "Simple steps. Shared direction.",
+      "intro": "",
+      "tint": false,
+      "variant": "process",
+      "items": [
+        {
+          "title": "Start with your priorities",
+          "description": "Tell us what matters, what is currently difficult and what you hope to change."
+        },
+        {
+          "title": "Understand strengths & needs",
+          "description": "Your clinician gathers relevant information and completes assessment where appropriate."
+        },
+        {
+          "title": "Build practical strategies",
+          "description": "Sessions focus on meaningful goals and strategies that make sense in real routines."
+        },
+        {
+          "title": "Review & adapt",
+          "description": "Progress is reviewed together and the plan is adjusted as needs and goals change."
+        }
+      ]
+    },
+    {
+      "type": "clinic/FAQ",
+      "eyebrow": "Common questions",
+      "title": "Before you get started.",
+      "intro": "These answers are general. We can discuss individual circumstances when you contact the team.",
+      "tint": true,
+      "items": [
+        {
+          "question": "Do I need musical skills?",
+          "answer": "No. Music Therapy is not a music lesson and does not require prior musical ability."
+        },
+        {
+          "question": "What can happen in a session?",
+          "answer": "Sessions may include singing, instruments, rhythm, movement, improvisation or listening activities selected to support specific goals."
+        },
+        {
+          "question": "Can Music Therapy complement other therapies?",
+          "answer": "Yes. Where appropriate, goals can be coordinated with other allied health supports."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Ready to begin?",
+      "title": "Let’s find the right starting point.",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

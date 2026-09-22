@@ -1,0 +1,138 @@
+{
+  "title": "Rising Tree Allied Health Services",
+  "description": "Rising Tree Allied Health Services — connected allied health support in Chatswood.",
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "Practical support. Connected care.",
+      "title": "Allied health built around everyday life.",
+      "intro": "Rising Tree brings therapy disciplines together to support communication, movement, independence, emotional wellbeing and social connection.",
+      "variant": "mosaic",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/7447261/pexels-photo-7447261.jpeg?auto=compress&cs=tinysrgb&w=1000",
+          "alt": "Allied health support"
+        },
+        {
+          "src": "https://images.pexels.com/photos/8653951/pexels-photo-8653951.jpeg?auto=compress&cs=tinysrgb&w=700",
+          "alt": "Child with therapist"
+        },
+        {
+          "src": "https://images.pexels.com/photos/4506073/pexels-photo-4506073.jpeg?auto=compress&cs=tinysrgb&w=700",
+          "alt": "Movement and rehabilitation"
+        }
+      ],
+      "actions": [
+        {
+          "label": "View services",
+          "href": "/services/",
+          "variant": "light"
+        },
+        {
+          "label": "Speak with our team",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "clinic/Stats",
+      "items": [
+        {
+          "title": "Person-centred",
+          "description": "Goals begin with what matters to you."
+        },
+        {
+          "title": "Multidisciplinary",
+          "description": "Disciplines can work together when useful."
+        },
+        {
+          "title": "Evidence-informed",
+          "description": "Clear strategies with practical purpose."
+        },
+        {
+          "title": "Participation-focused",
+          "description": "Skills that transfer into everyday life."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Our services",
+      "title": "A connected therapy team.",
+      "intro": "Seven service areas, one focus: helping people build capability and participate more confidently in the routines, relationships and activities that matter.",
+      "tint": false,
+      "variant": "services",
+      "items": [],
+      "collection": "services",
+      "action": {
+        "label": "Explore all services",
+        "href": "/services/",
+        "variant": "primary"
+      }
+    },
+    {
+      "type": "clinic/Split",
+      "tint": true,
+      "variant": "image",
+      "panels": [
+        {
+          "eyebrow": "How we work",
+          "title": "Clear goals. Practical strategies. Shared progress.",
+          "paragraphs": [
+            "Our approach is designed to be understandable and useful beyond the clinic room. We work with the individual, family and relevant supports so strategies can make sense in real routines."
+          ],
+          "checks": [
+            "Understand strengths and priorities",
+            "Set meaningful goals",
+            "Build practical strategies",
+            "Review and adapt over time"
+          ],
+          "dark": false,
+          "action": {
+            "label": "Learn about Rising Tree →",
+            "href": "/about-us/",
+            "variant": "primary"
+          }
+        }
+      ],
+      "image": {
+        "src": "https://images.pexels.com/photos/8653974/pexels-photo-8653974.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "alt": "Therapy session"
+      }
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Our team",
+      "title": "People who care about practical progress.",
+      "intro": "Meet our team and learn about their backgrounds, professional interests and approach to care.",
+      "tint": false,
+      "variant": "team",
+      "items": [],
+      "collection": "team",
+      "action": {
+        "label": "Meet our team",
+        "href": "/team/",
+        "variant": "primary"
+      }
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Start a conversation",
+      "title": "Support today. Brighter tomorrow.",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Contact Rising Tree",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

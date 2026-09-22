@@ -1,0 +1,172 @@
+{
+  "slug": "exercise-physiology",
+  "title": "Exercise Physiology | Rising Tree Allied Health Services",
+  "description": "Exercise Physiology uses individualised movement and exercise programs to support physical capacity, participation and long-term wellbeing. Programs are designed around the person's current abilities, goals and daily life.",
+  "card": {
+    "title": "Exercise Physiology",
+    "description": "Use tailored exercise to improve function, capacity, confidence and wellbeing.",
+    "href": "/services/exercise-physiology/",
+    "number": "04"
+  },
+  "sections": [
+    {
+      "type": "clinic/Hero",
+      "eyebrow": "04 · Service",
+      "title": "Exercise Physiology",
+      "intro": "Exercise Physiology uses individualised movement and exercise programs to support physical capacity, participation and long-term wellbeing. Programs are designed around the person's current abilities, goals and daily life.",
+      "variant": "service",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/7447261/pexels-photo-7447261.jpeg?auto=compress&cs=tinysrgb&w=1400",
+          "alt": "Exercise Physiology"
+        }
+      ],
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Ask a question",
+          "href": "/contact/",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "How we can help",
+      "title": "Support built around everyday participation.",
+      "intro": "Therapy goals are individual. These examples show common areas that may be explored when they are relevant to the person and their priorities.",
+      "tint": false,
+      "variant": "features",
+      "items": [
+        {
+          "title": "Strength",
+          "description": "Progressive exercises that build useful strength for daily activities."
+        },
+        {
+          "title": "Endurance",
+          "description": "Developing stamina and the ability to stay active for longer."
+        },
+        {
+          "title": "Functional capacity",
+          "description": "Improving the physical abilities needed for everyday routines and participation."
+        },
+        {
+          "title": "Exercise confidence",
+          "description": "Building comfort, knowledge and confidence around safe physical activity."
+        },
+        {
+          "title": "Health-focused movement",
+          "description": "Using structured activity to support general physical wellbeing."
+        },
+        {
+          "title": "Sustainable routines",
+          "description": "Creating realistic exercise habits that can fit into everyday life."
+        }
+      ]
+    },
+    {
+      "type": "clinic/Split",
+      "tint": true,
+      "variant": "columns",
+      "panels": [
+        {
+          "eyebrow": "What therapy may include",
+          "title": "A clear, practical pathway.",
+          "paragraphs": [],
+          "checks": [
+            "Baseline assessment",
+            "Personalised exercise plan",
+            "Supported exercise sessions",
+            "Education and self-management",
+            "Progress tracking and program updates"
+          ],
+          "dark": true
+        },
+        {
+          "eyebrow": "Who we support",
+          "title": "Goals first, service second.",
+          "paragraphs": [
+            "Programs are individualised and may support adolescents and adults with a variety of functional and wellbeing goals, depending on service suitability.",
+            "We start by understanding what is working well, what feels difficult and what meaningful change would look like in daily life. From there, the clinician can recommend a suitable next step."
+          ],
+          "checks": [],
+          "dark": false,
+          "action": {
+            "label": "Talk with our team →",
+            "href": "/contact/",
+            "variant": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "type": "clinic/CardGrid",
+      "eyebrow": "Our process",
+      "title": "Simple steps. Shared direction.",
+      "intro": "",
+      "tint": false,
+      "variant": "process",
+      "items": [
+        {
+          "title": "Start with your priorities",
+          "description": "Tell us what matters, what is currently difficult and what you hope to change."
+        },
+        {
+          "title": "Understand strengths & needs",
+          "description": "Your clinician gathers relevant information and completes assessment where appropriate."
+        },
+        {
+          "title": "Build practical strategies",
+          "description": "Sessions focus on meaningful goals and strategies that make sense in real routines."
+        },
+        {
+          "title": "Review & adapt",
+          "description": "Progress is reviewed together and the plan is adjusted as needs and goals change."
+        }
+      ]
+    },
+    {
+      "type": "clinic/FAQ",
+      "eyebrow": "Common questions",
+      "title": "Before you get started.",
+      "intro": "These answers are general. We can discuss individual circumstances when you contact the team.",
+      "tint": true,
+      "items": [
+        {
+          "question": "Is Exercise Physiology the same as personal training?",
+          "answer": "Exercise Physiology is an allied health service that uses assessment and tailored exercise programming to address individual health and functional goals."
+        },
+        {
+          "question": "Do I need to be fit before I start?",
+          "answer": "No. Programs are designed from your current starting point and progressed at an appropriate pace."
+        },
+        {
+          "question": "Can the program focus on everyday function?",
+          "answer": "Yes. Goals can be linked to real tasks, participation, energy and confidence in daily life."
+        }
+      ]
+    },
+    {
+      "type": "clinic/CTA",
+      "eyebrow": "Ready to begin?",
+      "title": "Let’s find the right starting point.",
+      "intro": "",
+      "actions": [
+        {
+          "label": "Make a referral",
+          "href": "/contact/#referral",
+          "variant": "light"
+        },
+        {
+          "label": "Call 0400 888 998",
+          "href": "tel:+61400888998",
+          "variant": "ghost"
+        }
+      ]
+    }
+  ]
+}

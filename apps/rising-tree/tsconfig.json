@@ -1,0 +1,13 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "baseUrl": "../../",
+    "paths": {
+      "@webfactory/core/*": ["packages/core/src/*"],
+      "@webfactory/template-allied-health/*": ["templates/allied-health/src/*"],
+      "@webfactory/sections/*": ["packages/sections/src/*"],
+      "@webfactory/ui/*": ["packages/ui/src/*"]
+    }
+  }
+}
