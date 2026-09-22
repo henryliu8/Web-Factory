@@ -67,6 +67,7 @@ web_modules/
 
 # dotenv environment variable files
 .dev.vars
+.dev.vars.*
 .env
 .env.*
 !.env.example
