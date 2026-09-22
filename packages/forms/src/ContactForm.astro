@@ -1,0 +1,293 @@
+---
+interface Props {
+  id: string;
+  endpoint: string;
+  siteKey: string;
+  developmentBypass?: boolean;
+  form: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    button: string;
+    note: string;
+    fields: Array<{
+      name: string;
+      label: string;
+      type: "text" | "tel" | "email" | "select" | "textarea";
+      full?: boolean;
+      autocomplete?: string;
+      options?: string[];
+      required?: boolean;
+      maxLength?: number;
+    }>;
+    feedback: {
+      sending: string;
+      success: string;
+      invalid: string;
+      verification: string;
+      failed: string;
+      unavailable: string;
+      noScript: string;
+      captchaLabel: string;
+    };
+  };
+}
+const { id, endpoint, siteKey, form } = Astro.props;
+// A production build cannot render a bypass even if a caller passes true.
+const developmentBypass =
+  import.meta.env.DEV && Astro.props.developmentBypass === true;
+const available = Boolean(siteKey) || developmentBypass;
+---
+
+<form
+  class="contact-form"
+  action={endpoint}
+  method="post"
+  data-contact-form
+  data-site-key={developmentBypass ? "" : siteKey}
+  data-development-bypass={developmentBypass ? "true" : undefined}
+  data-feedback={JSON.stringify(form.feedback)}
+>
+  <div class="eyebrow">{form.eyebrow}</div>
+  <h2>{form.title}</h2>
+  <p>{form.intro}</p>
+  <div class="form-grid">
+    {form.fields.map((field) => (
+      <div class:list={["field", { full: field.full }]}>
+        <label for={`${id}-${field.name}`}>
+          {field.label}
+          {field.required && <span aria-hidden="true"> *</span>}
+        </label>
+        {field.type === "select" ? (
+          <select
+            id={`${id}-${field.name}`}
+            name={field.name}
+            required={field.required}
+          >
+            {field.options?.map((option) => (
+              <option>{option}</option>
+            ))}
+          </select>
+        ) : field.type === "textarea" ? (
+          <textarea
+            id={`${id}-${field.name}`}
+            name={field.name}
+            required={field.required}
+            maxlength={field.maxLength}
+          ></textarea>
+        ) : (
+          <input
+            id={`${id}-${field.name}`}
+            name={field.name}
+            type={field.type}
+            autocomplete={
+              field.autocomplete as "name" | "email" | "tel" | undefined
+            }
+            required={field.required}
+            maxlength={field.maxLength}
+          />
+        )}
+      </div>
+    ))}
+    <div hidden aria-hidden="true">
+      <label for={`${id}-website`}>Website</label>
+      <input
+        id={`${id}-website`}
+        name="website"
+        type="text"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+    {developmentBypass && (
+      <p class="field full" role="status">
+        Local development: reCAPTCHA disabled. Submissions still send email.
+      </p>
+    )}
+    {siteKey && !developmentBypass && (
+      <div class="field full">
+        <span id={`${id}-captcha-label`}>{form.feedback.captchaLabel}</span>
+        <div
+          data-recaptcha
+          role="group"
+          aria-labelledby={`${id}-captcha-label`}
+        ></div>
+      </div>
+    )}
+    <div class="field full">
+      <button
+        class="btn btn-primary"
+        type="submit"
+        disabled={!developmentBypass}
+      >
+        {form.button}
+      </button>
+    </div>
+  </div>
+  <p class="form-note">{form.note}</p>
+  <p data-form-status role="status" aria-live="polite" hidden={available}>
+    {!available && form.feedback.unavailable}
+  </p>
+  <noscript>
+    <p>{form.feedback.noScript}</p>
+  </noscript>
+</form>
+<style>
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  [data-form-status] {
+    margin-top: var(--wf-space-4);
+    overflow-wrap: anywhere;
+  }
+  [data-form-status][data-error] {
+    color: var(--wf-color-error);
+  }
+  [data-recaptcha] {
+    min-height: 144px;
+  }
+</style>
+<script>
+  interface Recaptcha {
+    render(
+      element: HTMLElement,
+      options: {
+        sitekey: string;
+        size: "compact";
+        callback: () => void;
+        "expired-callback": () => void;
+        "error-callback": () => void;
+      },
+    ): number;
+    getResponse(id: number): string;
+    reset(id: number): void;
+  }
+  declare global {
+    interface Window {
+      grecaptcha?: Recaptcha;
+      wfContactRecaptchaReady?: () => void;
+    }
+  }
+  const forms = [
+    ...document.querySelectorAll<HTMLFormElement>("[data-contact-form]"),
+  ];
+  const controllers = forms.map((form) => {
+    const messages: Record<string, string> = JSON.parse(form.dataset.feedback!);
+    const button = form.querySelector<HTMLButtonElement>(
+      'button[type="submit"]',
+    )!;
+    const status = form.querySelector<HTMLElement>("[data-form-status]")!;
+    const developmentBypass = form.dataset.developmentBypass === "true";
+    let widgetId: number | undefined;
+    let submitting = false;
+    let submissionId = crypto.randomUUID();
+    const show = (code: string, error = false) => {
+      status.textContent = messages[code] ?? messages.failed;
+      status.hidden = false;
+      status.toggleAttribute("data-error", error);
+    };
+    form.addEventListener("input", () => {
+      if (!submitting) submissionId = crypto.randomUUID();
+    });
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (submitting || !form.reportValidity()) return;
+      const token = developmentBypass
+        ? "development-only"
+        : widgetId === undefined
+          ? ""
+          : window.grecaptcha?.getResponse(widgetId);
+      if (!token) {
+        show("verification", true);
+        return;
+      }
+      const payload: Record<string, FormDataEntryValue> = {
+        ...Object.fromEntries(new FormData(form)),
+        captchaToken: token,
+        submissionId,
+      };
+      delete payload["g-recaptcha-response"];
+      const fields = [
+        ...form.querySelectorAll<
+          HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+        >("input, select, textarea"),
+      ].filter((field) => !field.disabled);
+      fields.forEach((field) => {
+        field.disabled = true;
+      });
+      submitting = true;
+      button.disabled = true;
+      form.setAttribute("aria-busy", "true");
+      show("sending");
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+          signal: AbortSignal.timeout(25_000),
+        });
+        const result = await response.json();
+        if (response.ok && result.ok === true) {
+          form.reset();
+          submissionId = crypto.randomUUID();
+          show("success");
+        } else {
+          show(result.code, true);
+        }
+      } catch {
+        show("failed", true);
+      } finally {
+        fields.forEach((field) => {
+          field.disabled = false;
+        });
+        submitting = false;
+        form.removeAttribute("aria-busy");
+        if (widgetId !== undefined) window.grecaptcha?.reset(widgetId);
+        // Every attempt consumes or may expire the captcha token. Preserve fields on errors.
+        button.disabled = !developmentBypass;
+      }
+    });
+    return {
+      render() {
+        const container = form.querySelector<HTMLElement>("[data-recaptcha]");
+        if (!container || !window.grecaptcha || widgetId !== undefined) return;
+        widgetId = window.grecaptcha.render(container, {
+          sitekey: form.dataset.siteKey!,
+          size: "compact",
+          callback: () => {
+            button.disabled = submitting;
+          },
+          "expired-callback": () => {
+            button.disabled = true;
+            if (!submitting) show("verification", true);
+          },
+          "error-callback": () => {
+            button.disabled = true;
+            if (!submitting) show("verification", true);
+          },
+        });
+      },
+      unavailable() {
+        button.disabled = true;
+        show("verification", true);
+      },
+    };
+  });
+  if (forms.some((form) => form.dataset.siteKey)) {
+    window.wfContactRecaptchaReady = () =>
+      controllers.forEach((controller) => controller.render());
+    if (window.grecaptcha?.render) window.wfContactRecaptchaReady();
+    else {
+      const script = document.createElement("script");
+      script.src =
+        "https://www.google.com/recaptcha/api.js?onload=wfContactRecaptchaReady&render=explicit";
+      script.async = true;
+      script.defer = true;
+      script.onerror = () =>
+        controllers.forEach((controller) => controller.unavailable());
+      document.head.append(script);
+    }
+  }
+</script>
