@@ -32,12 +32,17 @@ export const services = records(serviceFiles).sort((a, b) =>
 );
 export const team = records(teamFiles).sort((a, b) => a.order - b.order);
 const collections = { services, team };
+const serviceLinks = services.map((entry) => ({
+  label: entry.card.title,
+  href: entry.card.href,
+}));
 export const site = siteSchema.parse({
   ...siteContent,
-  services: services.map((entry) => ({
-    label: entry.card.title,
-    href: entry.card.href,
+  navigation: siteContent.navigation.map((item) => ({
+    ...item,
+    ...(item.childrenFrom === "services" ? { children: serviceLinks } : {}),
   })),
+  services: serviceLinks,
 });
 export function loadPage(input: unknown) {
   const raw = z

@@ -1,3 +1,3 @@
-// Register only project-specific changes here, using the template's logical keys.
-export const projectSections = {};
+import Contact from "../sections/Contact.astro";
+export const projectSections = { "clinic/Contact": Contact };
 export const projectComponents = {};

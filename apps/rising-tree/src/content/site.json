@@ -12,7 +12,8 @@
     },
     {
       "label": "Services",
-      "href": "/services/"
+      "href": "/services/",
+      "childrenFrom": "services"
     },
     {
       "label": "Team",

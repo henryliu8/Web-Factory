@@ -27,13 +27,15 @@ pnpm --filter @webfactory/app-rising-tree test:integration
 | 项目专属颜色、字号等 | `src/styles/project.css`，覆盖语义 token |
 | 项目组件替换 | `src/config/overrides.ts`，注册同名 logical key |
 
+Services 子菜单由 `site.json` 导航项的 `childrenFrom: "services"` 启用，自动读取服务列表。Services 文字保留总览链接，旁边箭头展开子菜单；桌面、手机及键盘均可操作。
+
 列表使用 `collection: "services"` 或 `"team"` 自动读取卡片。添加详情 JSON 后，页面路由和列表自动生成，不需要复制 Astro 页面。文件名与 `slug` 保持一致，服务卡片的 `number` 用于排序。页面内的文案、联系卡片和地点文字是独立编辑字段；`site.json` 修改的是全局页头与页脚。
 
 JSON 中的内容为纯文本；Astro 自动转义，不接受任意 HTML。无效字段会在构建时报错。已有项目级覆盖无需改动模板或共享代码。
 
 ## 当前边界
 
-- 联系表单没有后台，不会发信或保存数据。按钮明确显示未发送状态；电话、邮箱链接可以使用。
+- 联系表单已接入 Resend 和 Google reCAPTCHA v2；需要配置密钥及发件域名后启用，详见 [CONTACT.md](CONTACT.md)。网站通过 Node 服务运行，15 个内容页面仍预生成。未配置时不会发送邮件。
 - 未部署，也未连接 Storyblok。接入方案见 `STORYBLOK.md`。
 - 原站 Pexels 图片仍引用远程 URL，本地测试环境对该域名连接超时；上线前确认可访问性及使用权，或替换为项目内图片。Logo 与团队照片已本地化。
 - 页面改用目录 URL（例如 `/about-us/`、`/services/psychology/`）。原型 `.html` 深链接不保留；如果已有公开地址，上线时配置对应重定向。

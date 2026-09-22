@@ -1,0 +1,27 @@
+---
+import { getSecret } from "astro:env/server";
+import { canBypassRecaptcha } from "../config/contactDevelopment";
+import ContactSection from "@webfactory/template-allied-health/sections/Contact";
+import ContactForm from "@webfactory/forms/ContactForm.astro";
+import type { SectionProps } from "@webfactory/template-allied-health/schema";
+interface Props extends SectionProps<"clinic/Contact"> {}
+const developmentBypass = canBypassRecaptcha(
+  import.meta.env.DEV,
+  getSecret("CONTACT_DISABLE_RECAPTCHA"),
+  Astro.url,
+);
+const { id = "referral", form } = Astro.props;
+if (!form.feedback)
+  throw new Error("Contact form feedback content is required");
+---
+
+<ContactSection {...Astro.props}>
+  <ContactForm
+    slot="form"
+    {id}
+    {developmentBypass}
+    endpoint="/api/contact/"
+    siteKey={import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY ?? ""}
+    form={{ ...form, feedback: form.feedback }}
+  />
+</ContactSection>

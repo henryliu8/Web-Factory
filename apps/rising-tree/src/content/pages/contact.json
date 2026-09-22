@@ -15,7 +15,6 @@
       "type": "clinic/Contact",
       "eyebrow": "Rising Tree Allied Health Services",
       "title": "Contact details.",
-      "intro": "This is a prototype form. Web Factory can later connect it to your preferred form, CRM or email workflow.",
       "id": "referral",
       "details": [
         {
@@ -40,28 +39,34 @@
       "form": {
         "eyebrow": "Enquiry / referral",
         "title": "Tell us how we can help.",
-        "intro": "Online enquiries are not connected yet. Please phone or email the clinic to make an enquiry or referral.",
+        "intro": "Send an enquiry and our team will contact you. Fields marked * are required.",
         "fields": [
           {
             "name": "name",
             "label": "Name",
             "type": "text",
             "full": false,
-            "autocomplete": "name"
+            "autocomplete": "name",
+            "required": true,
+            "maxLength": 100
           },
           {
             "name": "phone",
             "label": "Phone",
             "type": "tel",
             "full": false,
-            "autocomplete": "tel"
+            "autocomplete": "tel",
+            "required": false,
+            "maxLength": 40
           },
           {
             "name": "email",
             "label": "Email",
             "type": "email",
             "full": true,
-            "autocomplete": "email"
+            "autocomplete": "email",
+            "required": true,
+            "maxLength": 254
           },
           {
             "name": "service",
@@ -77,18 +82,31 @@
               "Psychology",
               "Music Therapy",
               "Social Group"
-            ]
+            ],
+            "required": false
           },
           {
             "name": "message",
             "label": "How can we help?",
             "type": "textarea",
-            "full": true
+            "full": true,
+            "required": true,
+            "maxLength": 5000
           }
         ],
-        "button": "Preview enquiry (not sent)",
-        "note": "Do not use this prototype form for urgent or emergency matters. Form delivery is not connected yet.",
-        "message": "No enquiry has been sent. Please contact the clinic by phone or email."
+        "button": "Send enquiry",
+        "note": "For urgent matters, please call the clinic. Do not include medical records or sensitive health details in this form.",
+        "message": "Please contact the clinic by phone or email.",
+        "feedback": {
+          "sending": "Sending your enquiry…",
+          "success": "Thank you. Your enquiry has been submitted to our team.",
+          "invalid": "Please check your name, email and message (10–5,000 characters), then complete the verification again.",
+          "verification": "Please complete the reCAPTCHA verification. If it cannot load, check your connection or contact the clinic by phone or email.",
+          "failed": "We could not confirm submission. Your details are still here; complete the verification again and retry, or phone the clinic.",
+          "unavailable": "Online enquiries are temporarily unavailable. Please contact the clinic by phone or email.",
+          "noScript": "Please enable JavaScript to verify and send this form, or contact the clinic by phone or email.",
+          "captchaLabel": "Verification"
+        }
       }
     },
     {

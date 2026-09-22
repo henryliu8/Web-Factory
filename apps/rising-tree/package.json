@@ -6,14 +6,19 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "astro check",
-    "test:integration": "astro build && tsx ../../tools/integration/src/verifyRisingTreeBuild.ts"
+    "test:integration": "pnpm test && astro build && tsx ../../tools/integration/src/verifyRisingTreeBuild.ts",
+    "start": "node --env-file-if-exists=.env dist/server/entry.mjs",
+    "test": "tsx --test test/contact.test.ts"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^14.3.2",
     "@webfactory/core": "workspace:*",
+    "@webfactory/forms": "workspace:*",
     "@webfactory/template-allied-health": "workspace:*",
     "@webfactory/theme-modern-clinical": "workspace:*",
     "@webfactory/tokens": "workspace:*",
     "astro": "^5.15.0",
+    "wrangler": "^4.136.1",
     "zod": "^3.25.76"
   },
   "devDependencies": {
