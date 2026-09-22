@@ -36,15 +36,48 @@ const active = (href: string) =>
       <span></span>
     </button>
     <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
-      {site.navigation.map((item) => (
-        <a
-          href={item.href}
-          class:list={[{ active: active(item.href) }]}
-          aria-current={active(item.href) ? "page" : undefined}
-        >
-          {item.label}
-        </a>
-      ))}
+      {site.navigation.map((item) =>
+        item.children?.length ? (
+          <div class="nav-group">
+            <a
+              href={item.href}
+              class:list={["nav-parent", { active: active(item.href) }]}
+              aria-current={
+                Astro.url.pathname === item.href ? "page" : undefined
+              }
+            >
+              {item.label}
+            </a>
+            <details class="nav-dropdown">
+              <summary aria-label={`Toggle ${item.label} submenu`}>
+                <span aria-hidden="true">⌄</span>
+              </summary>
+              <ul class="nav-submenu">
+                {item.children.map((child) => (
+                  <li>
+                    <a
+                      href={child.href}
+                      aria-current={
+                        Astro.url.pathname === child.href ? "page" : undefined
+                      }
+                    >
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class:list={[{ active: active(item.href) }]}
+            aria-current={Astro.url.pathname === item.href ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ),
+      )}
       <a class="nav-cta" href={site.cta.href}>
         {site.cta.label}
       </a>
@@ -55,7 +88,14 @@ const active = (href: string) =>
   const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
   const nav = document.querySelector<HTMLElement>(".main-nav");
   if (toggle && nav) {
+    const closeSubmenus = () =>
+      nav
+        .querySelectorAll<HTMLDetailsElement>(".nav-dropdown[open]")
+        .forEach((menu) => {
+          menu.open = false;
+        });
     const close = () => {
+      closeSubmenus();
       nav.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", "Open menu");
@@ -67,6 +107,14 @@ const active = (href: string) =>
     });
     nav.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
+        const submenu = (
+          event.target as HTMLElement
+        ).closest<HTMLDetailsElement>(".nav-dropdown[open]");
+        if (submenu) {
+          submenu.open = false;
+          submenu.querySelector("summary")?.focus();
+          return;
+        }
         close();
         toggle.focus();
       }
@@ -76,6 +124,9 @@ const active = (href: string) =>
     });
     nav.addEventListener("click", (event) => {
       if ((event.target as HTMLElement).closest("a")) close();
+    });
+    document.addEventListener("click", (event) => {
+      if (!nav.contains(event.target as Node)) closeSubmenus();
     });
   }
 </script>

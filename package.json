@@ -11,6 +11,8 @@
     "build": "turbo run build",
     "check": "turbo run check",
     "dev": "turbo run dev",
+    "cf:dev": "astro build && wrangler dev",
+    "deploy": "astro build && wrangler deploy",
     "lint": "turbo run lint",
     "format": "prettier --write .",
     "format:check": "prettier --check ",

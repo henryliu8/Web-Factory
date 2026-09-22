@@ -9,7 +9,8 @@
     "./registry": "./src/registry.ts",
     "./layouts/SiteLayout": "./src/layouts/SiteLayout.astro",
     "./page-templates/StandardPageTemplate": "./src/page-templates/StandardPageTemplate.astro",
-    "./styles": "./src/styles/template.css"
+    "./styles": "./src/styles/template.css",
+    "./sections/Contact": "./src/sections/Contact.astro"
   },
   "scripts": {
     "check": "astro check"

@@ -10,7 +10,11 @@ import {
 const app = fileURLToPath(
   new URL("../../../apps/rising-tree/", import.meta.url),
 );
-const dist = resolve(app, "dist");
+const dist = resolve(app, "dist/client");
+assert.ok(
+  existsSync(resolve(app, "dist/server/entry.mjs")),
+  "Contact API requires a server build",
+);
 const routes = [
   ...readdirSync(resolve(app, "src/content/pages"))
     .filter((name) => name.endsWith(".json"))
@@ -90,6 +94,19 @@ for (const route of routes) {
   }
 }
 const home = readFileSync(resolve(dist, "index.html"), "utf8");
+const submenu = home.match(/<ul class="nav-submenu">([\s\S]*?)<\/ul>/)?.[1];
+assert.ok(submenu, "Services navigation must render a submenu");
+for (const name of readdirSync(resolve(app, "src/content/services"))) {
+  if (!name.endsWith(".json")) continue;
+  const service = JSON.parse(
+    readFileSync(resolve(app, "src/content/services", name), "utf8"),
+  );
+  assert.ok(
+    submenu.includes(`href="${service.card.href}"`),
+    `Missing submenu service: ${service.slug}`,
+  );
+}
+
 assert.equal(
   (home.match(/class="service-card"/g) ?? []).length,
   readdirSync(resolve(app, "src/content/services")).filter((name) =>
@@ -102,11 +119,17 @@ assert.equal(
     name.endsWith(".json"),
   ).length,
 );
+const contact = readFileSync(resolve(dist, "contact/index.html"), "utf8");
+assert.ok(contact.includes('action="/api/contact/"'));
+assert.ok(contact.includes("data-contact-form"));
 assert.ok(
-  readFileSync(resolve(dist, "contact/index.html"), "utf8").includes(
-    "No enquiry has been sent.",
-  ),
+  !/<form[^>]*data-development-bypass/.test(contact),
+  "Production form must never bypass captcha",
 );
+assert.ok(!/<form[^>]*data-demo-form/.test(contact));
+for (const field of ["name", "email", "message"]) {
+  assert.match(contact, new RegExp(`name="${field}"[^>]*required`));
+}
 console.log(
   `Rising Tree: ${routes.length} routes, content validation, links, assets, anchors and server-rendered cards passed.`,
 );

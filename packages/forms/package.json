@@ -4,6 +4,14 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./server": "./src/server.ts",
+    "./ContactForm.astro": "./src/ContactForm.astro"
+  },
+  "scripts": {
+    "check": "astro check"
+  },
+  "devDependencies": {
+    "astro": "^5.15.0"
   }
 }

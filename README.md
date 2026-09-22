@@ -82,4 +82,4 @@ pnpm --filter @webfactory/app-rising-tree test:integration
 
 Edit JSON content and section order under `apps/rising-tree/src/content/`. Service and team detail files generate their routes and directory cards automatically. [Editing guide](apps/rising-tree/project/PROJECT.md) · [Storyblok integration plan](apps/rising-tree/project/STORYBLOK.md).
 
-The contact form remains a clearly labelled preview without delivery. Storyblok is supported as a future content/preview adapter; no CMS connection has been enabled.
+The Rising Tree contact form uses shared `@webfactory/forms` Resend and reCAPTCHA v2 integrations, with a project-owned `/api/contact/` endpoint. It requires a Node server and provider keys; setup is documented in [CONTACT.md](apps/rising-tree/project/CONTACT.md). Storyblok is supported as a future content/preview adapter; no CMS connection has been enabled.

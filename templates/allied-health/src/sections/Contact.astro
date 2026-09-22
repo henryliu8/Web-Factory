@@ -24,45 +24,50 @@ const { id = "referral", eyebrow, title, details, form } = Astro.props;
         ))}
       </div>
     </div>
-    <form class="contact-form" data-demo-form>
-      <div class="eyebrow">{form.eyebrow}</div>
-      <h2>{form.title}</h2>
-      <p>{form.intro}</p>
-      <div class="form-grid">
-        {form.fields.map((field) => (
-          <div class:list={["field", { full: field.full }]}>
-            <label for={`${id}-${field.name}`}>{field.label}</label>
-            {field.type === "select" ? (
-              <select id={`${id}-${field.name}`} name={field.name}>
-                {field.options?.map((option) => (
-                  <option>{option}</option>
-                ))}
-              </select>
-            ) : field.type === "textarea" ? (
-              <textarea id={`${id}-${field.name}`} name={field.name}></textarea>
-            ) : (
-              <input
-                id={`${id}-${field.name}`}
-                name={field.name}
-                type={field.type}
-                autocomplete={
-                  field.autocomplete as "name" | "email" | "tel" | undefined
-                }
-              />
-            )}
+    <slot name="form">
+      <form class="contact-form" data-demo-form>
+        <div class="eyebrow">{form.eyebrow}</div>
+        <h2>{form.title}</h2>
+        <p>{form.intro}</p>
+        <div class="form-grid">
+          {form.fields.map((field) => (
+            <div class:list={["field", { full: field.full }]}>
+              <label for={`${id}-${field.name}`}>{field.label}</label>
+              {field.type === "select" ? (
+                <select id={`${id}-${field.name}`} name={field.name}>
+                  {field.options?.map((option) => (
+                    <option>{option}</option>
+                  ))}
+                </select>
+              ) : field.type === "textarea" ? (
+                <textarea
+                  id={`${id}-${field.name}`}
+                  name={field.name}
+                ></textarea>
+              ) : (
+                <input
+                  id={`${id}-${field.name}`}
+                  name={field.name}
+                  type={field.type}
+                  autocomplete={
+                    field.autocomplete as "name" | "email" | "tel" | undefined
+                  }
+                />
+              )}
+            </div>
+          ))}
+          <div class="field full">
+            <button class="btn btn-primary" type="button" data-demo-submit>
+              {form.button}
+            </button>
           </div>
-        ))}
-        <div class="field full">
-          <button class="btn btn-primary" type="button" data-demo-submit>
-            {form.button}
-          </button>
         </div>
-      </div>
-      <p class="form-note">{form.note}</p>
-      <p data-form-message hidden role="status">
-        {form.message}
-      </p>
-    </form>
+        <p class="form-note">{form.note}</p>
+        <p data-form-message hidden role="status">
+          {form.message}
+        </p>
+      </form>
+    </slot>
   </div>
 </section>
 <script>
